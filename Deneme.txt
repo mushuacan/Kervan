@@ -1,0 +1,7 @@
+Deneme():{
+	print("deneme");
+}
+
+class main start() {
+	Deneme();
+}
