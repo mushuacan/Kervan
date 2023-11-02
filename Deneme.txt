@@ -1,7 +1,5 @@
-Deneme():{
-	print("deneme");
+Deneme() {
+	print("Hello world!");
 }
 
-class main start() {
-	Deneme();
-}
+Deneme()
