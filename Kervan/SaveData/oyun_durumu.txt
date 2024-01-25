@@ -1,0 +1,8 @@
+Olay:Çık
+Grup:Eleman
+Grup:Eleman
+Envanter:Aile Yâdigârı Gümüş Kolye
+Para:100
+Erzak:38
+OyuncuKonumX:4
+OyuncuKonumY:10
