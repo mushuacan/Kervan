@@ -47,7 +47,7 @@ namespace Kervan
             Random random = new Random();
             int rastgele;
 
-            CiddiliYaz("VAKA\n\n", 35, 115);
+            CiddiliYaz("\n\nVAKA\n\n", 35, 115);
             Thread.Sleep(500);
             
 
@@ -323,8 +323,8 @@ namespace Kervan
                     CiddiliYaz("Yolda gördüğün garibanlardan farkın kalmadı.");
                     VakaAyrıştırıcı("Son");
                 }
-                rastgele = random.Next(1,15);
-                if (rastgele <3)
+                rastgele = random.Next(1, 35);
+                if (rastgele <3) //<3
                 {
                     rastgele = random.Next(0, ortakErişim.OrtakListe.Envanter.Count - 1);
                     int rastgele2 = random.Next(0, ortakErişim.OrtakListe.Grup.Count - 1);
@@ -344,19 +344,26 @@ namespace Kervan
                     ortakErişim.OrtakListe.Para -= rastgele;
                     CiddiliYaz($"{rastgele} paran artık gitti.");
                 }
+                else if (rastgele < 15 && ortakErişim.OrtakListe.Grup.Contains("Haşin Koruma"))
+                {
+                    CiddiliYaz("Haşin Koruma senin otoritene saygısı kalmadığını belirtti.");
+                    CiddiliYaz("Erzak bittiği için seni kınadı.");
+                    CiddiliYaz("Haşin Koruma gruptan ayrıldı.");
+                    ortakErişim.OrtakListe.Grup.Remove("Haşin Koruma");
+                }
                 else
                 {
                     CiddiliYaz("Yoldaşların erzakların bitmesinden rahatsız olduğunu dillendiriyor.");
                 }
             }
 
-            if (olay == "kumarÇıkış")
+            if (olay == "kumarÇıkış") //Benim oyunumda kumar oynamayın lan! Neden mi koydum oyuna o mu zaman mı? E sizi kazıklamak için olm. Kumar kötü bi şe.
             {
                 if(sayıGirdisi1 > 300)
                 {
                     CiddiliYaz("\n\nGece evine yüklü miktarda kumar parasıyla dönerken ");
                     CiddiliYaz("Ansızın ensene inen acı verici bir sopayla bayıldın.");
-                    rastgele = random.Next(1, 4);
+                    rastgele = random.Next(1, 5);
                     switch (rastgele)
                     {
                         case 1:
@@ -376,6 +383,15 @@ namespace Kervan
                             CiddiliYaz("Gece yarısı, sokaklarda tedirginlikle süründün.");
                             CiddiliYaz("Sağsağlim eve vardın ancak bir doktor görmen gerek.");
                             ortakErişim.OrtakListe.Olay.Add("Doktor");
+                            break;
+                        case 4:
+                            CiddiliYaz("Adamın teki üzerini karıştırıyordu.");
+                            CiddiliYaz("Kendine geldin ve adamın kafasına şamarı yapıştırdın.");
+                            CiddiliYaz("Adam şaşkınlıkla sendeledi ve adamı dönüp sen üzerindeki bütün parayı aldın.");
+                            CiddiliYaz("Hana dönerken keyfin yerindeydi ama handa biraz ağrın olduğunu fark ettin.");
+                            CiddiliYaz("Doktora görünsen iyi olacak.");
+                            ortakErişim.OrtakListe.Olay.Add("Doktor");
+                            sayıGirdisi1 = sayıGirdisi1 + random.Next(1, 15);
                             break;
                         default:
                             Console.WriteLine("#Hata: Vakalar.Vaka()");

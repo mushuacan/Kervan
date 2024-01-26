@@ -17,6 +17,8 @@ namespace Kervan
         public List<string> Envanter { get; set; } = new List<string>();
         public int Para { get; set; }
         public int Erzak { get; set; }
+        public int oyuncuGlobalKonumX { get; set; }
+        public int oyuncuGlobalKonumY { get; set; }
     }
 
     public class OL_Singleton //OL -> Ortak Liste
@@ -58,6 +60,8 @@ namespace Kervan
             ortakErişim.OrtakListe.Grup.Add("Eleman");
             ortakErişim.OrtakListe.Para = 100;
             ortakErişim.OrtakListe.Erzak = 44;
+            ortakErişim.OrtakListe.oyuncuGlobalKonumX = 4;
+            ortakErişim.OrtakListe.oyuncuGlobalKonumY = 10;
             ortakErişim.OrtakListe.Envanter.Add("Aile Yâdigârı Gümüş Kolye");
         }
 
@@ -279,7 +283,7 @@ namespace Kervan
         {
             OL_Singleton ortakErişim = OL_Singleton.Instance;
 
-            if (işlem == "Arttır")
+            if (işlem == "Arttır") //Azaltmak için eksili değer girilip gene Arttır yazalır
             {
                 if (ortakErişim.OrtakListe.Grup.Contains("Aşçı") && artış == -1)
                 {
@@ -293,20 +297,29 @@ namespace Kervan
             }
             else if (işlem == "Kontrol")
             {
+                int günlükErzak = 5;
                 Console.WriteLine($"Gruptakilerin sayısı: {ortakErişim.OrtakListe.Grup.Count}");
-                if (ortakErişim.OrtakListe.Erzak >= 0 && ortakErişim.OrtakListe.Grup.Contains("Aşçı"))
+                if (ortakErişim.OrtakListe.Erzak > 0 && ortakErişim.OrtakListe.Grup.Contains("Aşçı"))
                 {
-                    int günlükErzak = (int)(ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count / 2);
+                    günlükErzak = (int)(ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count / 3);
                     Console.WriteLine($"{günlükErzak} günlük erzağın var.");
+                    if (günlükErzak <= 4 && günlükErzak != 0)
+                    {
+                        Console.WriteLine("\n E R Z A Ğ I N I Z   B İ T İ Y O R ! ! ! \n");
+                    }
                 }
-                else if (ortakErişim.OrtakListe.Erzak >= 0)
+                else if (ortakErişim.OrtakListe.Erzak > 0)
                 {
-                    int günlükErzak = ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count;
+                    günlükErzak = ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count;
                     Console.WriteLine($"{günlükErzak} günlük erzağın var.");
+                    if (günlükErzak <= 4 && günlükErzak != 0)
+                    {
+                        Console.WriteLine("\n E R Z A Ğ I N I Z   B İ T İ Y O R ! ! ! \n");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Erzağın bitti.");
+                    Console.WriteLine("\n E R Z A Ğ I N I Z   B İ T T İ \n");
                 }
             }
         }
@@ -319,7 +332,8 @@ namespace Kervan
             {
                 Console.WriteLine($"{ortakErişim.OrtakListe.Erzak/ortakErişim.OrtakListe.Grup.Count} günlük erzağın var.");
                 int erzakGünlükFiyat = ortakErişim.OrtakListe.Grup.Count;
-                Console.WriteLine($"Alacağın gün başına {erzakGünlükFiyat} para ödeyeceksin.");
+                Console.WriteLine($"Gün başına {erzakGünlükFiyat} para ödeyeceksin.");
+                Console.WriteLine($"{ortakErişim.OrtakListe.Para} kadar paran var.");
 
                 bool alışveriş = true;
                 do
@@ -565,13 +579,12 @@ namespace Kervan
 
 
 
-            Console.WriteLine($"\nEnvanterin:");
             
             Thread.Sleep(1000);
 
             while (true)
             {
-                Console.WriteLine($"Envanterde {ortakErişim.OrtakListe.Envanter.Count()}, tahminde {tahminiFiyat.Count()} eleman var.");
+                //Console.WriteLine($"Envanterde {ortakErişim.OrtakListe.Envanter.Count()}, tahminde {tahminiFiyat.Count()} eleman var.");
                 // Sonuçları yazdırma
                 Console.WriteLine($"\nParan: {ortakErişim.OrtakListe.Para}\nEnvanterin:");
                 for (int i = 0; i < ortakErişim.OrtakListe.Envanter.Count; i++)
@@ -715,6 +728,7 @@ namespace Kervan
                             if (fiyatAl > ortakErişim.OrtakListe.Para)
                             {
                                 Console.WriteLine($"Bu eşyaya paran ({ortakErişim.OrtakListe.Para}) yetmedi.");
+                                Thread.Sleep(724);
                             }
                             else if (!(elemanSayısı * 4 > envanterdekilerinSayısı))
                             {

@@ -25,7 +25,7 @@ namespace Kervan
             string dosyaYolu = Path.Combine(klasorYolu, "oyun_durumu.txt");
 
             // Şimdi dosyayı kullanabilirsiniz
-            Console.WriteLine("Dosya yolu: " + dosyaYolu);
+            //Console.WriteLine("Dosya yolu: " + dosyaYolu);
 
 
             if (işlem == "kaydet")
@@ -79,56 +79,82 @@ namespace Kervan
 
         public void YükleTxt(string dosyaYolu)
         {
-            OL_Singleton ortakErişim = OL_Singleton.Instance;
-            Harita haritaCs = new Harita();
-            ortakErişim.OrtakListe.Olay.Clear();
-            ortakErişim.OrtakListe.Grup.Clear();
-            ortakErişim.OrtakListe.Envanter.Clear();
-            ortakErişim.OrtakListe.Para = 0;
-            ortakErişim.OrtakListe.Erzak = 0;
-            int sayı;
-
-            using (StreamReader reader = new StreamReader(dosyaYolu))
+            Console.WriteLine("Kayıt Dosyası yükleniyor ama hiçbir oyuncu dönüp bunu okumayacak çünkü ->\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            if (File.Exists(dosyaYolu))
             {
-                string satır;
-                while ((satır = reader.ReadLine()) != null)
-                {
-                    string[] parçalar = satır.Split(':');
-                    string anahtar = parçalar[0];
-                    string değer = parçalar[1];
+                OL_Singleton ortakErişim = OL_Singleton.Instance;
+                Harita haritaCs = new Harita();
+                ortakErişim.OrtakListe.Olay.Clear();
+                ortakErişim.OrtakListe.Grup.Clear();
+                ortakErişim.OrtakListe.Envanter.Clear();
+                ortakErişim.OrtakListe.Para = 0;
+                ortakErişim.OrtakListe.Erzak = 0;
+                int sayı;
 
-                    switch (anahtar)
+                using (StreamReader reader = new StreamReader(dosyaYolu))
+                {
+                    string satır;
+                    while ((satır = reader.ReadLine()) != null)
                     {
-                        case "Olay":
-                            ortakErişim.OrtakListe.Olay.Add(değer);
-                            break;
-                        case "Grup":
-                            ortakErişim.OrtakListe.Grup.Add(değer);
-                            break;
-                        case "Envanter":
-                            ortakErişim.OrtakListe.Envanter.Add(değer);
-                            break;
-                        case "Para":
-                            ortakErişim.OrtakListe.Para = int.Parse(değer);
-                            break;
-                        case "Erzak":
-                            ortakErişim.OrtakListe.Erzak = int.Parse(değer);
-                            break;
-                        case "OyuncuKonumX":
-                            sayı = int.Parse(değer);
-                            haritaCs.KonumIşınlan("x", sayı);
-                            break;
-                        case "OyuncuKonumY":
-                            sayı = int.Parse(değer);
-                            haritaCs.KonumIşınlan("y", sayı);
-                            break;
-                        default:
-                            Console.WriteLine("Bilinmeyen anahtar: " + anahtar);
-                            break;
+                        string[] parçalar = satır.Split(':');
+                        string anahtar = parçalar[0];
+                        string değer = parçalar[1];
+
+                        switch (anahtar)
+                        {
+                            case "Olay":
+                                ortakErişim.OrtakListe.Olay.Add(değer);
+                                break;
+                            case "Grup":
+                                ortakErişim.OrtakListe.Grup.Add(değer);
+                                break;
+                            case "Envanter":
+                                ortakErişim.OrtakListe.Envanter.Add(değer);
+                                break;
+                            case "Para":
+                                ortakErişim.OrtakListe.Para = int.Parse(değer);
+                                break;
+                            case "Erzak":
+                                ortakErişim.OrtakListe.Erzak = int.Parse(değer);
+                                break;
+                            case "OyuncuKonumX":
+                                sayı = int.Parse(değer);
+                                haritaCs.KonumIşınlan("x", sayı);
+                                break;
+                            case "OyuncuKonumY":
+                                sayı = int.Parse(değer);
+                                haritaCs.KonumIşınlan("y", sayı);
+                                break;
+                            default:
+                                Console.WriteLine("Bilinmeyen anahtar: " + anahtar);
+                                break;
+                        }
                     }
                 }
+                Console.WriteLine("Listeler metin dosyasından yüklendi.");
+                Thread.Sleep(2000);
+                Console.Write(".");
+                Thread.Sleep(300);
+                Console.Write(".");
+                Thread.Sleep(300);
+                Console.Write(".");
+                haritaCs.haritaHazırla();
+                haritaCs.haritaYazdır();
             }
-            Console.WriteLine("Listeler metin dosyasından yüklendi.");
+            else
+            {
+                // Dosya mevcut değil
+                Console.WriteLine("Bir kayıt dosyası mevcut değil.");
+                Thread.Sleep(1000);
+                Console.Write("Sizi oyuna sıfırdan başlar gibi başlatacağız.");
+                Thread.Sleep(2000);
+                for (int i = 0; i < 180; i += 0)
+                {
+                    Console.Write(".");
+                    Thread.Sleep(200 - i);
+                    i += (int)((200 - i) * 0.1);
+                }
+            }
         }
     }
 }

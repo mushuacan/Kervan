@@ -6,6 +6,7 @@ class Program
 {
     public static void Main()
     {
+        Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"); //En üstten aşağı gitmek nedense rahatsız edici geliyor. Direk aşağıdan başlaıyorum.
         Şehir ŞehirCs = new Şehir();
         Harita haritaCs = new Harita();
         ŞehirCs.BaşlarkenHazırlık();
@@ -30,6 +31,8 @@ class Program
 
     public void Maincik() //Oyunu baştan başlat
     {
+        Şehir ŞehirCs = new Şehir();
+        ŞehirCs.BaşlarkenHazırlık();
         Main();
     }
 
@@ -54,7 +57,7 @@ class Program
                 Console.WriteLine("\n\n\n");
                 switch (sayi)
                 {
-                    case 1:
+                    case 1: //Oyunu başlat
                         Console.WriteLine("Oyun Başlatılıyor");
                         Thread.Sleep(450);
                         Console.Write(".");
@@ -64,23 +67,20 @@ class Program
                         Console.Write(".");
                         return;
 
-                    case 2:
+                    case 2: //Kaydedilmiş Son Oyunu Açar
                         Console.WriteLine("\n\n\n\n\n\n\n\n\n");
                         Console.WriteLine("P haritadaki sizin bulunduğunuz konumu gösterir.\n\n\n");
                         Şehir ŞehirCs = new Şehir();
-                        Harita haritaCs = new Harita();
                         Kayıt KayıtCs = new Kayıt();
                         KayıtCs.KayıtDosyası("yükle");
-                        haritaCs.haritaHazırla();
-                        haritaCs.haritaYazdır();
                         return;
 
-                    case 3:
+                    case 3: //Dil Seçeneği
                         HavliYazı("Kısıtlı zamandan mütevellit başka bir dil eklenememiştir.", 35, 100);
                         Thread.Sleep(400);
                         break;
 
-                    case 4:
+                    case 4: //Hile kodları
                         Console.WriteLine("Hile kodu: 1 50");
                         Console.WriteLine("(Para ekler)");
                         Console.WriteLine("Hile kodu: 1 150");
@@ -99,7 +99,7 @@ class Program
                         Console.WriteLine("Ayrıca kumarhanede sayı bilmeye çalışırken 'kumarbaz' yazmak sayıyı ifşalar.");
                         break;
 
-                    case 5:
+                    case 5: // Oyun hakkında bilgi
                         Console.WriteLine("Oyun Mount&Blade Warband oyunundaki ticaret kervanlarından esinlenilmiştir.");
                         Thread.Sleep(123);
                         Console.WriteLine("Amacımız Şehirler ve Köyler arasında dolaşarak eşya alıp satmak ve para kazanmaktır.");
@@ -117,20 +117,22 @@ class Program
                         Console.WriteLine("Mesela Koyuncular Köyünde Yün'ü ve Et'i daha fazla bulabilirsiniz.");
                         Thread.Sleep(123);
                         Console.WriteLine("İyi oyunlar!");
-                        Thread.Sleep(3000);
+                        Thread.Sleep(300);
                         break;
 
-                    case 6:
+                    case 6: //Yapımcı Hakkında Bilgi
                         Console.WriteLine("Yapımcı, bendeniz Mushu");
                         Thread.Sleep(444);
                         Console.WriteLine("''Muhammet Şua Can''");
                         Thread.Sleep(1000);
-                        Console.WriteLine("\nAyrıca yapımında büyük oranda 'GPT-3.5 tabanlı dil modeli'nden yardım görülmüştür.");
+                        Console.WriteLine("\nProjenin yapımında büyük oranda 'GPT-3.5 tabanlı dil modeli'nden yardım görülmüştür.");
                         Thread.Sleep(700);
-                        Console.WriteLine("Kodların %95'ini ona yazdırdım ama bütünde bir oyun olabilmesi için %40'ını falan değiştirmek durumunda,");
+                        Console.WriteLine("Kodların %75'ini ona yazdırdım ama bütünde bir oyun olabilmesi için %70'ını falan değiştirmek durumunda,");
                         Thread.Sleep(700);
                         Console.Write("ayarlamak durumunda kaldım.");
                         Thread.Sleep(400);
+                        Console.Write("\n%60 derken %75'in %70'ı yani bütün kodlara oranladığımızda %25 kendim yazdım %52,5'ını gpt'den lıp değiştirdim.");
+                        Console.Write("Geri kalan da gpt'nin kodu. Mesela Instance'ı pek anlamadım. Ama çalışıyor yani.");
                         break;
 
                     case 7:

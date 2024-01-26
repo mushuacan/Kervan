@@ -192,6 +192,10 @@ namespace Kervan
             {
                 ortakErişim.OrtakListe.Para += coin;
             }
+            else
+            {
+                ortakErişim.OrtakListe.Para += coin;
+            }
             Console.WriteLine($"Toplam paran {ortakErişim.OrtakListe.Para}.");
         }
     }

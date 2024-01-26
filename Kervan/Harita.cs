@@ -29,8 +29,6 @@ namespace Kervan
         // Haritayı liste olarak temsil etmek için
         List<List<char>> haritaListesi = new List<List<char>>();
 
-        public int oyuncuKonumX = 4;
-        public int oyuncuKonumY = 10;
 
         bool iflasdenemesi = false;
 
@@ -96,12 +94,12 @@ namespace Kervan
         public void oyuncuHareket()
         {
             // Oyuncunun yönüne göre konumunu güncelle
+            OL_Singleton ortakErişim = OL_Singleton.Instance;
             Eşyalar EşyalarCs = new Eşyalar();
             Şehir ŞehirCs = new Şehir();
             ŞehirCs.Erzak("Kontrol");
-            OL_Singleton ortakErişim = OL_Singleton.Instance;
-            Console.Write("Yön Seçimi (w-Yukarı, d-Sağa, s-Aşağı, a-Sola");
-            Console.Write(", 1-Harita bilgilendirmesi, 2-Yerleşkeler,\n 3-Kendi bilgilerin, 4-Kaydedip çıkmak için)\n-> ");
+            Console.Write("(w-Yukarı, s-Aşağı, d-Sağa, a-Sola\n");
+            Console.Write("1-Harita bilgilendirmesi, 2-Yerleşkeler (isimleri),\n3-Kendi bilgilerin, 4-İpucu Al, 5-Kaydedip çık, .)\n-> ");
             string yon = Console.ReadLine();
 
             switch (yon)
@@ -125,6 +123,8 @@ namespace Kervan
                     break;
                 case "2":
                     HaritaBilgilendirme("Yerleşke");
+                    Thread.Sleep(500);
+                    haritaYazdır();
                     oyuncuHareket();
                     Thread.Sleep(500);
                     break;
@@ -138,10 +138,13 @@ namespace Kervan
                     Thread.Sleep(1000);
                     break;
                 case "4":
+                    İpucu();
+                    break;
+                case "5":
                     KaydetVeÇık();
                     break;
                 case "konum":
-                    Console.WriteLine($"Konumun: {oyuncuKonumX}, {oyuncuKonumY}");
+                    Console.WriteLine($"Konumun: {ortakErişim.OrtakListe.oyuncuGlobalKonumX}, {ortakErişim.OrtakListe.oyuncuGlobalKonumY}");
                     oyuncuHareket();
                     break;
                 case "şehir":
@@ -228,26 +231,27 @@ namespace Kervan
 
         public void oyuncuKonumDeğişikliği(int konumX, int konumY)
         {
-            string konumdakiBlok = string.Concat(haritaListesi[konumY + oyuncuKonumY][konumX + oyuncuKonumX]);
+            OL_Singleton ortakErişim = OL_Singleton.Instance;
+            string konumdakiBlok = string.Concat(haritaListesi[konumY + ortakErişim.OrtakListe.oyuncuGlobalKonumY][konumX + ortakErişim.OrtakListe.oyuncuGlobalKonumX]);
 
             Şehir ŞehirCs = new Şehir();
 
             switch (konumdakiBlok)
             {
                 case "#":
+                    Console.WriteLine("\n\nGitmek istenen konumda engel var. Lütfen tekrar deneyin.\n\n");
                     haritaYazdır();
-                    Console.WriteLine("Gitmek istenen konumda engel var. Lütfen tekrar deneyin.");
                     oyuncuHareket();
                     break;
                 case ".":
-                    oyuncuKonumX = konumX + oyuncuKonumX;
-                    oyuncuKonumY = konumY + oyuncuKonumY;
+                    ortakErişim.OrtakListe.oyuncuGlobalKonumX = konumX + ortakErişim.OrtakListe.oyuncuGlobalKonumX;
+                    ortakErişim.OrtakListe.oyuncuGlobalKonumY = konumY + ortakErişim.OrtakListe.oyuncuGlobalKonumY;
                     OlayKontrolMakenizması();
                     ŞehirCs.Erzak("Arttır", -1);
                     break;
                 case "?":
-                    oyuncuKonumX = konumX + oyuncuKonumX;
-                    oyuncuKonumY = konumY + oyuncuKonumY;
+                    ortakErişim.OrtakListe.oyuncuGlobalKonumX = konumX + ortakErişim.OrtakListe.oyuncuGlobalKonumX;
+                    ortakErişim.OrtakListe.oyuncuGlobalKonumY = konumY + ortakErişim.OrtakListe.oyuncuGlobalKonumY;
                     TehlikeliArazi();
                     ŞehirCs.Erzak("Arttır", -1);
                     break;
@@ -297,11 +301,12 @@ namespace Kervan
 
         public void haritaYazdır()
         {
+            OL_Singleton ortakErişim = OL_Singleton.Instance;
             // Haritayı kopyala
             List<List<char>> haritaListeKopyası = KopyalaHaritayi(haritaListesi);
 
             // Kopyadaki oyuncunun konumunu 'P' ile değiştir
-            haritaListeKopyası[oyuncuKonumY][oyuncuKonumX] = 'P';
+            haritaListeKopyası[ortakErişim.OrtakListe.oyuncuGlobalKonumY][ortakErişim.OrtakListe.oyuncuGlobalKonumX] = 'P';
 
             // Haritayı yazdır
             Yazdir(haritaListeKopyası);
@@ -390,27 +395,92 @@ namespace Kervan
 
         public int KonumGöster(string xy)
         {
+            OL_Singleton ortakErişim = OL_Singleton.Instance;
             if (xy == "x")
             {
-                return oyuncuKonumX;
+                return ortakErişim.OrtakListe.oyuncuGlobalKonumX;
             }
             else if (xy == "y")
             {
-                return oyuncuKonumY;
+                return ortakErişim.OrtakListe.oyuncuGlobalKonumY;
             }
-            else { Console.WriteLine("Konum kaydedilirken bir sıkıntı meydana gelebilir."); return oyuncuKonumX; }
+            else { Console.WriteLine("Konum kaydedilirken bir sıkıntı meydana gelebilir."); return ortakErişim.OrtakListe.oyuncuGlobalKonumX; }
         }
 
         public void KonumIşınlan(string konum, int değer)
         {
+            OL_Singleton ortakErişim = OL_Singleton.Instance;
             if (konum == "x")
             {
-                oyuncuKonumX = değer;
+                ortakErişim.OrtakListe.oyuncuGlobalKonumX = değer;
             }
             else
             {
-                oyuncuKonumY = değer;
+                ortakErişim.OrtakListe.oyuncuGlobalKonumY = değer;
             }
+        }
+
+        private void İpucu()
+        {
+            Random random = new Random();
+            int rastgele = random.Next(1, 44); //44. şıkkı göstermeyeceğini biliyorum.
+            Console.Write("\n\n" + rastgele + ".");
+            switch (rastgele)
+            {
+                case 1: Console.Write("İpucu: Köylerden alıp şehirlerde satmak çok daha kârlıdır."); break;
+                case 2: Console.Write("İpucu: Erzağınız biterse grubunuzdakiler size düşman kesilebilir."); break;
+                case 3: Console.Write("İpucu: Garibe yemek vermek sevaptır."); break;
+                case 4: Console.Write("İpucu: Tehlikeli arazide ilerlemek bir şey kaybetmeseniz bile zaman alacaktır."); break;
+                case 5: Console.Write("İpucu: Şehirde kumar oynamak sadece bir sayı bulmaca oyunudur."); break;
+                case 6: Console.Write("İpucu: Köylerden alamayacağınız elemanları (Koruma & Aşçı) Şehirlerden temin edebilirsiniz."); break;
+                case 7: Console.Write("İpucu: Korumalar sizi tehlikeli durumlarda kalmaktan korur."); break;
+                case 8: Console.Write("İpucu: Ekibinize Aşçı almak erzak kontrolünü sağlar ve erzağınız daha uzun gider."); break;
+                case 9: Console.Write("İpucu: Bu oyunun yapıncısı Mushu'dur."); break;
+                case 10: Console.Write("İpucu: Projenizi kaydetip istediğiniz zaman kaldığınız yerden devam edebilirsiniz.\n Ama dikkat edin, kayıt üstüne kayıt almak önceki kaydı silecektir."); break;
+                case 11: Console.Write("İpucu: Kervan oyunu aslında bir Final Projesi olarak yapıldı."); break;
+                case 12: Console.Write("İpucu: Tehlikeli araziden geçmeyi düşünüyorsanız et-balık almayın. Vahşi hayvanları çekebilir."); break;
+                case 13: Console.Write("İpucu: Oyunda en çok kâr getiren eşya Elmas Yüzüktür (ve en nâdir bulunan)."); break;
+                case 14: Console.Write("İpucu: Erzağınızın bitmemesi için Şehirlerden veya Köylerden alımda bulunabilirsiniz."); break;
+                case 15: Console.Write("İpucu: Erzak bu oyunda önemlidir."); break;
+                case 16: Console.Write("İpucu: Oyunda 0 koduna sahip Harabeler diye bir bölge olduğunu biliyor muydun?"); break; //bkn. Eşyalar.Eşya() -> ŞehirlerListesi
+                case 17: Console.Write("İpucu: Haşin Koruma pahalı olabilir ama gerçekten de koruyor."); break;
+                case 18: Console.Write("İpucu: Koyuncu Köylerinden Et ve Yün alıp en yakın Şehirde satmak oldukça kârlıdır."); break;
+                case 19: Console.Write("İpucu: Hangi numara hangi şehri temsil ediyor öğrenmek için 'Yerleşkeler'in kodunu gir."); break;
+                case 20: Console.Write("İpucu: 'iflas' yazarak iflas edebilirsin."); break;
+                case 21: Console.Write("İpucu: Yün'ü Koyuncu köyünden alıp, Şehirlerde değil ama başka köylerde satmak daha kârlıdır."); break;
+                case 22: Console.Write("İpucu: İçki'ye nedense buranın köylüleri daha düşkün, en çok ithal edeniyse 'Kuzey Limen Şehri'."); break;
+                case 23: Console.Write("İpucu: 'Merkez Şehir'dekiler biraz içki düşkünü mü ne..."); break;
+                case 24: Console.Write("İpucu: 24 güzel sayı."); break;
+                case 25: Console.Write("İpucu: 'Madenciler Köyü' tuz ve demiri en ucuza alabileceğin yerdir."); break;
+                case 26: Console.Write("İpucu: 'Kuzey Liman Şehri'nde tuza ihtiyaç var."); break;
+                case 27: Console.Write("İpucu: 'Kuzey Liman Şehri'nde demire ihtiyaç var."); break;
+                case 28: Console.Write("İpucu: Çömlekleri 'Merkez Şehir'den alıp 'Falanca Liman Şehri'nde satmak daha kârlıdır."); break;
+                case 29: Console.Write("İpucu: Yağ'ı Kuzey Yerleşkelerden alıp Güney Yerleşkelerde satmak oldukça kârlı."); break;
+                case 30: Console.Write("İpucu: Güney'den alıp Kuzey'de satmak İpek için oldukça kâr getiren bir hareket."); break;
+                case 31: Console.Write("İpucu: 'Merkez Şehir'dekiler Baharat Düşkünü."); break;
+                case 32: Console.Write("İp mi ucu?"); break;
+                case 33: Console.Write("İpucu: Midye için en çok para verenler Köylülermiş."); break;
+                case 34: Console.Write("İpucu: Midye ve Balığı liman Yerleşkelerden oldukça ucuza bulabilirsin."); break;
+                case 35: Console.Write("İpucu: Merkez Şehir'de keten üretimi çokmuş."); break;
+                case 36: Console.Write("İpucu: Merkez Şehir'de bal çokmuş."); break;
+                case 37: Console.Write("İpucu: Kuzey Liman Şehri'nde bal kıtlığı varmış."); break;
+                case 38: Console.Write("İpucu: Elmas Yüzük bulursan Kuzey Liman Şehri'ne git. Süse orada daha çok para harcanıyor."); break;
+                case 39: Console.Write("İpucu: Bu oyuna 20'sinde başlanıp 25'inde oynanabilir bir versiyonun ulaşılmıştır."); break;
+                case 40: Console.Write("İpucu: Mount and Blade Warband'ta en kârlı dükkan Reyvadin Şehrindeki Kadife Dokuma Atölyesidir."); break; //Bu oyuna da dükkan eklesek olurmuş bak
+                case 41: Console.Write("İpucu: 41 kere Maşallah."); break;
+                case 42: Console.Write("İpucu: The answer to life, the universe, and everything..."); break; //Göndermemizi de yapalım
+                case 43: Console.Write("İpucu: Vedalar hep üzücüdür. Evine bir kervan kurmak için veda ettin. Buna değmesini sağla."); break;
+                case 44: Console.Write("İpucu: Bu oyunu görsem yapımcısına 100 üzerinden 100 verirdim."); break;
+            }
+            Console.WriteLine();
+            Thread.Sleep(2416);
+            for (int i = 0; i < 180; i += 0)
+            {
+                Console.Write("-");
+                Thread.Sleep(200 - i);
+                i += (int)((200 - i) * 0.1);
+            }
+            Console.WriteLine();
         }
     }
 }

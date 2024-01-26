@@ -254,8 +254,8 @@ namespace Kervan
             AllItems[6].SetCityData("Kuzey Liman Şehri",        0, 40);
             #endregion
             #region Çömlek 18 8
-            AllItems[7].SetCityData("Güney Koyuncular Köyü",    2, 18);
-            AllItems[7].SetCityData("Güney Liman Şehri",        12, 12);
+            AllItems[7].SetCityData("Güney Koyuncular Köyü",    2, 12);
+            AllItems[7].SetCityData("Güney Liman Şehri",        12, 18);
             AllItems[7].SetCityData("Madenciler Köyü",          45, 4);
             AllItems[7].SetCityData("Balıkçılar Köyü",          15, 9);
             AllItems[7].SetCityData("Merkez Şehir",             75, 5);
@@ -265,10 +265,10 @@ namespace Kervan
             #endregion
             #region Yağ 5 30
             AllItems[8].SetCityData("Güney Koyuncular Köyü",    0, 61);
-            AllItems[8].SetCityData("Güney Liman Şehri",        8, 28);
+            AllItems[8].SetCityData("Güney Liman Şehri",        0, 60);
             AllItems[8].SetCityData("Madenciler Köyü",          0, 32);
             AllItems[8].SetCityData("Balıkçılar Köyü",          1, 15);
-            AllItems[8].SetCityData("Merkez Şehir",             3, 37);
+            AllItems[8].SetCityData("Merkez Şehir",             3, 50);
             AllItems[8].SetCityData("Çiftçiler Köyü",           1, 44);
             AllItems[8].SetCityData("Kuzey Koyuncular Köyü",    2, 42);
             AllItems[8].SetCityData("Kuzey Liman Şehri",        10, 24);
@@ -288,7 +288,7 @@ namespace Kervan
             AllItems[10].SetCityData("Güney Liman Şehri",        12, 31);
             AllItems[10].SetCityData("Madenciler Köyü",          2, 26);
             AllItems[10].SetCityData("Balıkçılar Köyü",          1, 38);
-            AllItems[10].SetCityData("Merkez Şehir",             2, 40);
+            AllItems[10].SetCityData("Merkez Şehir",             2, 50);
             AllItems[10].SetCityData("Çiftçiler Köyü",           1, 30);
             AllItems[10].SetCityData("Kuzey Koyuncular Köyü",    0, 35);
             AllItems[10].SetCityData("Kuzey Liman Şehri",        15, 27);
@@ -305,7 +305,7 @@ namespace Kervan
             #endregion
             #region Keten 10 20
             AllItems[12].SetCityData("Güney Koyuncular Köyü",    10, 18);
-            AllItems[12].SetCityData("Güney Liman Şehri",        0, 0);
+            AllItems[12].SetCityData("Güney Liman Şehri",        0, 25);
             AllItems[12].SetCityData("Madenciler Köyü",          2, 24);
             AllItems[12].SetCityData("Balıkçılar Köyü",          1, 26);
             AllItems[12].SetCityData("Merkez Şehir",             10, 17);
@@ -388,6 +388,7 @@ namespace Kervan
                     if (city.Name != "Harabeler")
                     {
                         Console.WriteLine($"{i}.{city.Name}");
+                        Thread.Sleep(200);
                     }
                     i++;
                 }
