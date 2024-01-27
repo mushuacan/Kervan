@@ -8,7 +8,6 @@ namespace Kervan
 {
     internal class Kumar
     {
-
         public int coinEnter()
         {
             OL_Singleton ortakErişim = OL_Singleton.Instance;
@@ -50,16 +49,8 @@ namespace Kervan
 
             int randomMax;
             int due;
-            if (coin <= 100)
-            {
-                randomMax = 131;
-                due = 8;
-            }
-            else
-            {
-                randomMax = 151;
-                due = 7;
-            }
+            randomMax = 161;
+            due = 7;
 
             do
             {
@@ -81,18 +72,8 @@ namespace Kervan
                 int targetNumber = randomCs.Next(1, randomMax); // 1 ile 100 arasında rastgele bir sayı seçer
 
                 Console.WriteLine($"\nŞu kadar para yatırdın: {coin}\nKazanırsan en az {coinRate} kadar para kazanacaksın.  ");
-                if (coin <= minCoinToLose)
-                {
-                    Console.WriteLine("Kaybedersen bütün paranı kaybedeceksin.");
-                }
-                else if (highCoinDamage < coin)
-                {
-                    Console.WriteLine($"Kaybedersen {coinRate - 20} kadar para kaybedeceksin.");
-                }
-                else
-                {
-                    Console.WriteLine($"Kaybedersen {coinRate} kadar para kaybedeceksin.");
-                }
+                Console.WriteLine("Kaybedersen bütün paranı kaybedeceksin.");
+                
 
                 Console.Write("\nOynamak istiyor musunuz? (Evet için 1, Hayır için 0): ");
                 playAgainInput = Console.ReadLine();
@@ -150,23 +131,10 @@ namespace Kervan
                         Console.WriteLine($"\nK A Y B E T T İ N !!!!\n");
                         Console.WriteLine($"{targetNumber} sayısını {attempts} defa denediysen de bulamadın.\n");
                         Console.WriteLine($"Paranız {coin} idi");
-                        if (coin <= minCoinToLose)
-                        {
-                            playAgainInput = "NoCoin";
-                            coinRate = coin;
-                            coin = 0;
-                            Console.Write("Bütün paranı harcadın. Kumarhaneyi terk ediyorsun.");
-                            return;
-                        }
-                        else if (highCoinDamage < coin)
-                        {
-                            coinRate = coinRate - 20;
-                            coin = coin - coinRate;
-                        }else
-                        {
-                            coin = coin - coinRate;
-                        }
-                        Console.WriteLine($"Paranız {coinRate} azalarak {coin} oldu.");
+                        playAgainInput = "NoCoin";
+                        coinRate = coin;
+                        coin = 0;
+                        Console.Write("Bütün paranı harcadın. Kumarhaneyi terk ediyorsun.");
                         whileLoop = false;
                         Gamble(coin, coinAtFirst);
                         return;
@@ -188,15 +156,25 @@ namespace Kervan
             {
                 Vakalar vakaCs = new Vakalar();
                 vakaCs.VakaAyrıştırıcı("kumarÇıkış", coin);
-            }else if (coin >= 200 && rastgele < 7)
+                ortakErişim.OrtakListe.Olay.Add("Kumar Parası");
+            }
+            else if (coin >= 300 && rastgele < 7)
             {
-                ortakErişim.OrtakListe.Para += coin;
+                Vakalar vakaCs = new Vakalar();
+                vakaCs.VakaAyrıştırıcı("kumarÇıkış", coin);
+                ortakErişim.OrtakListe.Olay.Add("Kumar Dayağı");
             }
             else
             {
                 ortakErişim.OrtakListe.Para += coin;
+                ortakErişim.OrtakListe.Olay.Add("Kumar Parası");
             }
+
+            Harita haritaCs = new Harita();
+            haritaCs.oyunBekasıKontrol(true);
             Console.WriteLine($"Toplam paran {ortakErişim.OrtakListe.Para}.");
+
+
         }
     }
 }

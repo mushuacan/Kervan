@@ -622,6 +622,11 @@ namespace Kervan
                             ortakErişim.OrtakListe.Para += fiyatSat;
                             ortakErişim.OrtakListe.Envanter.RemoveAt(sayı - 1);
                             tahminiFiyat.RemoveAt(sayı - 1);
+
+                            if (!ortakErişim.OrtakListe.Olay.Contains("Tüccariyet"))
+                            {
+                                ortakErişim.OrtakListe.Olay.Add("Tüccariyet");
+                            }
                             break;
                         }
                         else if (sayı == tahminiFiyat.Count + 1)

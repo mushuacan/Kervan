@@ -39,6 +39,7 @@ namespace Kervan
                 CiddiliYaz("Ama ne yol gösterenin var, ne yemeğin, ne gücün.");
                 CiddiliYaz("\n\n\n", 500, 600);
                 CiddiliYaz("Oyunu Kaybettin!");
+                CiddiliYaz("Mağlubiyet!");
                 Program program = new Program();
                 program.Maincik();
             }

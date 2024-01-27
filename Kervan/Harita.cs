@@ -59,9 +59,23 @@ namespace Kervan
             haritaYazdır();
         }
 
-        public void oyunBekasıKontrol()
+        public void oyunBekasıKontrol(bool kumarMı = false)
         {
             OL_Singleton ortakErişim = OL_Singleton.Instance;
+
+            if (kumarMı && ortakErişim.OrtakListe.Para < 5 && ortakErişim.OrtakListe.Envanter.Count <= 1) //KUMARDA PARA BİTİRME
+            {
+                Yazİflas("Kumarbazlığın peşinde koştururken bütün paranı harcadın.");
+                Yazİflas("Tüccar olacağım diyerek çıktığın köye bütün parasını kumarbaz halde yemiş biri olarak döndün.");
+                Yazİflas("Köyde ailenizin nâmına bir kara leke olarak yapıştın.");
+                Yazİflas("\n\n\n", 200, 500);
+                Yazİflas("Kumarda bütün paranı kaybettin!");
+                Yazİflas("\n\nOyun Bitti!");
+                Yazİflas("Kumar Mağlubiyeti!");
+                Thread.Sleep(4444);
+                Environment.Exit(0);
+            }
+
             if (ortakErişim.OrtakListe.Para < 5 && ortakErişim.OrtakListe.Envanter.Count <= 1)
             {
                 Vakalar vakaCs = new Vakalar();
@@ -69,7 +83,46 @@ namespace Kervan
                 Yazİflas("Etrafındaki herkes sayıp sövüp gitti.");
                 vakaCs.VakaAyrıştırıcı("Son");
             }
-            if (ortakErişim.OrtakListe.Para >= 1000 )
+            if (ortakErişim.OrtakListe.Para >= 1000 //Full kumarbaz zaferş
+                && ortakErişim.OrtakListe.Olay.Contains("Kumar Parası") 
+                && !ortakErişim.OrtakListe.Olay.Contains("Tüccariyet"))
+            {
+                Yazİflas("Tüccar olma niyetiyle çıktığın bu yolda kumarbazın teki oldun.");
+                Yazİflas("Ama öyle olacak ki oyunu gene de kazanmayı becerdin!");
+                Yazİflas("Paran 1000'i geçti, hem de ticaret yapmadan!");
+                Yazİflas("Gerçek bir kumarbazsın.");
+                Yazİflas("Oynadığın için teşekkürler.");
+                Yazİflas("\n\n\n", 200, 500);
+                Yazİflas("Kazandın!");
+                Yazİflas("Kumarbaz Zaferi!");
+                Thread.Sleep(4444);
+                Environment.Exit(0);
+            }
+            else if (ortakErişim.OrtakListe.Para >= 1000 //Full kumarlı Ticaret zaferi.
+                && ortakErişim.OrtakListe.Olay.Contains("Kumar Parası")
+                && ortakErişim.OrtakListe.Olay.Contains("Tüccariyet"))
+            {
+                Vakalar vakaCs = new Vakalar();
+                Şehir ŞehirCs = new Şehir();
+                Yazİflas("Şanlı oyuncu!");
+                Yazİflas("Paran 1000'i geçti.");
+                Console.WriteLine($"Paran: {ortakErişim.OrtakListe.Para}");
+                Console.WriteLine($"{ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count} günlük erzağın var.");
+                Thread.Sleep(1000);
+                ŞehirCs.GrupYazdır();
+                Thread.Sleep(1000);
+                ŞehirCs.EnvanterYazdır();
+                Thread.Sleep(2000);
+                Yazİflas("Gerçek bir tüccarsın ama kumara da bulaşmışsın.");
+                Yazİflas("Oynadığın için teşekkürler.");
+                Yazİflas("\n\n\n", 200, 500);
+                Yazİflas("Kazandın!");
+                Yazİflas("Kumarlı Tüccarlık Zaferi!");
+                Thread.Sleep(4444);
+                Environment.Exit(0);
+
+            }
+            else if (ortakErişim.OrtakListe.Para >= 1000 ) //
             {
                 Vakalar vakaCs = new Vakalar();
                 Şehir ŞehirCs = new Şehir();
@@ -86,6 +139,7 @@ namespace Kervan
                 Yazİflas("Oynadığın için teşekkürler.");
                 Yazİflas("\n\n\n", 200, 500);
                 Yazİflas("Kazandın!");
+                Yazİflas("Tüccarlık Zaferi!");
                 Thread.Sleep(4444);
                 Environment.Exit(0);
             }
