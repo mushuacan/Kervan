@@ -98,12 +98,12 @@ namespace Kervan
                 Eşyalar EşyalarCs = new Eşyalar();
                 string bölge = "Şehir";
 
-                Console.WriteLine($"\n\nGeldiğin yerleşke: {EşyalarCs.ŞehirlerListesi[bölgeKodu].Name}");
+                Console.WriteLine($"\n\n{EşyalarCs.ŞehirlerListesi[bölgeKodu].Name}");
                 Thread.Sleep(200);
 
                 while (true)
                 {
-                    Console.WriteLine("\n1-Ticaret yap");
+                    Console.WriteLine("1-Ticaret yap");
                     Console.WriteLine("2-Eleman alma");
                     Console.WriteLine("3-Kumar oynama");
                     Console.WriteLine("4-Gecele");
@@ -187,7 +187,13 @@ namespace Kervan
                             {
                                 if (ortakErişim.OrtakListe.Para >= 20)
                                 {
-                                    ortakErişim.OrtakListe.Olay.RemoveAt(ortakErişim.OrtakListe.Olay.IndexOf("Doktor"));
+                                    for (int i = ortakErişim.OrtakListe.Olay.Count - 1; i >= 0 ; i--)
+                                    {
+                                        if (ortakErişim.OrtakListe.Olay[i] == "Doktor")
+                                        {
+                                            ortakErişim.OrtakListe.Olay.RemoveAt(i);
+                                        }
+                                    }
                                     Console.WriteLine("Tedavi oldun.");
                                 }else
                                 {
@@ -216,12 +222,12 @@ namespace Kervan
         {
             {
                 Eşyalar EşyalarCs = new Eşyalar();
-                Console.WriteLine($"\n\nGeldiğin yerleşke: {EşyalarCs.ŞehirlerListesi[bölgeKodu].Name}, {bölgeKodu}");
+                Console.WriteLine($"\n\n{EşyalarCs.ŞehirlerListesi[bölgeKodu].Name}");
                 Thread.Sleep(200);
                 string bölge = "Köy";
                 while (true)
                 {
-                    Console.WriteLine("\n1-Ticaret yap");
+                    Console.WriteLine("1-Ticaret yap");
                     Console.WriteLine("2-Eleman alma");
                     Console.WriteLine("3-Erzak alma");
                     Console.WriteLine("4-Köyden ayrılma");
@@ -287,7 +293,7 @@ namespace Kervan
             {
                 if (ortakErişim.OrtakListe.Grup.Contains("Aşçı") && artış == -1)
                 {
-                    ortakErişim.OrtakListe.Erzak = (int)(ortakErişim.OrtakListe.Erzak + artış * (ortakErişim.OrtakListe.Grup.Count / 2)); //Aşçı varsa erzak daha fazla dayanır.
+                    ortakErişim.OrtakListe.Erzak = (int)(ortakErişim.OrtakListe.Erzak + artış * (ortakErişim.OrtakListe.Grup.Count / 1.5f)); //Aşçı varsa erzak daha fazla dayanır.
                 }
                 else
                 {
@@ -301,8 +307,8 @@ namespace Kervan
                 Console.WriteLine($"Gruptakilerin sayısı: {ortakErişim.OrtakListe.Grup.Count}");
                 if (ortakErişim.OrtakListe.Erzak > 0 && ortakErişim.OrtakListe.Grup.Contains("Aşçı"))
                 {
-                    günlükErzak = (int)(ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count / 3);
-                    Console.WriteLine($"{günlükErzak} günlük erzağın var.");
+                    günlükErzak = (int)(ortakErişim.OrtakListe.Erzak / (ortakErişim.OrtakListe.Grup.Count / 1.5f));
+                    Console.WriteLine($"{günlükErzak} günlük erzağın var. (Aşçı var)");
                     if (günlükErzak <= 4 && günlükErzak != 0)
                     {
                         Console.WriteLine("\n E R Z A Ğ I N I Z   B İ T İ Y O R ! ! ! \n");
@@ -352,6 +358,10 @@ namespace Kervan
                             int günlükErzak = ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count;
                             Console.WriteLine($"Günlük erzak stoğunuz ise {günlükErzak}");
                             alışveriş = false;
+                            if (ortakErişim.OrtakListe.Olay.Contains("Avcı Koruma Bahşiş İsyanı"))
+                            {
+                                ortakErişim.OrtakListe.Olay.Remove("Avcı Koruma Bahşiş İsyanı");
+                            }
                         }
                         else
                         {
@@ -621,7 +631,7 @@ namespace Kervan
                         }
                         else
                         {
-                            Console.WriteLine("Lütfen listedeki sayıları girin.");
+                            Console.WriteLine("Lütfen listedeki sayıları girin.\n->");
                         }
                     }
                     else
@@ -752,7 +762,7 @@ namespace Kervan
                         }
                         else
                         {
-                            Console.WriteLine("Lütfen listedeki sayıları girin.");
+                            Console.WriteLine("Lütfen listedeki sayıları girin.\n->");
                         }
                     }
                     else

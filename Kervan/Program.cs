@@ -9,12 +9,11 @@ class Program
         Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"); //En üstten aşağı gitmek nedense rahatsız edici geliyor. Direk aşağıdan başlaıyorum.
         Şehir ŞehirCs = new Şehir();
         Harita haritaCs = new Harita();
+        Sıfırla();
         ŞehirCs.BaşlarkenHazırlık();
         OL_Singleton ortakErişim = OL_Singleton.Instance;
         if (!ortakErişim.OrtakListe.Olay.Contains("Çık"))
-        {
-            ortakErişim.OrtakListe.Olay.Add("Çıkış");
-        }
+        { ortakErişim.OrtakListe.Olay.Add("Çıkış"); }
         Menu();
         Console.WriteLine("\n\n\n\n\n\n\n\n\n");
         Console.WriteLine("P haritadaki sizin bulunduğunuz konumu gösterir.\n\n\n");
@@ -31,9 +30,18 @@ class Program
 
     public void Maincik() //Oyunu baştan başlat
     {
-        Şehir ŞehirCs = new Şehir();
-        ŞehirCs.BaşlarkenHazırlık();
+        Sıfırla();
         Main();
+    }
+
+    public static void Sıfırla()
+    {
+        OL_Singleton ortakErişim = OL_Singleton.Instance;
+        ortakErişim.OrtakListe.Para = 100;
+        ortakErişim.OrtakListe.Erzak = 44;
+        ortakErişim.OrtakListe.Envanter.Clear();
+        ortakErişim.OrtakListe.Grup.Clear();
+        ortakErişim.OrtakListe.Olay.Clear();
     }
 
     private static void Menu()

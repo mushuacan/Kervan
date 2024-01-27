@@ -303,27 +303,110 @@ namespace Kervan
             {
                 if (ortakErişim.OrtakListe.Grup.Count <= 1)
                 {
-                    CiddiliYaz("Hırsızlık");
-                    CiddiliYaz("Yanında son kalan kişi de seni tehdit etti.");
-                    CiddiliYaz("Bulduğu kesici alet karşısında yapabileceklerin sınırlıydı.");
-                    CiddiliYaz("Günlerdir aç susuz dolaştırdığın için sana sayıp sövdü.");
-                    if (ortakErişim.OrtakListe.Envanter.Contains("Aile Yâdigârı Gümüş Kolye"))
+                    rastgele = random.Next(0, 10);
+                    if (rastgele == 6)
                     {
-                        CiddiliYaz("Aile Yâdigârı Gümüş Kolye'n gasp edildi.");
-                    }
-                    CiddiliYaz("Beş paran yok.");
-                    if (ortakErişim.OrtakListe.Envanter.Count > 3)
+                        CiddiliYaz("Hırsızlık");
+                        CiddiliYaz("Yanında son kalan kişi de seni tehdit etti.");
+                        CiddiliYaz("Bulduğu kesici alet karşısında yapabileceklerin sınırlıydı.");
+                        CiddiliYaz("Günlerdir aç susuz dolaştırdığın için sana sayıp sövdü.");
+                        if (ortakErişim.OrtakListe.Envanter.Contains("Aile Yâdigârı Gümüş Kolye"))
+                        {
+                            CiddiliYaz("Aile Yâdigârı Gümüş Kolye'n gasp edildi.");
+                        }
+                        CiddiliYaz("Beş paran yok.");
+                        if (ortakErişim.OrtakListe.Envanter.Count > 3)
+                        {
+                            CiddiliYaz("Eşyalarını taşıyacak, kimse kalmadı.");
+                        }
+                        else
+                        {
+                            CiddiliYaz("Zaten doğru düzgün eşyân da kalmadı.");
+                        }
+                    }else
                     {
-                        CiddiliYaz("Eşyalarını taşıyacak, kimse kalmadı.");
-                    }
-                    else
-                    {
-                        CiddiliYaz("Zaten doğru düzgün eşyân da kalmadı.");
+                        CiddiliYaz("Kaç gündür aç acına dolaştırdığın elemanın grubu terk etti.");
+                        CiddiliYaz("Eşyaları taşıyacak kimse kalmadı.");
                     }
                     CiddiliYaz("Yolda gördüğün garibanlardan farkın kalmadı.");
                     VakaAyrıştırıcı("Son");
                 }
-                rastgele = random.Next(1, 35);
+                if (ortakErişim.OrtakListe.Olay.Contains("Avcı Koruma Bahşiş İsyanı")
+                    && ortakErişim.OrtakListe.Grup.Contains("Basit Koruma")
+                    || ortakErişim.OrtakListe.Grup.Contains("Haşin Koruma"))
+                {
+                    CiddiliYaz("Av yapıp ava çıkan korumaların verdiğin paradan mutlu değillerdi.");
+                    CiddiliYaz("Bütün korumalar grubu terk etti.");
+                    CiddiliYaz("Giderken yaygara çıkardılar.");
+                    CiddiliYaz("Yanlarında bir kaç kişi daha gitti.");
+                    ortakErişim.OrtakListe.Grup.Remove("Basit Koruma");
+                    ortakErişim.OrtakListe.Grup.Remove("Haşin Koruma");
+                    ortakErişim.OrtakListe.Grup.Remove("Aşçı");
+                    ortakErişim.OrtakListe.Grup.Remove("Eleman");
+                    ortakErişim.OrtakListe.Grup.Remove("Eleman");
+                    ortakErişim.OrtakListe.Grup.Remove("Eleman");
+                    ortakErişim.OrtakListe.Olay.Remove("Avcı Koruma Bahşiş İsyanı");
+                    CiddiliYaz("Grubunda kalanlar:");
+                    Şehir ŞehirCs = new Şehir();
+                    ŞehirCs.GrupYazdır();
+                    Thread.Sleep(2000); 
+
+                    string arananEleman = "Eleman";
+                    int elemanSayısı = ortakErişim.OrtakListe.Grup.Count(e => e == arananEleman);
+                    int envanterdekilerinSayısı = ortakErişim.OrtakListe.Envanter.Count();
+                    if (!(elemanSayısı * 4 > envanterdekilerinSayısı))
+                    {
+                        CiddiliYaz("Kalan elemanlarının bütün eşyaları taşıyacak gücü yok.");
+                        CiddiliYaz("Eşyaların bir kısmını bırakmalısın.");
+                        while (true)
+                        {
+                            envanterdekilerinSayısı = ortakErişim.OrtakListe.Envanter.Count();
+                            if (elemanSayısı * 4 + 3 > envanterdekilerinSayısı)
+                            {
+                                CiddiliYaz("Daha fazla eşya bırakmadan, yükleri sırtlandınız ve yola çıktınız.");
+                                CiddiliYaz("Ama diğer elemanlarını doyurmadığın müddetçe onlar da gider mi kalır mı bilemiyorsun.");
+                                return;
+                            }
+                            //Console.WriteLine($"Envanterde {ortakErişim.OrtakListe.Envanter.Count()}, tahminde {tahminiFiyat.Count()} eleman var.");
+                            // Sonuçları yazdırma
+                            Console.WriteLine($"Envanterin:");
+                            for (int i = 0; i < ortakErişim.OrtakListe.Envanter.Count; i++)
+                            {
+                                Console.WriteLine($"{i + 1}.{ortakErişim.OrtakListe.Envanter[i]}");
+                            }
+                            Thread.Sleep(100);
+                            while (true)
+                            {
+                                string kullanıcıGirdisi = Console.ReadLine();
+
+                                // Girdi kontrolü
+                                if (int.TryParse(kullanıcıGirdisi, out int girdi))
+                                {
+                                    Console.WriteLine("\nGirilen sayı: " + girdi);
+                                    // Girdi sayıya dönüştürülebiliyorsa
+                                    if (girdi <= ortakErişim.OrtakListe.Envanter.Count)
+                                    {
+                                        string eşyaSat = ortakErişim.OrtakListe.Envanter[girdi - 1];
+                                        Console.WriteLine("Bırakılan eşya: " + eşyaSat);
+                                        ortakErişim.OrtakListe.Envanter.RemoveAt(girdi - 1);
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Lütfen listedeki sayıları girin.\n->");
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Geçersiz giriş. Lütfen bir sayı girin.");
+                                }
+                            }
+                        }
+                    }
+
+                    return;
+                }
+                rastgele = random.Next(0, 35);
                 if (rastgele <3) //<3
                 {
                     rastgele = random.Next(0, ortakErişim.OrtakListe.Envanter.Count - 1);
@@ -335,21 +418,69 @@ namespace Kervan
                     ortakErişim.OrtakListe.Envanter.RemoveAt(rastgele);
                     ortakErişim.OrtakListe.Grup.RemoveAt(rastgele2);
                 }
-                else if (rastgele < 6)
+                else if (rastgele < 6 && ortakErişim.OrtakListe.Grup.Count >= 5 && !ortakErişim.OrtakListe.Grup.Contains("Haşin Koruma"))
                 {
                     rastgele = random.Next(10, 25);
                     CiddiliYaz("Hırsızlık");
-                    CiddiliYaz("Paranı bulamıyorsun ancak suçlayabileceğin de kimse yok.");
+                    CiddiliYaz("Paranı bulamıyorsun ancak yoldaşlarını suçlayabilecek durumda değilsin.");
+                    CiddiliYaz("Erzak olmadığından dolayı herkes zaten çok gergin.");
                     CiddiliYaz("Kervandaki elemanlar sana karşı olan güvenlerini kaybettiler.");
                     ortakErişim.OrtakListe.Para -= rastgele;
                     CiddiliYaz($"{rastgele} paran artık gitti.");
                 }
-                else if (rastgele < 15 && ortakErişim.OrtakListe.Grup.Contains("Haşin Koruma"))
+                else if (rastgele < 7 && ortakErişim.OrtakListe.Grup.Contains("Haşin Koruma"))
                 {
                     CiddiliYaz("Haşin Koruma senin otoritene saygısı kalmadığını belirtti.");
                     CiddiliYaz("Erzak bittiği için seni kınadı.");
                     CiddiliYaz("Haşin Koruma gruptan ayrıldı.");
                     ortakErişim.OrtakListe.Grup.Remove("Haşin Koruma");
+                }
+                else if (rastgele < 30 && ortakErişim.OrtakListe.Grup.Contains("Haşin Koruma")
+                        || rastgele < 20 && ortakErişim.OrtakListe.Grup.Contains("Basit Koruma"))
+                {
+                    CiddiliYaz("Koruman avdan döndü.");
+                    Thread.Sleep(1000);
+                    rastgele = random.Next(0, 6);
+                    if(rastgele == 0)
+                    {
+                        CiddiliYaz("Bir tavşan avlamış.");
+                        CiddiliYaz("Yiyecek bir şeyiniz oldu.");
+                        ortakErişim.OrtakListe.Erzak += 3;
+                        Bahşiş(4, 8, 2);
+                    }
+                    else if (rastgele == 1)
+                    {
+                        CiddiliYaz("Bir Ceylan avlamış.");
+                        CiddiliYaz("Grubunuzdakiler duruma mutlu oldu.");
+                        ortakErişim.OrtakListe.Erzak += 14;
+                        Bahşiş(8, 15, 5);
+
+                    }
+                    else if (rastgele == 2)
+                    {
+                        CiddiliYaz("Bıldırcın avlamış.");
+                        ortakErişim.OrtakListe.Erzak += 1;
+                        Bahşiş(1, 4, 3);
+                    }
+                    else if (rastgele == 3)
+                    {
+                        CiddiliYaz("İki kuş avlamış.");
+                        CiddiliYaz("Bölüşüp doymasanız da açlığınızı geçirdiniz.");
+                        ortakErişim.OrtakListe.Erzak += 4;
+                        Bahşiş(4, 10, 2);
+                    }else
+                    {
+                        CiddiliYaz("Bir şey avlayamamış.");
+
+                    }
+                }
+                else if (rastgele < 20)
+                {
+                    CiddiliYaz("Bir elemanın sana hakaretler ederek kervandan ayrıldı.");
+                    CiddiliYaz("Erzağın yok. Ya herkes teker teker grubu terk edecek ya da açlıktan öleceksiniz.");
+                    rastgele = random.Next(0, ortakErişim.OrtakListe.Grup.Count - 1);
+                    CiddiliYaz($"Grubu terk eden: {ortakErişim.OrtakListe.Grup[rastgele]}.");
+                    ortakErişim.OrtakListe.Grup.RemoveAt(rastgele);
                 }
                 else
                 {
@@ -487,5 +618,51 @@ namespace Kervan
             }
         }
 
+
+        private void Bahşiş(int min = 5, int max = 15, int aralık = 3)
+        {
+            OL_Singleton ortakErişim = OL_Singleton.Instance;
+            Random random = new Random();
+            int bahşişİstekMiktar;
+            CiddiliYaz("Koruman bahşiş vermeni bekliyor.");
+            CiddiliYaz($"(Kesinkez mutlu etmek için ödemen gereken miktar -> {max + aralık})");
+            CiddiliYaz("Vereceksen tutarı gir, vermeyeceksen 0 -> ");
+            bahşişİstekMiktar = random.Next(min, max); //Korumanın istediği para.
+            while (true)
+            {
+                string girilenMiktar = Console.ReadLine();
+                // Girişi bir tamsayıya dönüştürme
+                if (int.TryParse(girilenMiktar, out int verilenPara))
+                {
+                    if (verilenPara <= ortakErişim.OrtakListe.Para)
+                    {
+                        CiddiliYaz($"Korumana {verilenPara} kadar para verdin.");
+                        if (verilenPara < bahşişİstekMiktar - aralık)
+                        {
+                            CiddiliYaz("Koruman verdiğin miktarı beğenmedi.");
+                            ortakErişim.OrtakListe.Olay.Add("Avcı Koruma Bahşiş İsyanı");
+                        }else if (verilenPara > bahşişİstekMiktar + aralık)
+                        {
+                            CiddiliYaz("Koruman verdiğin miktardan ziyadesiyle mutlu oldu.");
+                            CiddiliYaz("Emeğinin karşılığının verildiğini hissediyor.");
+                        }else
+                        {
+                            CiddiliYaz("Koruman biraz daha fazla versen daha hoşnut olurdu gibi bir ifade takındı.");
+                            CiddiliYaz("Ama bu miktar da kesinlikle ona yetmiş.");
+                        }
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("O kadar paran yok.\n -> ");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Geçersiz giriş. Lütfen bir tamsayı girin.\n -> ");
+                    // Giriş geçerli bir tamsayı değilse, uygun bir hata mesajı verebilir veya programı sonlandırabilirsiniz.
+                }
+            }
+        }
     }
 }

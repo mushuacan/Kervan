@@ -86,8 +86,8 @@ namespace Kervan
                 Yazİflas("Oynadığın için teşekkürler.");
                 Yazİflas("\n\n\n", 200, 500);
                 Yazİflas("Kazandın!");
-                Program program = new Program();
-                program.Maincik();
+                Thread.Sleep(4444);
+                Environment.Exit(0);
             }
         }
 
