@@ -6,42 +6,75 @@ class Program
 {
     public static void Main()
     {
-        Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"); //En üstten aşağı gitmek nedense rahatsız edici geliyor. Direk aşağıdan başlaıyorum.
+        #region Gerekli Referanslar
         Şehir ŞehirCs = new Şehir();
         Harita haritaCs = new Harita();
+        OL_Singleton ortakErişim = OL_Singleton.Instance;
+        #endregion
+
+        //En üstten aşağı gitmek nedense rahatsız edici geliyor. Direk aşağıdan başlaıyorum.
+        Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
         Sıfırla();
         ŞehirCs.BaşlarkenHazırlık();
-        OL_Singleton ortakErişim = OL_Singleton.Instance;
+
+        //Bu programı çalıştırıp direk çıkanlar için bir şakadır.
+        #region Şaka
         if (!ortakErişim.OrtakListe.Olay.Contains("Çık"))
         { ortakErişim.OrtakListe.Olay.Add("Çıkış"); }
+        #endregion 
+
         Menu();
+
         Console.WriteLine("\n\n\n\n\n\n\n\n\n");
         Console.WriteLine("P haritadaki sizin bulunduğunuz konumu gösterir.\n\n\n");
+
         haritaCs.haritaHazırla();
         haritaCs.haritaYazdır();
+
+        //Oyun başlayınca çıkarken şakalamayı kapatır.
+        #region Şakayı Boz
         ortakErişim.OrtakListe.Olay.Remove("Çıkış");
         ortakErişim.OrtakListe.Olay.Add("Çık");
+        #endregion
+
+        //Oyun döngüsü
         while (true)
         {
             haritaCs.oyuncuHareketEtHaritaYazdır();
         }
-        Console.Write("\n\n\nProgram sonlanmıştır.\n");
+
+        #region Asla Gözükmeyecek Çıktı
+        Console.Write("\n\n\nProgram sonlanmıştır.\n"); //Aska gözükmeyecek.
+        #endregion
     }
 
-    public void Maincik() //Oyunu baştan başlat
+    public void Maincik() //Oyunu baştan başlat (Diğer scriptlerden başlatamadım böyle bir seçenek buldum.)
     {
         Sıfırla();
         Main();
     }
 
-    public static void Sıfırla()
+    public static void Sıfırla() //Bütün global bilgileri sıfırlar.
     {
         OL_Singleton ortakErişim = OL_Singleton.Instance;
+
+        bool şakaHatasıDüzelt = false;
+        if (ortakErişim.OrtakListe.Olay.Contains("Çık"))
+        {
+            şakaHatasıDüzelt = true;
+        }
+
         ortakErişim.OrtakListe.Para = 100;
         ortakErişim.OrtakListe.Erzak = 44;
         ortakErişim.OrtakListe.Envanter.Clear();
         ortakErişim.OrtakListe.Grup.Clear();
         ortakErişim.OrtakListe.Olay.Clear();
+
+        if (şakaHatasıDüzelt)
+        {
+            ortakErişim.OrtakListe.Olay.Add("Çık");
+        }
     }
 
     private static void Menu()
@@ -51,6 +84,7 @@ class Program
         Thread.Sleep(2000);
         while (true)
         {
+            #region Menü Yazıları
             Console.WriteLine("\n\n\n1.Oyuna Başla");
             Console.WriteLine("2.Son Kaydı Oyna");
             Console.WriteLine("3.Dil Seçeneklerini Gör");
@@ -59,13 +93,15 @@ class Program
             Console.WriteLine("6.Yapımcıları Hakkında Bilgi Al");
             Console.WriteLine("7.Çıkış Yap");
             Console.WriteLine("Lütfen 1-7 arası bir sayı girin: ");
-        
+            #endregion
+
             if (int.TryParse(Console.ReadLine(), out int sayi))
             {
                 Console.WriteLine("\n\n\n");
                 switch (sayi)
                 {
-                    case 1: //Oyunu başlat
+                    //Oyunu başlat
+                    case 1: 
                         Console.WriteLine("Oyun Başlatılıyor");
                         Thread.Sleep(450);
                         Console.Write(".");
@@ -75,7 +111,8 @@ class Program
                         Console.Write(".");
                         return;
 
-                    case 2: //Kaydedilmiş Son Oyunu Açar
+                    //Kaydedilmiş Son Oyunu Açar
+                    case 2: 
                         Console.WriteLine("\n\n\n\n\n\n\n\n\n");
                         Console.WriteLine("P haritadaki sizin bulunduğunuz konumu gösterir.\n\n\n");
                         Şehir ŞehirCs = new Şehir();
@@ -83,12 +120,14 @@ class Program
                         KayıtCs.KayıtDosyası("yükle");
                         return;
 
-                    case 3: //Dil Seçeneği
-                        HavliYazı("Kısıtlı zamandan mütevellit başka bir dil eklenememiştir.", 35, 100);
+                    //Dil Seçeneği
+                    case 3: 
+                        CiddiliYaz("Kısıtlı zamandan mütevellit başka bir dil eklenememiştir.", 35, 100);
                         Thread.Sleep(400);
                         break;
 
-                    case 4: //Hile kodları
+                    //Hile kodları
+                    case 4: 
                         Console.WriteLine("Hile kodu: 1 50");
                         Console.WriteLine("(Para ekler)");
                         Console.WriteLine("Hile kodu: 1 150");
@@ -107,7 +146,8 @@ class Program
                         Console.WriteLine("Ayrıca kumarhanede sayı bilmeye çalışırken 'kumarbaz' yazmak sayıyı ifşalar.");
                         break;
 
-                    case 5: // Oyun hakkında bilgi
+                    // Oyun hakkında bilgi
+                    case 5: 
                         Console.WriteLine("Oyun Mount&Blade Warband oyunundaki ticaret kervanlarından esinlenilmiştir.");
                         Thread.Sleep(123);
                         Console.WriteLine("Amacımız Şehirler ve Köyler arasında dolaşarak eşya alıp satmak ve para kazanmaktır.");
@@ -128,7 +168,8 @@ class Program
                         Thread.Sleep(300);
                         break;
 
-                    case 6: //Yapımcı Hakkında Bilgi
+                    //Yapımcı Hakkında Bilgi
+                    case 6: 
                         Console.WriteLine("Yapımcı, bendeniz Mushu");
                         Thread.Sleep(444);
                         Console.WriteLine("''Muhammet Şua Can''");
@@ -143,12 +184,14 @@ class Program
                         Console.Write("Geri kalan da gpt'nin kodu. Mesela Instance'ı pek anlamadım. Ama çalışıyor yani.");
                         break;
 
+                    // Çıkış
                     case 7:
-                        if (ortakErişim.OrtakListe.Olay.Contains("Çıkış"))
+                        //Bu if programı başlatıp oyuna girmeden çıkanlara yazılmıştır.
+                        if (ortakErişim.OrtakListe.Olay.Contains("Çıkış")) //Şaka bu if'in içinde
                         {
-                            HavliYazı("Oyunu kapatmak için mi açtın?");
+                            CiddiliYaz("Oyunu kapatmak için mi açtın?");
                             Thread.Sleep(1000);
-                            HavliYazı("Neyse tamam kapatıyorum.");
+                            CiddiliYaz("Neyse tamam kapatıyorum.");
                             Thread.Sleep(1000);
                         }
                         Environment.Exit(0); // Çıkış kodu 0 (Evet tabii ki de chat GPT'den aldım.)
@@ -166,7 +209,7 @@ class Program
         }
         
     }
-    static void HavliYazı(string metin, int minDeğer = 25, int maxDeğer = 105)
+    static void CiddiliYaz(string metin, int minDeğer = 25, int maxDeğer = 105)
     {
         Random random = new Random();
         int rastgele;

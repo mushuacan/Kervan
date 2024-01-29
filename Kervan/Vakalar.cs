@@ -27,10 +27,9 @@ namespace Kervan
             Vaka( girdi, sayıGirdisi1);
         }
 
-
         private void Vaka(string olay, int sayıGirdisi1 = 0)
         {
-
+            //Son olduğundan dolayı diğer şeyleri kontrol etmeden önce çalışıp programı bitirse de olur.
             if (olay == "Son")
             {
                 CiddiliYaz("Açlık hissini artık yatıştıracak ekmek bulmakta zorlanıyorsun.");
@@ -44,16 +43,16 @@ namespace Kervan
                 program.Maincik();
             }
 
+            #region Gerekli Referanslar
             OL_Singleton ortakErişim = OL_Singleton.Instance;
             Random random = new Random();
             int rastgele;
+            #endregion
 
             CiddiliYaz("\n\nVAKA\n\n", 35, 115);
             Thread.Sleep(500);
-            
 
-            //CiddiliYaz($"Vaka kodu: {olay}, numarası: {sayıGirdisi1}");
-
+            // Haritada ? üzerinde ilerlerken
             if (olay == "TehlikeliArazi")
             {
                 if (sayıGirdisi1 == 5)
@@ -299,7 +298,7 @@ namespace Kervan
                 }
             }
 
-
+            // Erzak bitmişken
             if (olay == "Hırsızlık")
             {
                 if (ortakErişim.OrtakListe.Grup.Count <= 1)
@@ -489,7 +488,8 @@ namespace Kervan
                 }
             }
 
-            if (olay == "kumarÇıkış") //Benim oyunumda kumar oynamayın lan! Neden mi koydum oyuna o mu zaman mı? E sizi kazıklamak için olm. Kumar kötü bi şe.
+            //Benim oyunumda kumar oynamayın lan! Neden mi koydum oyuna o mu zaman mı? E sizi kazıklamak için olm. Kumar kötü bi şe.
+            if (olay == "kumarÇıkış") 
             {
                 if(sayıGirdisi1 > 300)
                 {
@@ -543,12 +543,15 @@ namespace Kervan
                     ortakErişim.OrtakListe.Para = sayıGirdisi1 - rastgele;
                 }
             }
+
+            //Doktor görme olayı
             if (olay == "1" || olay == "3")
             {
                 CiddiliYaz("İki üç gün önce başlayan hapşurma ve tıksırmaların şiddetlendi.");
                 CiddiliYaz("Artık bir doktor görmen gerektiğine ikna olmuş vaziyettesin.");
                 ortakErişim.OrtakListe.Olay.Add("Doktor");
             }
+            //Olaysızlar
             else if (olay == "2")
             {
                 rastgele = random.Next(1,9);
@@ -561,6 +564,9 @@ namespace Kervan
                 if (rastgele == 7) { CiddiliYaz("Gez göz arpacık"); }
                 if (rastgele == 8) { CiddiliYaz("Burnun salya sümük akıyor."); }
             }
+
+            #region Dilenci
+            //Yoldaki dilenci
             else if (olay == "4")
             {
                 CiddiliYaz("Yolda bir garip, aç olduğunu ve bir erzak istediğini söylüyor.");
@@ -588,6 +594,7 @@ namespace Kervan
                     }
                 }
             }
+            //Yoldaki dilenci zengin olmuş, seni takdir ediyor.
             else if (olay == "5" && ortakErişim.OrtakListe.Olay.Contains("Gariban"))
             {
                 CiddiliYaz("Yolda giderken bir kervanla karşılaştınız.");
@@ -608,6 +615,7 @@ namespace Kervan
                 ortakErişim.OrtakListe.Olay.Remove("Gariban");
                 ortakErişim.OrtakListe.Olay.Add("GaribandıArtıkZengin");
             }
+            //Yoldaki dilenci zengin olmuştu karşılaşmışsın, tekrar karşılaştın.
             else if (olay == "5" && ortakErişim.OrtakListe.Olay.Contains("GaribandıArtıkZengin"))
             {
                 CiddiliYaz("Kervanla karşılaştınız.");
@@ -617,9 +625,10 @@ namespace Kervan
                 ortakErişim.OrtakListe.Olay.Remove("GaribandıArtıkZengin");
                 ortakErişim.OrtakListe.Olay.Add("Zengin");
             }
+            #endregion
         }
 
-
+        //Erzak bitmişken korumalar avlanınca bahşiş isterler.
         private void Bahşiş(int min = 5, int max = 15, int aralık = 3)
         {
             OL_Singleton ortakErişim = OL_Singleton.Instance;

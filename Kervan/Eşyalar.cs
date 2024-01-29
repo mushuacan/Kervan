@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Kervan
 {
+    #region Anlayamadığım Chat Gpt kodu (Ama oldukça önemli)
+
     // Şehir sınıfı
     public class City
     {
@@ -19,7 +21,6 @@ namespace Kervan
         }
     }
 
-    // Eşya sınıfı
     // Eşya sınıfı
     public class Item
     {
@@ -76,55 +77,8 @@ namespace Kervan
         {
             return GetFinalValue(cityPrices, cityName, basePrice);
         }
-
-        /*
-        public void SetCityRarity(string cityName, int rarity)
-        {
-            if (cityRarities.ContainsKey(cityName))
-            {
-                cityRarities[cityName] = rarity;
-            }
-            else
-            {
-                cityRarities.Add(cityName, rarity);
-            }
-        }
-        public void SetCityPrice(string cityName, int price)
-        {
-            if (cityPrices.ContainsKey(cityName))
-            {
-                cityPrices[cityName] = price;
-            }
-            else
-            {
-                cityPrices.Add(cityName, price);
-            }
-        }
-
-        public int GetFinalRarity(string cityName)
-        {
-            if (cityRarities.ContainsKey(cityName))
-            {
-                return cityRarities[cityName];
-            }
-            else
-            {
-                return baseRarity;
-            }
-        }
-
-        public int GetFinalPrice(string cityName)
-        {
-            if (cityPrices.ContainsKey(cityName))
-            {
-                return cityPrices[cityName];
-            }
-            else
-            {
-                return basePrice;
-            }
-        }*/
     }
+    #endregion
 
     internal class Eşyalar
     {
@@ -133,9 +87,10 @@ namespace Kervan
         public List<Item> AllItems { get; set; }
         public Eşyalar()
         {
-            Eşya(); // Eşya metodunu çağır
+            Eşya();
         }
 
+        //Eşyaları ve değerlerini ayarlar
         public void Eşya()
         {
             ŞehirlerListesi = new List<City>
@@ -151,9 +106,8 @@ namespace Kervan
             new City("Kuzey Liman Şehri"),
             // Diğer şehirleri buraya ekleyebilirsiniz.
             };
-            #region FİYATLANDIRMA
             AllItems = new List<Item>
-        {
+            {
             //Eşya ismi, nadirlik 100-0, fiyat
             new Item("Et", 15, 15),
             new Item("Balık", 33, 8),
@@ -171,18 +125,18 @@ namespace Kervan
             new Item("Bal", 3, 25),
             new Item("Elmas Yüzük", 0, 120),
             new Item("Deri", 7, 8),
+            };
 
-        };
-
-            // Tüm şehirlere aynı eşyaları ekleyin
+            // Tüm şehirlere aynı eşyaları ekleme
             foreach (var city in ŞehirlerListesi)
             {
                 city.AvailableItems.AddRange(AllItems);
             }
 
+            #region Eşyların Şehirlere göre Nadirlik ve Fiyatlarının Belirlenmesi
 
-            // Şehirlere özel eşyaları güncelleyin
-            //Et'in şehirlere göre farkı
+            //AllItems[EŞYAKODU].SetCityData("Şehrin ismi", Nadirlik, Fiyat)
+
             #region ET 15 15
             AllItems[0].SetCityData("Güney Koyuncular Köyü",    100, 8);
             AllItems[0].SetCityData("Güney Liman Şehri",        5, 20);
@@ -355,13 +309,18 @@ namespace Kervan
             AllItems[10].SetCityData("Kuzey Liman Şehri",        0, 0);
             #endregion
             */
-#endregion
+            #endregion
         }
 
+        //Eşyaları Yazdırır.
         public void Print(string istek)
         {
-
             int i = 0;
+
+            //Haritada hareket etmek yerine şu girdiler girilince çıkan çıktılar
+
+            //Şehirleri ve içindeki eşyaları yazdırır.
+            //Hile kodu: 3 1
             if (istek == "Şehirler+Eşyalar")
             {
                 foreach (var city in ŞehirlerListesi)
@@ -381,7 +340,11 @@ namespace Kervan
                     Console.WriteLine();
                     Thread.Sleep(200);
                 }
-            }else if (istek == "Şehirler")
+            }
+
+            //Şehirleri yazdırır
+            //Hile kodu: 3 2
+            else if (istek == "Şehirler")
             {
                 foreach (var city in ŞehirlerListesi)
                 {
@@ -395,6 +358,9 @@ namespace Kervan
                 Console.WriteLine();
                 Thread.Sleep(200);
             }
+
+            //Eşyaları ve eşyaların şehirlerdeki değerlerini yazdırır.
+            //Hile kodu: 3 3
             else if (istek == "Eşyalar")
             {
                 foreach (var seçiliEşya in ŞehirlerListesi.SelectMany(city => city.AvailableItems).DistinctBy(item => item.Name))
@@ -412,11 +378,6 @@ namespace Kervan
                     Thread.Sleep(200);
                 }
             }
-
         }
-
-
-
-
     }
 }

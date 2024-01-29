@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 namespace Kervan
 {
 
+    #region SINGLETON INSCTANCE // GLOBAL BÜTÜN DEĞİŞKENLER
     public class OrtakListe
     {
         public List<string> Olay { get; set; } = new List<string>();
@@ -21,6 +22,7 @@ namespace Kervan
         public int oyuncuGlobalKonumY { get; set; }
     }
 
+    //Buranın altındaki kodları zerre anlamadım, gpt yazdı ben de kullandım.
     public class OL_Singleton //OL -> Ortak Liste
     {
         private static OL_Singleton instance;
@@ -43,15 +45,12 @@ namespace Kervan
             }
         }
     }
-
+    #endregion
 
     internal class Şehir
     {
-
-        
         public void BaşlarkenHazırlık()
         {
-
             // OrtakListe'yi kullanmak için OrtakListeSingleton.Instance'dan bir örnek alın
             OL_Singleton ortakErişim = OL_Singleton.Instance;
 
@@ -94,15 +93,22 @@ namespace Kervan
         public void Şehrinİçinde(int bölgeKodu)
         {
             {
+                //Niye iki tane {{ var hiç bir fikrim yok silemeycem şimdi
+
+                #region Gerekli Referanslar
                 OL_Singleton ortakErişim = OL_Singleton.Instance;
                 Eşyalar EşyalarCs = new Eşyalar();
                 string bölge = "Şehir";
+                #endregion
 
+                #region Yerleşkenin İsmini Yazdır
                 Console.WriteLine($"\n\n{EşyalarCs.ŞehirlerListesi[bölgeKodu].Name}");
                 Thread.Sleep(200);
+                #endregion
 
                 while (true)
                 {
+                    #region Menü
                     Console.WriteLine("1-Ticaret yap");
                     Console.WriteLine("2-Eleman alma");
                     Console.WriteLine("3-Kumar oynama");
@@ -120,14 +126,16 @@ namespace Kervan
                     {
                         Console.Write("\nLütfen bir seçenek girin (1-6): ");
                     }
+                    #endregion
 
-
+                    #region Girdi Değerlendirmesi
                     // Kullanıcının seçimini al
                     string userInput = Console.ReadLine();
 
                     // Kullanıcının girdisini değerlendir
                     switch (userInput)
                     {
+                        //Ticaret
                         case "1":
                             Console.WriteLine("\nTicaret yapılıyor...\n");
                             Thread.Sleep(600);
@@ -135,6 +143,7 @@ namespace Kervan
                             Thread.Sleep(1000);
                             break;
 
+                        //Eleman
                         case "2":
                             Console.WriteLine("\nEleman alınıyor...\n");
                             Thread.Sleep(600);
@@ -142,6 +151,7 @@ namespace Kervan
                             Thread.Sleep(1000);
                             break;
 
+                        //Kumar
                         case "3":
                             Console.WriteLine("\nKumar oynanıyor...\n");
                             Thread.Sleep(600);
@@ -155,6 +165,7 @@ namespace Kervan
                             Thread.Sleep(1000);
                             break;
 
+                        //Geceleme (Ne işe yarıyorsa artık)
                         case "4":
                             Console.WriteLine("\nGeceleniyor...");
                             Thread.Sleep(600);
@@ -163,6 +174,7 @@ namespace Kervan
                             Thread.Sleep(1000);
                             break;
 
+                        //Erzak
                         case "5":
                             Console.WriteLine("\nErzak alınıyor...\n");
                             Thread.Sleep(600);
@@ -170,6 +182,7 @@ namespace Kervan
                             Thread.Sleep(1000);
                             break;
 
+                        //Çıkış
                         case "6":
                             Console.WriteLine("\nŞehirden ayrılma...");
                             Thread.Sleep(600);
@@ -177,6 +190,8 @@ namespace Kervan
                             Thread.Sleep(600);
                             return; // while döngüsünü kır
                                     // break; // return kullanıldığı için break kullanmaya gerek yok
+
+                        //Doktor
                         case "dc":
                             Console.WriteLine("\nDoktor görmeye gittin.");
                             Console.WriteLine("Tedavi parası: 20");
@@ -212,12 +227,14 @@ namespace Kervan
                             Console.WriteLine("Lütfen 1 ile 6 arasında bir sayı girin.");
                             break;
                     }
+                    #endregion
 
-                    Console.WriteLine(); // Bir boş satır ekleyerek okunabilirliği artırın
+                    Console.WriteLine(); // Bir boş satır ekleyerek okunabilirliği artır
                 }
             }
         }
 
+        //Şehirdekilerin aynısı ama Köyün içinde olan kısıtlamalarla birlikte
         public void Köyünİçinde(int bölgeKodu)
         {
             {
@@ -284,12 +301,13 @@ namespace Kervan
             }
         }
 
-
+        //Erzakla ilgili işlemler
         public void Erzak(string işlem, int artış = 0)
         {
             OL_Singleton ortakErişim = OL_Singleton.Instance;
 
-            if (işlem == "Arttır") //Azaltmak için eksili değer girilip gene Arttır yazalır
+            //Azaltmak için eksili değer girilip gene Arttır yazalır
+            if (işlem == "Arttır") 
             {
                 if (ortakErişim.OrtakListe.Grup.Contains("Aşçı") && artış == -1)
                 {
@@ -334,6 +352,7 @@ namespace Kervan
         {
             OL_Singleton ortakErişim = OL_Singleton.Instance;
 
+            //Erzak Alma Menüsü
             if (iş == "Erzak")
             {
                 Console.WriteLine($"{ortakErişim.OrtakListe.Erzak/ortakErişim.OrtakListe.Grup.Count} günlük erzağın var.");
@@ -377,10 +396,9 @@ namespace Kervan
                         Console.WriteLine("Geçersiz giriş. Lütfen bir sayı girin.");
                     }
                 } while (alışveriş);
-                
-
             }
             
+            //Eleman Alma Menüsü
             else if (iş == "Eleman")
             {
                 List<string> alinabileceklerListesi = new List<string>();
@@ -474,12 +492,9 @@ namespace Kervan
                     }
                 }
                 Console.WriteLine($"Paran: {ortakErişim.OrtakListe.Para}");
-
-
-
-
             }
             
+            //Ticaret Menüsü
             else if (iş == "Ticaret")
             {
                 do
@@ -515,6 +530,7 @@ namespace Kervan
 
         private void TicaretSat(int bölgeKodu, string bölge)
         {
+            #region Gerekli Referanslar
             Random random = new Random();
             Eşyalar EşyalarCs = new Eşyalar();
             OL_Singleton ortakErişim = OL_Singleton.Instance;
@@ -522,7 +538,9 @@ namespace Kervan
             List<string> satılacakEşyaListesi = new List<string>();
             List<int> satılacakEşyaFiyatları = new List<int>();
             List<int> tahminiFiyat = new List<int>();
+            #endregion
 
+            #region Şehir Kodu doğru mu kontrol
             var şehir = EşyalarCs.ŞehirlerListesi[bölgeKodu];
             if (şehir != null && şehir.AvailableItems != null)
             {
@@ -543,20 +561,16 @@ namespace Kervan
                 Thread.Sleep(1000);
                 return;
             }
+            #endregion
 
-
-            /*
-            foreach (var item in EşyalarCs.ŞehirlerListesi[bölgeKodu].AvailableItems)
-            {
-                satılacakEşyaListesi.Add(item.Name);
-                satılacakEşyaFiyatları.Add(item.GetFinalPrice(EşyalarCs.ŞehirlerListesi[bölgeKodu].Name));
-            }
-            */
+            #region Oyundaki tek eşsiz eşyanın fiyatı
             if (ortakErişim.OrtakListe.Envanter.Contains("Aile Yâdigârı Gümüş Kolye"))
             {
                 tahminiFiyat.Add(80);
             }
+            #endregion
 
+            #region Envanterdeki Eşyaları Fiyatlandırma
             for (int itemCount = 0; itemCount < ortakErişim.OrtakListe.Envanter.Count; itemCount++)
             {
                 foreach (var item in satılacakEşyaListesi)
@@ -568,42 +582,43 @@ namespace Kervan
                     }
                 }
             }
+            #endregion
 
+            #region Eşya Fiyatlarıyla oynama
             double minDeger = 0.9;
             double maxDeger = 1.1;
-            if (bölge == "Köy")
+            if (bölge == "Köy") //Köyde eşya satmak daha az kârlı
             {
                 minDeger = 0.4;
                 maxDeger = 0.9;
-            }else if (bölge == "Şehir")
+            }else if (bölge == "Şehir") //Şehirde eşya satmak çok daha kârlı
             {
                 minDeger = 0.7;
                 maxDeger = 1.1;
             }
-            for (int i = 0; i < tahminiFiyat.Count; i++)
+            for (int i = 0; i < tahminiFiyat.Count; i++) //Bütün eşyaların fiyatlarını değiştir
             {
                 double rastgelen = minDeger + (random.NextDouble() * (maxDeger - minDeger));
                 tahminiFiyat[i] = (int)(tahminiFiyat[i] * rastgelen);
             }
+            #endregion
 
-
-
-
-            
             Thread.Sleep(1000);
 
+            #region Eşya Satma Menüsü
             while (true)
             {
-                //Console.WriteLine($"Envanterde {ortakErişim.OrtakListe.Envanter.Count()}, tahminde {tahminiFiyat.Count()} eleman var.");
-                // Sonuçları yazdırma
-                Console.WriteLine($"\nParan: {ortakErişim.OrtakListe.Para}\nEnvanterin:");
+                #region Envanterdeki eşyaları yazdır
+                Console.WriteLine($"\nParan: {ortakErişim.OrtakListe.Para}\n\nEnvanterin:");
                 for (int i = 0; i < ortakErişim.OrtakListe.Envanter.Count; i++)
                 {
                     Console.WriteLine($"{i + 1}.{ortakErişim.OrtakListe.Envanter[i]} için {tahminiFiyat[i]} ödeniyor.");
                 }
                 Thread.Sleep(100);
-
                 Console.Write($"{tahminiFiyat.Count + 1}.Çıkış\n->");
+                #endregion
+
+                #region Sat
                 while (true)
                 {
                     string kullanıcıGirdisi = Console.ReadLine();
@@ -644,12 +659,14 @@ namespace Kervan
                         Console.WriteLine("Geçersiz giriş. Lütfen bir sayı girin.");
                     }
                 }
+                #endregion
             }
-
+            #endregion
         }
 
         private void TicaretAl(int bölgeKodu, string bölge)
         {
+            #region Gerekli Referanslar
             Random random = new Random();
             Eşyalar EşyalarCs = new Eşyalar();
             OL_Singleton ortakErişim = OL_Singleton.Instance;
@@ -658,7 +675,7 @@ namespace Kervan
             List<string> alınacakEşyaListesi = new List<string>();
             List<int> alınacakEşyaFiyatları = new List<int>();
             List<int> alınacakEşyaNadirlikleri = new List<int>();
-
+            #endregion
 
             #region RASTGELE EŞYA ÜRETİMİ
             foreach (var item in EşyalarCs.ŞehirlerListesi[bölgeKodu].AvailableItems)
@@ -709,6 +726,7 @@ namespace Kervan
                 seçilenEşyalarFiyatları.Add((int)(seçilenEşyaFiyatı * faktör));
             }
             #endregion
+
             #region EŞYA ALIMI
             while (true)
             {

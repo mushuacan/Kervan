@@ -11,9 +11,10 @@ namespace Kervan
         public int coinEnter()
         {
             OL_Singleton ortakErişim = OL_Singleton.Instance;
-
             Console.WriteLine($"Toplam paran {ortakErişim.OrtakListe.Para}.");
             Console.Write("Kumarhâneye geldin. Kaç para yatırmak istersin: ");
+
+            #region Kumarhanede Para Girişi
             string girilenMiktar = Console.ReadLine();
 
             // Girişi bir tamsayıya dönüştürme
@@ -36,46 +37,47 @@ namespace Kervan
                 // Giriş geçerli bir tamsayı değilse, uygun bir hata mesajı verebilir veya programı sonlandırabilirsiniz.
             }
             return 0;
+            #endregion
         }
 
         public void Gamble(int coin, int coinAtFirst)
         {
+            #region Değişkenler
+            string playAgainInput;
             int coinRate;
             int guess;
             int attempts = 0;
-            string playAgainInput;
-            int minCoinToLose = 24;
-            int highCoinDamage = 99;
-
+            
             int randomMax;
-            int due;
-            randomMax = 161;
-            due = 7;
+            int due; //Kaç deneme hakkı olduğu
 
+            randomMax = 161; //150
+            due = 7; //6
+            #endregion
+
+            #region KUMAR OYUNU
             do
             {
-
                 if (coin <= 0)
                 {
                     break;
                 }
 
+                #region Değişken ayarlamaları
                 due--;
                 attempts = 0;
                 bool whileLoop = true;
                 randomMax = randomMax - 10;
-
                 coinRate = (int)(coin * (17 - due) * 0.08);
+                #endregion
 
-                // Rastgele bir sayı seçme
                 Random randomCs = new Random();
-                int targetNumber = randomCs.Next(1, randomMax); // 1 ile 100 arasında rastgele bir sayı seçer
+                int targetNumber = randomCs.Next(1, randomMax); 
 
                 Console.WriteLine($"\nŞu kadar para yatırdın: {coin}\nKazanırsan en az {coinRate} kadar para kazanacaksın.  ");
                 Console.WriteLine("Kaybedersen bütün paranı kaybedeceksin.");
-                
-
                 Console.Write("\nOynamak istiyor musunuz? (Evet için 1, Hayır için 0): ");
+
                 playAgainInput = Console.ReadLine();
                 if (playAgainInput != "1")
                 {
@@ -94,6 +96,7 @@ namespace Kervan
                     if (!int.TryParse(input, out guess))
                     {
                         attempts--;
+                        //Hile
                         if (input == "kumarbaz")
                         {
                             Console.Write($"\n\n\nHile aktifleştirildi. Sayı: {targetNumber}\n\n\n");
@@ -142,13 +145,14 @@ namespace Kervan
 
                 } while (whileLoop);
             } while (playAgainInput == "1");
-
+            #endregion
 
             OL_Singleton ortakErişim = OL_Singleton.Instance;
 
             ortakErişim.OrtakListe.Para -= coinAtFirst;
             Console.WriteLine($"\n\nKumarhâneden çıktın. {coinAtFirst} kadar para yatırdın ve şuan {coin} kadar parayla çıkıyorsun.\n\n\n");
-            
+
+            #region Kumarhane Çıkışı Vakaları
             Random random = new Random();
             int rastgele = random.Next(0, 40);
 
@@ -169,12 +173,11 @@ namespace Kervan
                 ortakErişim.OrtakListe.Para += coin;
                 ortakErişim.OrtakListe.Olay.Add("Kumar Parası");
             }
+            #endregion
 
             Harita haritaCs = new Harita();
             haritaCs.oyunBekasıKontrol(true);
             Console.WriteLine($"Toplam paran {ortakErişim.OrtakListe.Para}.");
-
-
         }
     }
 }

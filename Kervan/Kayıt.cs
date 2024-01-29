@@ -9,11 +9,10 @@ namespace Kervan
 {
     internal class Kayıt
     {
-
+        // KayıtDosyası() -> dosyaYolu'nu belirler
         public void KayıtDosyası(string işlem)
         {
             string klasorYolu = Path.Combine(Environment.CurrentDirectory, "..", "..", "..",  "SaveData");
-
 
             // Eğer SaveData klasörü yoksa oluştur
             if (!Directory.Exists(klasorYolu))
@@ -21,12 +20,8 @@ namespace Kervan
                 Directory.CreateDirectory(klasorYolu);
             }
 
-            // Ardından dosya yolunu belirleyin
+            // Ardından dosya yolunu belirler
             string dosyaYolu = Path.Combine(klasorYolu, "oyun_durumu.txt");
-
-            // Şimdi dosyayı kullanabilirsiniz
-            //Console.WriteLine("Dosya yolu: " + dosyaYolu);
-
 
             if (işlem == "kaydet")
             {
@@ -39,8 +34,6 @@ namespace Kervan
 
         public void KaydetTxt(string dosyaYolu)
         {
-            
-
             OL_Singleton ortakErişim = OL_Singleton.Instance;
             using (StreamWriter writer = new StreamWriter(dosyaYolu))
             {

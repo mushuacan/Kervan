@@ -9,6 +9,7 @@ namespace Kervan
 {
     internal class Harita
     {
+        #region HARİTA
         // Verilen harita
         string[] harita = {
             "#####################",
@@ -25,32 +26,16 @@ namespace Kervan
             "########..2......####",
             "#####################"
         };
+        #endregion
 
+        #region Tam olarak 2 adet değişken
         // Haritayı liste olarak temsil etmek için
+        // (Listedeki oyuncunun konumu P ile değiştirilip print edilir.)
         List<List<char>> haritaListesi = new List<List<char>>();
 
-
+        //Bunun ne olduğunu hatırlamıyorum
         bool iflasdenemesi = false;
-
-        void HaritaBilgilendirme(string bildiri)
-        {
-            if (bildiri == "Harita")
-            {
-                Console.WriteLine(" P -> Bulunduğunuz konumu gösterir.");
-                Console.WriteLine(" # -> Engebeli arazi veya deniz (üzerinden geçilemez.)");
-                Console.WriteLine(" . -> Boş arazi. Geçilebilir.");
-                Console.WriteLine(" ? -> Tehlikeli arazi. Geçenlerden haber alınamıyor.");
-                Console.WriteLine(" 1-2 gibi sayılar -> Şehirleri veya köyleri (Yerleşkeleri) ifade eder.");
-                //Console.WriteLine(" S -> Oyunu save almak için gitmeniz gereken yer.");
-                Console.WriteLine("\n");
-            }else if (bildiri == "Yerleşke")
-            {
-                Eşyalar EşyalarCs = new Eşyalar();
-                EşyalarCs.Print("Şehirler");
-            }
-        }
-
-
+        #endregion
 
         public void oyuncuHareketEtHaritaYazdır()
         {
@@ -59,103 +44,20 @@ namespace Kervan
             haritaYazdır();
         }
 
-        public void oyunBekasıKontrol(bool kumarMı = false)
-        {
-            OL_Singleton ortakErişim = OL_Singleton.Instance;
-
-            if (kumarMı && ortakErişim.OrtakListe.Para < 5 && ortakErişim.OrtakListe.Envanter.Count <= 1) //KUMARDA PARA BİTİRME
-            {
-                Yazİflas("Kumarbazlığın peşinde koştururken bütün paranı harcadın.");
-                Yazİflas("Tüccar olacağım diyerek çıktığın köye bütün parasını kumarbaz halde yemiş biri olarak döndün.");
-                Yazİflas("Köyde ailenizin nâmına bir kara leke olarak yapıştın.");
-                Yazİflas("\n\n\n", 200, 500);
-                Yazİflas("Kumarda bütün paranı kaybettin!");
-                Yazİflas("\n\nOyun Bitti!");
-                Yazİflas("Kumar Mağlubiyeti!");
-                Thread.Sleep(4444);
-                Environment.Exit(0);
-            }
-
-            if (ortakErişim.OrtakListe.Para < 5 && ortakErişim.OrtakListe.Envanter.Count <= 1)
-            {
-                Vakalar vakaCs = new Vakalar();
-                Yazİflas("Beş paran kalmadı. Eşyan da yok.");
-                Yazİflas("Etrafındaki herkes sayıp sövüp gitti.");
-                vakaCs.VakaAyrıştırıcı("Son");
-            }
-            if (ortakErişim.OrtakListe.Para >= 1000 //Full kumarbaz zaferş
-                && ortakErişim.OrtakListe.Olay.Contains("Kumar Parası") 
-                && !ortakErişim.OrtakListe.Olay.Contains("Tüccariyet"))
-            {
-                Yazİflas("Tüccar olma niyetiyle çıktığın bu yolda kumarbazın teki oldun.");
-                Yazİflas("Ama öyle olacak ki oyunu gene de kazanmayı becerdin!");
-                Yazİflas("Paran 1000'i geçti, hem de ticaret yapmadan!");
-                Yazİflas("Gerçek bir kumarbazsın.");
-                Yazİflas("Oynadığın için teşekkürler.");
-                Yazİflas("\n\n\n", 200, 500);
-                Yazİflas("Kazandın!");
-                Yazİflas("Kumarbaz Zaferi!");
-                Thread.Sleep(4444);
-                Environment.Exit(0);
-            }
-            else if (ortakErişim.OrtakListe.Para >= 1000 //Full kumarlı Ticaret zaferi.
-                && ortakErişim.OrtakListe.Olay.Contains("Kumar Parası")
-                && ortakErişim.OrtakListe.Olay.Contains("Tüccariyet"))
-            {
-                Vakalar vakaCs = new Vakalar();
-                Şehir ŞehirCs = new Şehir();
-                Yazİflas("Şanlı oyuncu!");
-                Yazİflas("Paran 1000'i geçti.");
-                Console.WriteLine($"Paran: {ortakErişim.OrtakListe.Para}");
-                Console.WriteLine($"{ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count} günlük erzağın var.");
-                Thread.Sleep(1000);
-                ŞehirCs.GrupYazdır();
-                Thread.Sleep(1000);
-                ŞehirCs.EnvanterYazdır();
-                Thread.Sleep(2000);
-                Yazİflas("Gerçek bir tüccarsın ama kumara da bulaşmışsın.");
-                Yazİflas("Oynadığın için teşekkürler.");
-                Yazİflas("\n\n\n", 200, 500);
-                Yazİflas("Kazandın!");
-                Yazİflas("Kumarlı Tüccarlık Zaferi!");
-                Thread.Sleep(4444);
-                Environment.Exit(0);
-
-            }
-            else if (ortakErişim.OrtakListe.Para >= 1000 ) //
-            {
-                Vakalar vakaCs = new Vakalar();
-                Şehir ŞehirCs = new Şehir();
-                Yazİflas("Şanlı oyuncu!");
-                Yazİflas("Paran 1000'i geçti.");
-                Console.WriteLine($"Paran: {ortakErişim.OrtakListe.Para}");
-                Console.WriteLine($"{ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count} günlük erzağın var.");
-                Thread.Sleep(1000);
-                ŞehirCs.GrupYazdır();
-                Thread.Sleep(1000);
-                ŞehirCs.EnvanterYazdır();
-                Thread.Sleep(2000);
-                Yazİflas("Gerçek bir tüccarsın.");
-                Yazİflas("Oynadığın için teşekkürler.");
-                Yazİflas("\n\n\n", 200, 500);
-                Yazİflas("Kazandın!");
-                Yazİflas("Tüccarlık Zaferi!");
-                Thread.Sleep(4444);
-                Environment.Exit(0);
-            }
-        }
-
         public void oyuncuHareket()
         {
-            // Oyuncunun yönüne göre konumunu güncelle
+            #region Gerekli Referanslar
             OL_Singleton ortakErişim = OL_Singleton.Instance;
             Eşyalar EşyalarCs = new Eşyalar();
             Şehir ŞehirCs = new Şehir();
+            #endregion
+
             ŞehirCs.Erzak("Kontrol");
             Console.Write("(w-Yukarı, s-Aşağı, d-Sağa, a-Sola\n");
             Console.Write("1-Harita bilgilendirmesi, 2-Yerleşkeler (isimleri),\n3-Kendi bilgilerin, 4-İpucu Al, 5-Kaydedip çık, .)\n-> ");
             string yon = Console.ReadLine();
 
+            #region Haritada Dolaşma
             switch (yon)
             {
                 case "w":
@@ -208,27 +110,27 @@ namespace Kervan
                 case "iflas":
                     #region İflas Konuşması
                     if(iflasdenemesi) { break; }
-                    Yazİflas("O kadar acınasısın ki!");
-                    Yazİflas("O kadar korkaksın ki!");
-                    Yazİflas("Dayanamadan terk ediyorsun hemen.");
-                    Yazİflas("Seninle kim bir yola çıksa yarıda kalır.");
-                    Yazİflas("Hani diyarın en zengin tüccarı olacaktık?", 65, 120);
-                    Yazİflas("Hani onlarca kervanımız olacaktı?", 90, 130);
+                    CiddiliYaz("O kadar acınasısın ki!");
+                    CiddiliYaz("O kadar korkaksın ki!");
+                    CiddiliYaz("Dayanamadan terk ediyorsun hemen.");
+                    CiddiliYaz("Seninle kim bir yola çıksa yarıda kalır.");
+                    CiddiliYaz("Hani diyarın en zengin tüccarı olacaktık?", 65, 120);
+                    CiddiliYaz("Hani onlarca kervanımız olacaktı?", 90, 130);
                     Console.WriteLine();
-                    Yazİflas("Vazgeçmişliğinle öğrendin bu hayat zor.");
-                    Yazİflas("Devam eden herkes mücadeleyi sürdürüyor.");
-                    Yazİflas("Sense korkaklık ettin. Bu kadar dedin.");
-                    Yazİflas("Neyime yaracak ki bu köhne diyar dedin.");
-                    Yazİflas("Adın çıkmadı merak etme ama korkaksın.");
-                    Yazİflas("Geçmişe baktın mı hep hüzne bakacaksın.", 90, 130);
+                    CiddiliYaz("Vazgeçmişliğinle öğrendin bu hayat zor.");
+                    CiddiliYaz("Devam eden herkes mücadeleyi sürdürüyor.");
+                    CiddiliYaz("Sense korkaklık ettin. Bu kadar dedin.");
+                    CiddiliYaz("Neyime yaracak ki bu köhne diyar dedin.");
+                    CiddiliYaz("Adın çıkmadı merak etme ama korkaksın.");
+                    CiddiliYaz("Geçmişe baktın mı hep hüzne bakacaksın.", 90, 130);
                     Console.WriteLine();
-                    Yazİflas("Son bir şansın var, 'vazgeç'ecek misin? Yoksa 'terk' mi edeceksin?");
+                    CiddiliYaz("Son bir şansın var, 'vazgeç'ecek misin? Yoksa 'terk' mi edeceksin?");
                     bool iflasDöngüsü = true;
                     do{ Console.Write(" -> ");
                         string cevap = Console.ReadLine();
-                        if (cevap == "Vazgeç") { Yazİflas("Helal olsun, vazgeçmeyeceğini biliyordum."); iflasDöngüsü = false; }
-                        else if (cevap == "Terk et") { Yazİflas("Tamam\n", 150, 160); Thread.Sleep(2000); Yazİflas("KORKAK", 300, 320); Thread.Sleep(200); Environment.Exit(0); }
-                        else { Yazİflas("Anlayabilmem için 'Vazgeç' veya 'Terk et' yaz.", 15, 35); }
+                        if (cevap == "Vazgeç") { CiddiliYaz("Helal olsun, vazgeçmeyeceğini biliyordum."); iflasDöngüsü = false; }
+                        else if (cevap == "Terk et") { CiddiliYaz("Tamam\n", 150, 160); Thread.Sleep(2000); CiddiliYaz("KORKAK", 300, 320); Thread.Sleep(200); Environment.Exit(0); }
+                        else { CiddiliYaz("Anlayabilmem için 'Vazgeç' veya 'Terk et' yaz.", 15, 35); }
                     } while (iflasDöngüsü);
                     iflasdenemesi = true;
                     #endregion
@@ -263,33 +165,18 @@ namespace Kervan
                     oyuncuHareket();
                     break;
             }
+            #endregion
         }
-
-        #region iflas efekti
-        static void Yazİflas(string metin, int minDeğer = 25, int maxDeğer = 105)
-        {
-            Random random = new Random();
-            int rastgele;
-            foreach (char harf in metin)
-            {
-                rastgele = random.Next(minDeğer, maxDeğer);
-                Console.Write(harf);
-                Thread.Sleep(rastgele);
-            }
-            Thread.Sleep(444);
-            Console.Write("\n");
-        }
-        #endregion
-
-        #region OYUNCU HAREKETİ ALAKADAR
 
         public void oyuncuKonumDeğişikliği(int konumX, int konumY)
         {
             OL_Singleton ortakErişim = OL_Singleton.Instance;
-            string konumdakiBlok = string.Concat(haritaListesi[konumY + ortakErişim.OrtakListe.oyuncuGlobalKonumY][konumX + ortakErişim.OrtakListe.oyuncuGlobalKonumX]);
-
             Şehir ŞehirCs = new Şehir();
 
+            //Konumdaki blok haritada ilerlediğimiz yöndeki bloğu öğrenir.
+            string konumdakiBlok = string.Concat(haritaListesi[konumY + ortakErişim.OrtakListe.oyuncuGlobalKonumY][konumX + ortakErişim.OrtakListe.oyuncuGlobalKonumX]);
+
+            //Haritada ilerlediğimiz konumdaki bloğa göre işlevler
             switch (konumdakiBlok)
             {
                 case "#":
@@ -311,13 +198,14 @@ namespace Kervan
                     break;
                 default:
 
-                    // Girişi bir tamsayıya dönüştürme
+                    #region ŞEHİRLER veya KÖYLER'E GİRİŞ
                     if (int.TryParse(konumdakiBlok, out int sayı))
                     {
                         if (sayı == 2 || sayı == 5 || sayı == 8)
                         { ŞehirCs.Şehrinİçinde(sayı); }
                         else { ŞehirCs.Köyünİçinde(sayı); }
                     }
+                    #endregion
                     else
                     {
                         Console.WriteLine("İlerleyeceğiniz yön saptanamadı. Lütfen o yöne gitmeyiniz.");
@@ -325,13 +213,7 @@ namespace Kervan
                     }
                     break;
             }
-
         }
-
-
-
-
-        #endregion
 
 
         #region HARİTA ALAKADAR
@@ -394,8 +276,6 @@ namespace Kervan
         }
         #endregion
 
-
-
         static void OlayKontrolMakenizması()
         {
             OL_Singleton ortakErişim = OL_Singleton.Instance;
@@ -403,25 +283,30 @@ namespace Kervan
             Vakalar vakaCs = new Vakalar();
             int rastgele = random.Next(1, 11);
 
+            #region Hastalıktan ölme
             if (ortakErişim.OrtakListe.Olay.Contains("Doktor") && rastgele == 1)
             {
-                Yazİflas("\nYolda hastalığın iyice ağırlaştı.");
-                Yazİflas("Kervanı şehirde doktor görmek için terk ettin.");
-                Yazİflas("Ancak yanındaki kişinin ısrarı üzere bir ağaç gölgesinde durdun.");
-                Yazİflas("Doktoru buraya çağırmak için gitti.");
-                Yazİflas("Dönmesini beklerken uyanamayacağın bir uykuya daldın.");
-                Yazİflas("\n\n\nOyun Bitti.\n\nOynadığınız için teşekkürler.");
+                CiddiliYaz("\nYolda hastalığın iyice ağırlaştı.");
+                CiddiliYaz("Kervanı şehirde doktor görmek için terk ettin.");
+                CiddiliYaz("Ancak yanındaki kişinin ısrarı üzere bir ağaç gölgesinde durdun.");
+                CiddiliYaz("Doktoru buraya çağırmak için gitti.");
+                CiddiliYaz("Dönmesini beklerken uyanamayacağın bir uykuya daldın.");
+                CiddiliYaz("\n\n\nOyun Bitti.\n\nOynadığınız için teşekkürler.");
                 Program program = new Program();
                 program.Maincik();
                 Environment.Exit(0);
             }
+            #endregion
 
+            #region Erzak bitince dönen olaylar
             if (ortakErişim.OrtakListe.Erzak == 0)
             {
                 vakaCs.VakaAyrıştırıcı("Hırsızlık");
                 return;
             }
+            #endregion
 
+            #region Rastgele olaylar
             rastgele = random.Next(1, 1111);
 
             if (rastgele <= 4){vakaCs.VakaAyrıştırıcı("1"); }
@@ -429,10 +314,104 @@ namespace Kervan
             else if (rastgele <= 24) { vakaCs.VakaAyrıştırıcı("3"); }
             else if (rastgele <= 44) { vakaCs.VakaAyrıştırıcı("4"); }
             else if (rastgele <= 88 && ortakErişim.OrtakListe.Olay.Contains("Gariban")) { vakaCs.VakaAyrıştırıcı("5"); }
+            #endregion
         }
-        static void TehlikeliArazi()
+
+
+        public void oyunBekasıKontrol(bool kumarMı = false)
         {
             OL_Singleton ortakErişim = OL_Singleton.Instance;
+
+            //Kumarda tüm parayı harcayınca gelen pişmanlık hissi
+            if (kumarMı && ortakErişim.OrtakListe.Para < 5 && ortakErişim.OrtakListe.Envanter.Count <= 1) //KUMARDA PARA BİTİRME
+            {
+                CiddiliYaz("Kumarbazlığın peşinde koştururken bütün paranı harcadın.");
+                CiddiliYaz("Tüccar olacağım diyerek çıktığın köye bütün parasını kumarbaz halde yemiş biri olarak döndün.");
+                CiddiliYaz("Köyde ailenizin nâmına bir kara leke olarak yapıştın.");
+                CiddiliYaz("\n\n\n", 200, 500);
+                CiddiliYaz("Kumarda bütün paranı kaybettin!");
+                CiddiliYaz("\n\nOyun Bitti!");
+                CiddiliYaz("Kumar Mağlubiyeti!");
+                Thread.Sleep(4444);
+                Environment.Exit(0);
+            }
+            //Para bitinceki Mağlubiyet
+            if (ortakErişim.OrtakListe.Para < 5 && ortakErişim.OrtakListe.Envanter.Count <= 1)
+            {
+                Vakalar vakaCs = new Vakalar();
+                CiddiliYaz("Beş paran kalmadı. Eşyan da yok.");
+                CiddiliYaz("Etrafındaki herkes sayıp sövüp gitti.");
+                vakaCs.VakaAyrıştırıcı("Son");
+            }
+
+            //Kumarbaz Zaferi
+            if (ortakErişim.OrtakListe.Para >= 1000 
+                && ortakErişim.OrtakListe.Olay.Contains("Kumar Parası")
+                && !ortakErişim.OrtakListe.Olay.Contains("Tüccariyet"))
+            {
+                CiddiliYaz("Tüccar olma niyetiyle çıktığın bu yolda kumarbazın teki oldun.");
+                CiddiliYaz("Ama öyle olacak ki oyunu gene de kazanmayı becerdin!");
+                CiddiliYaz("Paran 1000'i geçti, hem de ticaret yapmadan!");
+                CiddiliYaz("Gerçek bir kumarbazsın.");
+                CiddiliYaz("Oynadığın için teşekkürler.");
+                CiddiliYaz("\n\n\n", 200, 500);
+                CiddiliYaz("Kazandın!");
+                CiddiliYaz("Kumarbaz Zaferi!");
+                Thread.Sleep(4444);
+                Environment.Exit(0);
+            }
+            //Kumarbaz Tüccar Zaferi
+            else if (ortakErişim.OrtakListe.Para >= 1000 
+                && ortakErişim.OrtakListe.Olay.Contains("Kumar Parası")
+                && ortakErişim.OrtakListe.Olay.Contains("Tüccariyet"))
+            {
+                Vakalar vakaCs = new Vakalar();
+                Şehir ŞehirCs = new Şehir();
+                CiddiliYaz("Şanlı oyuncu!");
+                CiddiliYaz("Paran 1000'i geçti.");
+                Console.WriteLine($"Paran: {ortakErişim.OrtakListe.Para}");
+                Console.WriteLine($"{ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count} günlük erzağın var.");
+                Thread.Sleep(1000);
+                ŞehirCs.GrupYazdır();
+                Thread.Sleep(1000);
+                ŞehirCs.EnvanterYazdır();
+                Thread.Sleep(2000);
+                CiddiliYaz("Gerçek bir tüccarsın ama kumara da bulaşmışsın.");
+                CiddiliYaz("Oynadığın için teşekkürler.");
+                CiddiliYaz("\n\n\n", 200, 500);
+                CiddiliYaz("Kazandın!");
+                CiddiliYaz("Kumarlı Tüccarlık Zaferi!");
+                Thread.Sleep(4444);
+                Environment.Exit(0);
+
+            }
+            //Tüccar Zaferi
+            else if (ortakErişim.OrtakListe.Para >= 1000) //
+            {
+                Vakalar vakaCs = new Vakalar();
+                Şehir ŞehirCs = new Şehir();
+                CiddiliYaz("Şanlı oyuncu!");
+                CiddiliYaz("Paran 1000'i geçti.");
+                Console.WriteLine($"Paran: {ortakErişim.OrtakListe.Para}");
+                Console.WriteLine($"{ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count} günlük erzağın var.");
+                Thread.Sleep(1000);
+                ŞehirCs.GrupYazdır();
+                Thread.Sleep(1000);
+                ŞehirCs.EnvanterYazdır();
+                Thread.Sleep(2000);
+                CiddiliYaz("Gerçek bir tüccarsın.");
+                CiddiliYaz("Oynadığın için teşekkürler.");
+                CiddiliYaz("\n\n\n", 200, 500);
+                CiddiliYaz("Kazandın!");
+                CiddiliYaz("Tüccarlık Zaferi!");
+                Thread.Sleep(4444);
+                Environment.Exit(0);
+            }
+        }
+
+        static void TehlikeliArazi()
+        {
+            //Harita üzerinde Tehlikeli Arazi'den "?" üzerinden geçerken çalışır
             Random random = new Random();
             Vakalar vakaCs = new Vakalar();
             int rastgele = random.Next(1, 11);
@@ -444,8 +423,6 @@ namespace Kervan
             Kayıt kayıtCs = new Kayıt();
             kayıtCs.KayıtDosyası("kaydet");
         }
-
-
 
         public int KonumGöster(string xy)
         {
@@ -472,6 +449,39 @@ namespace Kervan
             {
                 ortakErişim.OrtakListe.oyuncuGlobalKonumY = değer;
             }
+        }
+
+        void HaritaBilgilendirme(string bildiri)
+        {
+            if (bildiri == "Harita")
+            {
+                Console.WriteLine(" P -> Bulunduğunuz konumu gösterir.");
+                Console.WriteLine(" # -> Engebeli arazi veya deniz (üzerinden geçilemez.)");
+                Console.WriteLine(" . -> Boş arazi. Geçilebilir.");
+                Console.WriteLine(" ? -> Tehlikeli arazi. Geçenlerden haber alınamıyor.");
+                Console.WriteLine(" 1-2 gibi sayılar -> Şehirleri veya köyleri (Yerleşkeleri) ifade eder.");
+                //Console.WriteLine(" S -> Oyunu save almak için gitmeniz gereken yer.");
+                Console.WriteLine("\n");
+            }
+            else if (bildiri == "Yerleşke")
+            {
+                Eşyalar EşyalarCs = new Eşyalar();
+                EşyalarCs.Print("Şehirler");
+            }
+        }
+        
+        static void CiddiliYaz(string metin, int minDeğer = 25, int maxDeğer = 105)
+        {
+            Random random = new Random();
+            int rastgele;
+            foreach (char harf in metin)
+            {
+                rastgele = random.Next(minDeğer, maxDeğer);
+                Console.Write(harf);
+                Thread.Sleep(rastgele);
+            }
+            Thread.Sleep(444);
+            Console.Write("\n");
         }
 
         private void İpucu()
@@ -526,6 +536,7 @@ namespace Kervan
                 case 43: Console.Write("İpucu: Vedalar hep üzücüdür. Evine bir kervan kurmak için veda ettin. Buna değmesini sağla."); break;
                 case 44: Console.Write("İpucu: Bu oyunu görsem yapımcısına 100 üzerinden 100 verirdim."); break;
             }
+            #region İpucunun havalı şekilde geçilmesini sağlayan kod dizini
             Console.WriteLine();
             Thread.Sleep(2416);
             for (int i = 0; i < 180; i += 0)
@@ -535,6 +546,7 @@ namespace Kervan
                 i += (int)((200 - i) * 0.1);
             }
             Console.WriteLine();
+            #endregion
         }
     }
 }
