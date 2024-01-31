@@ -1,0 +1,155 @@
+Dil:English
+
+
+
+All.GeçersizGirdiSayıGir:Invalid login. Please enter a number.
+All.Para:Paran -> 
+
+
+PROGRAM BAŞLIYOR
+_____________________________________________________________________
+
+Program.Main.BeforeStart:P indicates your current location on the map.
+
+Program.Menu.Selam.1:Greetings!
+Program.Menu.Selam.2:Welcome to the Kervan game!
+
+Program.Menu.Menu.1:1.Start Game
+Program.Menu.Menu.2:2.Last Saved Game
+Program.Menu.Menu.3:3.Language Options (Dil)
+Program.Menu.Menu.4:4.Cheat Codes
+Program.Menu.Menu.5:5.About Game
+Program.Menu.Menu.6:6.Credits
+Program.Menu.Menu.7:7.Exit
+Program.Menu.Menu.8:Please enter a number between 1-7 ->
+
+Program.Menu.Case1:Game Starting
+Program.Menu.Case2:P indicates your current location on the map.
+Program.Menu.Case3:(Construction has started as of 31.01.2024. If possible, it will be delivered within 3 days at the latest.)
+Program.Menu.Case3.1:Select language option ->
+Program.Menu.Case3.2:1. Türkçe
+Program.Menu.Case3.3:2. English
+Program.Menu.Case3.4:Your choice ->
+
+Program.Menu.Case4.Hile1:(Adds money)
+Program.Menu.Case4.Hile2:(Adds supplies)
+Program.Menu.Case4.Hile31:(Irrelevant)
+Program.Menu.Case4.Hile32:(Irrelevant)
+Program.Menu.Case4.Hile33:(Irrelevant)
+Program.Menu.Case41:(For these codes to work, you must type where w-a-s-d you can type.)
+Program.Menu.Case42:Also, when trying to guess a number in the casino, typing 'kumarbaz' reveals the number.
+
+Program.Menu.Case5.1:The game is inspired by the trade caravans in Mount & Blade Warband.
+Program.Menu.Case5.2:Our aim is to travel between cities and villages, buy and sell items and earn money.
+Program.Menu.Case5.3:When you pass 1000 coins, you finish the game and win.
+Program.Menu.Case5.4:5 If you have no money left and no items in your inventory, you will be bankrupt and lose.
+Program.Menu.Case5.5:There are 8 settlements in the game, 3 of them are cities and 5 are villages.
+Program.Menu.Case5.6:Buying from villages and selling in cities is relatively profitable (recommended)
+Program.Menu.Case5.7:The names of the villages indicate intensive production.
+Program.Menu.Case5.8:For example, you can find more wool and meat in Koyuncular Village.
+Program.Menu.Case5.9:Have fun!
+
+Program.Menu.Case6.1:Produced by me, Mushu
+Program.Menu.Case6.2:"Muhammet Şua Can"
+Program.Menu.Case6.3:The structure of the project was largely aided by the 'GPT-3.5 based language model'.
+Program.Menu.Case6.4:I had 75% of the codes written on it, but I had to change
+Program.Menu.Case6.5:or adjust 70% of it so that a game could be made on it.
+Program.Menu.Case6.6:When I say 60%, I mean 70% of 75%, that is, when we compare it to all the codes, 25% I wrote myself and 52.5% I took from gpt and changed it.
+Program.Menu.Case6.7:The rest is the gpt code. For example, I didn't understand Instance very well. But it works.
+
+Program.Menu.Case7.1:Did you open the game to close it?
+Program.Menu.Case7.2:Anyway, okay, I'm closing it.
+
+Program.Menu.CaseDefault:Invalid login. Please enter a number between 1-7.
+
+
+PROGRAM BİTTİ
+_____________________________________________________________________
+
+
+
+
+KAYIT BAŞLIYOR
+_____________________________________________________________________
+
+Kayıt.Kaydet.1:Saving events.
+Kayıt.Kaydet.2:Saving group.
+Kayıt.Kaydet.3:Saving Inventory.
+Kayıt.Kaydet.Son:Lists saved to text file.
+
+Kayıt.Yükle.1:Lists loaded from text file.
+Kayıt.Yükle.Hata.1:A log file does not exist.
+Kayıt.Yükle.Hata.2:The game will start from scratch
+
+
+KAYIT BİTTİ 
+_____________________________________________________________________
+
+
+
+
+KUMAR BAŞLIYOR
+_____________________________________________________________________
+
+Kumar.coinEnter.1:Your total money ->
+Kumar.coinEnter.2:You came to the casino. Enter the money you will deposit -> 
+Kumar.coinEnter.YeterizPara:Damn man! You don't have that much money.
+
+Kumar.Gamble.Giriş.1.1:You deposited -> 
+Kumar.Gamble.Giriş.1.2:Minimum amount you will earn -> 
+Kumar.Gamble.Giriş.2:If you lose, you will lose all your money.
+Kumar.Gamble.Giriş.3:Do you want to play? (1 for Yes, 0 for No) -> 
+
+Kumar.Gamble.1:Prediction range of numbers -> 
+Kumar.Gamble.2:The amount you can try to guess -> 
+Kumar.Gamble.3:try -> 
+
+Kumar.Gamble.Oyun.1:enter your prediction -> 
+Kumar.Gamble.Oyun.küçük:Enter a SMALLER number.
+Kumar.Gamble.Oyun.büyük:Enter a BIGGER number.
+
+Kumar.Gamble.Oyun.Yatırdığın:Your deposit ->
+Kumar.Gamble.Oyun.Para:Your current money -> 
+
+Kumar.Gamble.Oyun.Win: W I N ! !
+Kumar.Gamble.Oyun.Win.1:Congratulations!
+Kumar.Gamble.Oyun.Win.2:Number of attempts -> 
+Kumar.Gamble.Oyun.Win.3:The number you found -> 
+Kumar.Gamble.Oyun.Win.4:The amount of increase in your money -> 
+
+Kumar.Gamble.Oyun.Lose: L O S T ! !
+Kumar.Gamble.Oyun.Lose.1:The number you were looking for was -> 
+Kumar.Gamble.Oyun.Lose.2:You guessed it this many times ->
+Kumar.Gamble.Oyun.İflas:You spent all your money. You are leaving the casino.
+
+Kumar.Out:You left the casino.
+
+KUMAR BİTİYOR
+_____________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

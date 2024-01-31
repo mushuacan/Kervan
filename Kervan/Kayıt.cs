@@ -37,21 +37,21 @@ namespace Kervan
             OL_Singleton ortakErişim = OL_Singleton.Instance;
             using (StreamWriter writer = new StreamWriter(dosyaYolu))
             {
-                Console.WriteLine("Olaylar Kaydediliyor.");
+                Console.WriteLine(Language.GetText("Kayıt.Kaydet.1"));
                 foreach (string item in ortakErişim.OrtakListe.Olay)
                 {
                     writer.WriteLine("Olay:" + item);
                 }
                 Thread.Sleep(44);
 
-                Console.WriteLine("Gruptaki Elemanlar Kaydediliyor.");
+                Console.WriteLine(Language.GetText("Kayıt.Kaydet.2"));
                 foreach (string item in ortakErişim.OrtakListe.Grup)
                 {
                     writer.WriteLine("Grup:" + item);
                 }
                 Thread.Sleep(44);
 
-                Console.WriteLine("Envanter Kaydediliyor.");
+                Console.WriteLine(Language.GetText("Kayıt.Kaydet.3"));
                 foreach (string item in ortakErişim.OrtakListe.Envanter)
                 {
                     writer.WriteLine("Envanter:" + item);
@@ -66,7 +66,7 @@ namespace Kervan
                 Console.WriteLine(haritaCs.KonumGöster("y") + " Y konumu");
                 Thread.Sleep(44);
             }
-            Console.WriteLine("Listeler metin dosyasına kaydedildi.");
+            Console.WriteLine(Language.GetText("Kayıt.Kaydet.Son"));
             Environment.Exit(0);
         }
 
@@ -124,7 +124,7 @@ namespace Kervan
                         }
                     }
                 }
-                Console.WriteLine("Listeler metin dosyasından yüklendi.");
+                Console.WriteLine(Language.GetText("Kayıt.Yükle.1"));
                 Thread.Sleep(2000);
                 Console.Write(".");
                 Thread.Sleep(300);
@@ -137,9 +137,9 @@ namespace Kervan
             else
             {
                 // Dosya mevcut değil
-                Console.WriteLine("Bir kayıt dosyası mevcut değil.");
+                Console.WriteLine(Language.GetText("Kayıt.Yükle.Hata.1"));
                 Thread.Sleep(1000);
-                Console.Write("Sizi oyuna sıfırdan başlar gibi başlatacağız.");
+                Console.WriteLine(Language.GetText("Kayıt.Yükle.Hata.2"));
                 Thread.Sleep(2000);
                 for (int i = 0; i < 180; i += 0)
                 {

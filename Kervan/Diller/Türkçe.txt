@@ -1,0 +1,158 @@
+Dil:Türkçe
+
+
+
+
+ALL NOKTALAR BAŞLIYOR
+_____________________________________________________________________
+
+All.GeçersizGirdiSayıGir:Geçersiz giriş. Lütfen bir sayı girin.
+All.Para:Paran -> 
+
+ALL NOKTALAR BİTTİ
+_____________________________________________________________________
+
+
+
+
+PROGRAM BAŞLIYOR
+_____________________________________________________________________
+
+Program.Main.BeforeStart:P haritadaki sizin bulunduğunuz konumu gösterir.
+
+Program.Menu.Selam.1:Selamlar!
+Program.Menu.Selam.2:Kervan oyununa hoşgeldin!
+
+Program.Menu.Menu.1:1.Oyuna Başla
+Program.Menu.Menu.2:2.Son Kaydı Oyna
+Program.Menu.Menu.3:3.Dil Seçeneklerini Gör (Language)
+Program.Menu.Menu.4:4.Hile Kodlarını Gör
+Program.Menu.Menu.5:5.Oyun Hakkında Bilgi Al
+Program.Menu.Menu.6:6.Yapımcıları Hakkında Bilgi Al
+Program.Menu.Menu.7:7.Çıkış Yap
+Program.Menu.Menu.8:Lütfen 1-7 arası bir sayı girin ->
+
+Program.Menu.Case1:Oyun Başlatılıyor
+Program.Menu.Case2:P haritadaki sizin bulunduğunuz konumu gösterir.
+Program.Menu.Case3:(31.01.2024 itibariyle yapımına başlanmıştır. Mümkünse en geç 3 gün içerisinde getirilecektir.)
+Program.Menu.Case3.1:Dil seçeneğini belirtin ->
+Program.Menu.Case3.2:1. Türkçe
+Program.Menu.Case3.3:2. English
+Program.Menu.Case3.4:Seçiminiz -> 
+
+Program.Menu.Case4.Hile1:(Para ekler)
+Program.Menu.Case4.Hile2:(Erzak ekler)
+Program.Menu.Case4.Hile31:(Alakasız)
+Program.Menu.Case4.Hile32:(Alakasız)
+Program.Menu.Case4.Hile33:(Alakasız)
+Program.Menu.Case41:(Bu kodların çalışması için haritada w-a-s-d girebildiğiniz kısma yazmanız gerekmektedir.)
+Program.Menu.Case42:Ayrıca kumarhanede sayı bilmeye çalışırken 'kumarbaz' yazmak sayıyı ifşalar.
+
+Program.Menu.Case5.1:Oyun Mount&Blade Warband oyunundaki ticaret kervanlarından esinlenilmiştir.
+Program.Menu.Case5.2:Amacımız Şehirler ve Köyler arasında dolaşarak eşya alıp satmak ve para kazanmaktır.
+Program.Menu.Case5.3:1000 parayı geçince oyunu bitirmiş ve kazanmış olursunuz.
+Program.Menu.Case5.4:5 Paranız kalmazsa ve envanterinizde eşyanız da yoksa, iflas etmiş olursunuz ve kaybedersiniz.
+Program.Menu.Case5.5:Oyunda 8 yerleşke bulunup 3'ü Şehir 5'i Köydür.
+Program.Menu.Case5.6:Köylerden alıp Şehirlerde satmak görece kârlıdır (tavsiyedir)
+Program.Menu.Case5.7:Köylerin isimleri yoğunluklu üretimi göstermektedir.
+Program.Menu.Case5.8:Mesela Koyuncular Köyünde Yün'ü ve Et'i daha fazla bulabilirsiniz.
+Program.Menu.Case5.9:İyi oyunlar!
+
+Program.Menu.Case6.1:Yapımcı, bendeniz Mushu
+Program.Menu.Case6.2:"Muhammet Şua Can"
+Program.Menu.Case6.3:Projenin yapımında büyük oranda 'GPT-3.5 tabanlı dil modeli'nden yardım görülmüştür.
+Program.Menu.Case6.4:Kodların %75'ini ona yazdırdım ama bütünde bir oyun olabilmesi için %70'ını falan değiştirmek durumunda,
+Program.Menu.Case6.5:ayarlamak durumunda kaldım.
+Program.Menu.Case6.6:%60 derken %75'in %70'ı yani bütün kodlara oranladığımızda %25 kendim yazdım %52,5'ını gpt'den lıp değiştirdim.
+Program.Menu.Case6.7:Geri kalan da gpt'nin kodu. Mesela Instance'ı pek anlamadım. Ama çalışıyor yani.
+
+Program.Menu.Case7.1:Oyunu kapatmak için mi açtın?
+Program.Menu.Case7.2:Neyse tamam kapatıyorum.
+
+Program.Menu.CaseDefault:Geçersiz giriş. Lütfen 1-7 arası bir sayı girin.
+
+
+PROGRAM BİTTİ
+_____________________________________________________________________
+
+
+
+
+KAYIT BAŞLIYOR
+_____________________________________________________________________
+
+Kayıt.Kaydet.1:Olaylar Kaydediliyor.
+Kayıt.Kaydet.2:Gruptaki Elemanlar Kaydediliyor.
+Kayıt.Kaydet.3:Envanter Kaydediliyor.
+Kayıt.Kaydet.Son:Listeler metin dosyasına kaydedildi.
+
+Kayıt.Yükle.1:Listeler metin dosyasından yüklendi.
+Kayıt.Yükle.Hata.1:Bir kayıt dosyası mevcut değil.
+Kayıt.Yükle.Hata.2:Sizi oyuna sıfırdan başlar gibi başlatacağız.
+
+
+KAYIT BİTTİ 
+_____________________________________________________________________
+
+
+
+
+KUMAR BAŞLIYOR
+_____________________________________________________________________
+
+Kumar.coinEnter.1:Toplam paran ->
+Kumar.coinEnter.2:Kumarhâneye geldin. Kaç para yatırmak istersin -> 
+Kumar.coinEnter.YeterizPara:Lanet olsun dostum! O kadar paran yok.
+
+Kumar.Gamble.Giriş.1.1:Şu kadar para yatırdın -> 
+Kumar.Gamble.Giriş.1.2:En az kazanacağın miktar -> 
+Kumar.Gamble.Giriş.2:Kaybedersen bütün paranı kaybedeceksin.
+Kumar.Gamble.Giriş.3:Oynamak istiyor musunuz? (Evet için 1, Hayır için 0) -> 
+
+Kumar.Gamble.1:Sayıların tahmin aralığı -> 
+Kumar.Gamble.2:Şu kadar tahmin hakkın var -> 
+Kumar.Gamble.3:deneme -> 
+
+Kumar.Gamble.Oyun.1:tahmininizi girin -> 
+Kumar.Gamble.Oyun.küçük:Daha KÜÇÜK bir sayı girin.
+Kumar.Gamble.Oyun.büyük:Daha BÜYÜK bir sayı girin.
+
+Kumar.Gamble.Oyun.Yatırdığın:Yatırdığınız para ->
+Kumar.Gamble.Oyun.Para:Güncel paranız -> 
+
+Kumar.Gamble.Oyun.Win: K A Z A N D I N !!!!
+Kumar.Gamble.Oyun.Win.1:Tebrikler!
+Kumar.Gamble.Oyun.Win.2:Deneme sayınız -> 
+Kumar.Gamble.Oyun.Win.3:Bulduğunuz sayı -> 
+Kumar.Gamble.Oyun.Win.4:Paranızdaki artış miktarı -> 
+
+Kumar.Gamble.Oyun.Lose: K A Y B E T T İ N !!!!
+Kumar.Gamble.Oyun.Lose.1:Aradığınız sayı şuydu -> 
+Kumar.Gamble.Oyun.Lose.2:Şu kadar kez tahmin ettiniz ->
+Kumar.Gamble.Oyun.İflas:Bütün paranı harcadın. Kumarhaneyi terk ediyorsun.
+
+Kumar.Out:Kumarhâneden çıktın.
+
+KUMAR BİTİYOR
+_____________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

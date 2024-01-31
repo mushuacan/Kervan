@@ -11,8 +11,8 @@ namespace Kervan
         public int coinEnter()
         {
             OL_Singleton ortakErişim = OL_Singleton.Instance;
-            Console.WriteLine($"Toplam paran {ortakErişim.OrtakListe.Para}.");
-            Console.Write("Kumarhâneye geldin. Kaç para yatırmak istersin: ");
+            Console.WriteLine(Language.GetText("Kumar.coinEnter.1") + $" {ortakErişim.OrtakListe.Para}.");
+            Console.Write(Language.GetText("Kumar.coinEnter.2") + " ");
 
             #region Kumarhanede Para Girişi
             string girilenMiktar = Console.ReadLine();
@@ -26,13 +26,13 @@ namespace Kervan
                 }
                 else
                 {
-                    Console.WriteLine("Lanet olsun dostum! O kadar paran yok.");
+                    Console.WriteLine(Language.GetText("Kumar.coinEnter.YeterizPara"));
                     return coinEnter();
                 }
             }
             else
             {
-                Console.WriteLine("Geçersiz giriş. Lütfen bir tamsayı girin.");
+                Console.WriteLine(Language.GetText("All.GeçersizGirdiSayıGir"));
                 coinEnter();
                 // Giriş geçerli bir tamsayı değilse, uygun bir hata mesajı verebilir veya programı sonlandırabilirsiniz.
             }
@@ -72,11 +72,12 @@ namespace Kervan
                 #endregion
 
                 Random randomCs = new Random();
-                int targetNumber = randomCs.Next(1, randomMax); 
+                int targetNumber = randomCs.Next(1, randomMax);
 
-                Console.WriteLine($"\nŞu kadar para yatırdın: {coin}\nKazanırsan en az {coinRate} kadar para kazanacaksın.  ");
-                Console.WriteLine("Kaybedersen bütün paranı kaybedeceksin.");
-                Console.Write("\nOynamak istiyor musunuz? (Evet için 1, Hayır için 0): ");
+                Console.WriteLine("\n" + Language.GetText("Kumar.Gamble.Giriş.1.1") + $" {coin}");
+                Console.WriteLine(Language.GetText("Kumar.Gamble.Giriş.1.2") + $" {coinRate}");
+                Console.WriteLine(Language.GetText("Kumar.Gamble.Giriş.2"));
+                Console.Write("\n" + Language.GetText("Kumar.Gamble.Giriş.3") + " ");
 
                 playAgainInput = Console.ReadLine();
                 if (playAgainInput != "1")
@@ -84,11 +85,12 @@ namespace Kervan
                     break;
                 }
 
-                Console.WriteLine($"\n1 ile {randomMax - 1} arasında bir sayıyı tahmin edin. {due} kadar hakkın var.");
+                Console.WriteLine("\n" + Language.GetText("Kumar.Gamble.1") + $" 1-{randomMax - 1}");
+                Console.WriteLine(Language.GetText("Kumar.Gamble.2") + $" {due}");
 
                 do
                 {
-                    Console.Write($"{attempts + 1}. tahmininizi girin: ");
+                    Console.Write($"{attempts + 1}. " + Language.GetText("Kumar.Gamble.3") + " ");
                     string input = Console.ReadLine();
                     attempts++;
 
@@ -102,42 +104,46 @@ namespace Kervan
                             Console.Write($"\n\n\nHile aktifleştirildi. Sayı: {targetNumber}\n\n\n");
                             continue;
                         }
-                        Console.WriteLine("Geçersiz giriş. Lütfen bir sayı girin.");
+                        Console.WriteLine(Language.GetText("All.GeçersizGirdiSayıGir"));
                         continue;
                     }
 
                     // Tahminin doğruluğunu kontrol etme
                     if (guess < targetNumber)
                     {
-                        Console.WriteLine("Daha BÜYÜK bir sayı girin.");
+                        Console.WriteLine(Language.GetText("Kumar.Gamble.Oyun.büyük"));
                     }
                     else if (guess > targetNumber)
                     {
-                        Console.WriteLine("Daha KÜÇÜK bir sayı girin.");
+                        Console.WriteLine(Language.GetText("Kumar.Gamble.Oyun.küçük"));
                     }
 
                     if (guess == targetNumber)
                     {
-                        Console.WriteLine($"\nK A Z A N D I N !!!!\n");
+                        Console.WriteLine("\n" + Language.GetText("Kumar.Gamble.Oyun.Win") + "\n");
                         Thread.Sleep(500);
-                        Console.WriteLine($"Tebrikler! {attempts} denemede doğru sayıyı buldunuz. Sayı: {targetNumber}\n");
-                        Console.WriteLine($"Paranız {coin} idi");
+                        Console.WriteLine(Language.GetText("Kumar.Gamble.Oyun.Win.1"));
+                        Console.WriteLine(Language.GetText("Kumar.Gamble.Oyun.Win.2") + $" {attempts}\n");
+                        Console.WriteLine(Language.GetText("Kumar.Gamble.Oyun.Win.3") + $" {targetNumber}");
+                        Console.WriteLine(Language.GetText("Kumar.Gamble.Oyun.Yatırdığın") + $" {coin}");
                         Thread.Sleep(200);
                         int coinWin = (int)(coinRate * (due - attempts + 5) / 5);
                         coin = coin + coinWin;
-                        Console.WriteLine($"Paranız {coinWin} artarak {coin} oldu.");
+                        Console.WriteLine(Language.GetText("Kumar.Gamble.Oyun.Win.4") + $" {coinWin}");
+                        Console.WriteLine(Language.GetText("Kumar.Gamble.Oyun.Para") + $" {coin}");
                         Thread.Sleep(300);
                         whileLoop = false;
                     }
                     else if (attempts == due)
                     {
-                        Console.WriteLine($"\nK A Y B E T T İ N !!!!\n");
-                        Console.WriteLine($"{targetNumber} sayısını {attempts} defa denediysen de bulamadın.\n");
-                        Console.WriteLine($"Paranız {coin} idi");
+                        Console.WriteLine($"\n" + Language.GetText("Kumar.Gamble.Oyun.Lose") + "\n");
+                        Console.WriteLine(Language.GetText("Kumar.Gamble.Oyun.Lose.1") + $" {targetNumber}");
+                        Console.WriteLine(Language.GetText("Kumar.Gamble.Oyun.Lose.2") + $" {attempts}\n");
+                        Console.WriteLine(Language.GetText("Kumar.Gamble.Oyun.Yatırdığın") + $" {coin}");
                         playAgainInput = "NoCoin";
                         coinRate = coin;
                         coin = 0;
-                        Console.Write("Bütün paranı harcadın. Kumarhaneyi terk ediyorsun.");
+                        Console.WriteLine(Language.GetText("Kumar.Gamble.Oyun.İflas"));
                         whileLoop = false;
                         Gamble(coin, coinAtFirst);
                         return;
@@ -150,7 +156,9 @@ namespace Kervan
             OL_Singleton ortakErişim = OL_Singleton.Instance;
 
             ortakErişim.OrtakListe.Para -= coinAtFirst;
-            Console.WriteLine($"\n\nKumarhâneden çıktın. {coinAtFirst} kadar para yatırdın ve şuan {coin} kadar parayla çıkıyorsun.\n\n\n");
+            Console.WriteLine("\n\n" + Language.GetText("Kumar.Out"));
+            Console.WriteLine(Language.GetText("Kumar.Gamble.Oyun.Yatırdığın") + $" {coinAtFirst}");
+            Console.WriteLine(Language.GetText("Kumar.Gamble.Oyun.Para") + $" {coin}\n\n\n");
 
             #region Kumarhane Çıkışı Vakaları
             Random random = new Random();
@@ -177,7 +185,7 @@ namespace Kervan
 
             Harita haritaCs = new Harita();
             haritaCs.oyunBekasıKontrol(true);
-            Console.WriteLine($"Toplam paran {ortakErişim.OrtakListe.Para}.");
+            Console.WriteLine(Language.GetText("All.Para") + $" {ortakErişim.OrtakListe.Para}");
         }
     }
 }
