@@ -53,8 +53,10 @@ namespace Kervan
             #endregion
 
             ŞehirCs.Erzak("Kontrol");
-            Console.Write("(w-Yukarı, s-Aşağı, d-Sağa, a-Sola\n");
-            Console.Write("1-Harita bilgilendirmesi, 2-Yerleşkeler (isimleri),\n3-Kendi bilgilerin, 4-İpucu Al, 5-Kaydedip çık, .)\n-> ");
+            Console.WriteLine(Language.GetText("Harita.Menu.1"));
+            Console.WriteLine(Language.GetText("Harita.Menu.2"));
+            Console.WriteLine(Language.GetText("Harita.Menu.3"));
+            Console.Write(Language.GetText("Harita.Menu.4"));
             string yon = Console.ReadLine();
 
             #region Haritada Dolaşma
@@ -85,8 +87,8 @@ namespace Kervan
                     Thread.Sleep(500);
                     break;
                 case "3":
-                    Console.WriteLine($"Paran: {ortakErişim.OrtakListe.Para}");
-                    Console.WriteLine($"{ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count} günlük erzağın var.");
+                    Console.WriteLine(Language.GetText("Harita.Menu.Case3.1") + $" {ortakErişim.OrtakListe.Para}");
+                    Console.WriteLine(Language.GetText("Harita.Menu.Case3.2") + $" {ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count}");
                     Thread.Sleep( 1000 );
                     ŞehirCs.GrupYazdır();
                     Thread.Sleep( 1000 );
@@ -160,7 +162,7 @@ namespace Kervan
                     break;
 
                 default:
-                    Console.WriteLine("Geçersiz yönlendirme.");
+                    Console.WriteLine(Language.GetText("All.GeçersizYönlendirme"));
                     Thread.Sleep(500);
                     oyuncuHareket();
                     break;
@@ -286,12 +288,13 @@ namespace Kervan
             #region Hastalıktan ölme
             if (ortakErişim.OrtakListe.Olay.Contains("Doktor") && rastgele == 1)
             {
-                CiddiliYaz("\nYolda hastalığın iyice ağırlaştı.");
-                CiddiliYaz("Kervanı şehirde doktor görmek için terk ettin.");
-                CiddiliYaz("Ancak yanındaki kişinin ısrarı üzere bir ağaç gölgesinde durdun.");
-                CiddiliYaz("Doktoru buraya çağırmak için gitti.");
-                CiddiliYaz("Dönmesini beklerken uyanamayacağın bir uykuya daldın.");
-                CiddiliYaz("\n\n\nOyun Bitti.\n\nOynadığınız için teşekkürler.");
+                CiddiliYaz("\n" + Language.GetText("Harita.Olay.Doktor.Ölüm.1"));
+                CiddiliYaz(Language.GetText("Harita.Olay.Doktor.Ölüm.2"));
+                CiddiliYaz(Language.GetText("Harita.Olay.Doktor.Ölüm.3"));
+                CiddiliYaz(Language.GetText("Harita.Olay.Doktor.Ölüm.4"));
+                CiddiliYaz(Language.GetText("Harita.Olay.Doktor.Ölüm.5"));
+                CiddiliYaz("\n\n\n" + Language.GetText("Harita.Olay.Doktor.Ölüm.6") 
+                                + "\n\n" + Language.GetText("Harita.Olay.Doktor.Ölüm.7"));
                 Program program = new Program();
                 program.Maincik();
                 Environment.Exit(0);
@@ -325,13 +328,13 @@ namespace Kervan
             //Kumarda tüm parayı harcayınca gelen pişmanlık hissi
             if (kumarMı && ortakErişim.OrtakListe.Para < 5 && ortakErişim.OrtakListe.Envanter.Count <= 1) //KUMARDA PARA BİTİRME
             {
-                CiddiliYaz("Kumarbazlığın peşinde koştururken bütün paranı harcadın.");
-                CiddiliYaz("Tüccar olacağım diyerek çıktığın köye bütün parasını kumarbaz halde yemiş biri olarak döndün.");
-                CiddiliYaz("Köyde ailenizin nâmına bir kara leke olarak yapıştın.");
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Lose.Kumar.1"));
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Lose.Kumar.2"));
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Lose.Kumar.3"));
                 CiddiliYaz("\n\n\n", 200, 500);
-                CiddiliYaz("Kumarda bütün paranı kaybettin!");
-                CiddiliYaz("\n\nOyun Bitti!");
-                CiddiliYaz("Kumar Mağlubiyeti!");
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Lose.Kumar.4"));
+                CiddiliYaz("\n\n" + Language.GetText("Harita.Bitiş.Lose.Kumar.5"));
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Lose.Kumar.6"));
                 Thread.Sleep(4444);
                 Environment.Exit(0);
             }
@@ -339,8 +342,8 @@ namespace Kervan
             if (ortakErişim.OrtakListe.Para < 5 && ortakErişim.OrtakListe.Envanter.Count <= 1)
             {
                 Vakalar vakaCs = new Vakalar();
-                CiddiliYaz("Beş paran kalmadı. Eşyan da yok.");
-                CiddiliYaz("Etrafındaki herkes sayıp sövüp gitti.");
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Lose.1"));
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Lose.2"));
                 vakaCs.VakaAyrıştırıcı("Son");
             }
 
@@ -349,14 +352,14 @@ namespace Kervan
                 && ortakErişim.OrtakListe.Olay.Contains("Kumar Parası")
                 && !ortakErişim.OrtakListe.Olay.Contains("Tüccariyet"))
             {
-                CiddiliYaz("Tüccar olma niyetiyle çıktığın bu yolda kumarbazın teki oldun.");
-                CiddiliYaz("Ama öyle olacak ki oyunu gene de kazanmayı becerdin!");
-                CiddiliYaz("Paran 1000'i geçti, hem de ticaret yapmadan!");
-                CiddiliYaz("Gerçek bir kumarbazsın.");
-                CiddiliYaz("Oynadığın için teşekkürler.");
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Kumarbaz.1"));
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Kumarbaz.2"));
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Kumarbaz.3"));
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Kumarbaz.4"));
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Kumarbaz.5"));
                 CiddiliYaz("\n\n\n", 200, 500);
-                CiddiliYaz("Kazandın!");
-                CiddiliYaz("Kumarbaz Zaferi!");
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Kumarbaz.6"));
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Kumarbaz.7"));
                 Thread.Sleep(4444);
                 Environment.Exit(0);
             }
@@ -367,20 +370,20 @@ namespace Kervan
             {
                 Vakalar vakaCs = new Vakalar();
                 Şehir ŞehirCs = new Şehir();
-                CiddiliYaz("Şanlı oyuncu!");
-                CiddiliYaz("Paran 1000'i geçti.");
-                Console.WriteLine($"Paran: {ortakErişim.OrtakListe.Para}");
-                Console.WriteLine($"{ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count} günlük erzağın var.");
+                CiddiliYaz(Language.GetText("Harita.Bitiş.KumarbazTüccar.1"));
+                CiddiliYaz(Language.GetText("Harita.Bitiş.KumarbazTüccar.2"));
+                Console.WriteLine(Language.GetText("All.Para") + $" {ortakErişim.OrtakListe.Para}");
+                Console.WriteLine(Language.GetText("All.Erzak") + $" {ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count}");
                 Thread.Sleep(1000);
                 ŞehirCs.GrupYazdır();
                 Thread.Sleep(1000);
                 ŞehirCs.EnvanterYazdır();
                 Thread.Sleep(2000);
-                CiddiliYaz("Gerçek bir tüccarsın ama kumara da bulaşmışsın.");
-                CiddiliYaz("Oynadığın için teşekkürler.");
+                CiddiliYaz(Language.GetText("Harita.Bitiş.KumarbazTüccar.3"));
+                CiddiliYaz(Language.GetText("Harita.Bitiş.KumarbazTüccar.4"));
                 CiddiliYaz("\n\n\n", 200, 500);
-                CiddiliYaz("Kazandın!");
-                CiddiliYaz("Kumarlı Tüccarlık Zaferi!");
+                CiddiliYaz(Language.GetText("Harita.Bitiş.KumarbazTüccar.5"));
+                CiddiliYaz(Language.GetText("Harita.Bitiş.KumarbazTüccar.6"));
                 Thread.Sleep(4444);
                 Environment.Exit(0);
 
@@ -390,20 +393,20 @@ namespace Kervan
             {
                 Vakalar vakaCs = new Vakalar();
                 Şehir ŞehirCs = new Şehir();
-                CiddiliYaz("Şanlı oyuncu!");
-                CiddiliYaz("Paran 1000'i geçti.");
-                Console.WriteLine($"Paran: {ortakErişim.OrtakListe.Para}");
-                Console.WriteLine($"{ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count} günlük erzağın var.");
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Tüccar.1"));
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Tüccar.2"));
+                Console.WriteLine(Language.GetText("All.Para") + $" {ortakErişim.OrtakListe.Para}");
+                Console.WriteLine(Language.GetText("All.Erzak") + $" {ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count} günlük erzağın var.");
                 Thread.Sleep(1000);
                 ŞehirCs.GrupYazdır();
                 Thread.Sleep(1000);
                 ŞehirCs.EnvanterYazdır();
                 Thread.Sleep(2000);
-                CiddiliYaz("Gerçek bir tüccarsın.");
-                CiddiliYaz("Oynadığın için teşekkürler.");
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Tüccar.3"));
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Tüccar.4"));
                 CiddiliYaz("\n\n\n", 200, 500);
-                CiddiliYaz("Kazandın!");
-                CiddiliYaz("Tüccarlık Zaferi!");
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Tüccar.5"));
+                CiddiliYaz(Language.GetText("Harita.Bitiş.Tüccar.6"));
                 Thread.Sleep(4444);
                 Environment.Exit(0);
             }
@@ -455,12 +458,11 @@ namespace Kervan
         {
             if (bildiri == "Harita")
             {
-                Console.WriteLine(" P -> Bulunduğunuz konumu gösterir.");
-                Console.WriteLine(" # -> Engebeli arazi veya deniz (üzerinden geçilemez.)");
-                Console.WriteLine(" . -> Boş arazi. Geçilebilir.");
-                Console.WriteLine(" ? -> Tehlikeli arazi. Geçenlerden haber alınamıyor.");
-                Console.WriteLine(" 1-2 gibi sayılar -> Şehirleri veya köyleri (Yerleşkeleri) ifade eder.");
-                //Console.WriteLine(" S -> Oyunu save almak için gitmeniz gereken yer.");
+                Console.WriteLine(Language.GetText("Harita.Bilgilendirme.1"));
+                Console.WriteLine(Language.GetText("Harita.Bilgilendirme.2"));
+                Console.WriteLine(Language.GetText("Harita.Bilgilendirme.3"));
+                Console.WriteLine(Language.GetText("Harita.Bilgilendirme.4"));
+                Console.WriteLine(Language.GetText("Harita.Bilgilendirme.5"));
                 Console.WriteLine("\n");
             }
             else if (bildiri == "Yerleşke")
@@ -488,54 +490,9 @@ namespace Kervan
         {
             Random random = new Random();
             int rastgele = random.Next(1, 44); //44. şıkkı göstermeyeceğini biliyorum.
-            Console.Write("\n\n" + rastgele + ".");
-            switch (rastgele)
-            {
-                case 1: Console.Write("İpucu: Köylerden alıp şehirlerde satmak çok daha kârlıdır."); break;
-                case 2: Console.Write("İpucu: Erzağınız biterse grubunuzdakiler size düşman kesilebilir."); break;
-                case 3: Console.Write("İpucu: Garibe yemek vermek sevaptır."); break;
-                case 4: Console.Write("İpucu: Tehlikeli arazide ilerlemek bir şey kaybetmeseniz bile zaman alacaktır."); break;
-                case 5: Console.Write("İpucu: Şehirde kumar oynamak sadece bir sayı bulmaca oyunudur."); break;
-                case 6: Console.Write("İpucu: Köylerden alamayacağınız elemanları (Koruma & Aşçı) Şehirlerden temin edebilirsiniz."); break;
-                case 7: Console.Write("İpucu: Korumalar sizi tehlikeli durumlarda kalmaktan korur."); break;
-                case 8: Console.Write("İpucu: Ekibinize Aşçı almak erzak kontrolünü sağlar ve erzağınız daha uzun gider."); break;
-                case 9: Console.Write("İpucu: Bu oyunun yapıncısı Mushu'dur."); break;
-                case 10: Console.Write("İpucu: Projenizi kaydetip istediğiniz zaman kaldığınız yerden devam edebilirsiniz.\n Ama dikkat edin, kayıt üstüne kayıt almak önceki kaydı silecektir."); break;
-                case 11: Console.Write("İpucu: Kervan oyunu aslında bir Final Projesi olarak yapıldı."); break;
-                case 12: Console.Write("İpucu: Tehlikeli araziden geçmeyi düşünüyorsanız et-balık almayın. Vahşi hayvanları çekebilir."); break;
-                case 13: Console.Write("İpucu: Oyunda en çok kâr getiren eşya Elmas Yüzüktür (ve en nâdir bulunan)."); break;
-                case 14: Console.Write("İpucu: Erzağınızın bitmemesi için Şehirlerden veya Köylerden alımda bulunabilirsiniz."); break;
-                case 15: Console.Write("İpucu: Erzak bu oyunda önemlidir."); break;
-                case 16: Console.Write("İpucu: Oyunda 0 koduna sahip Harabeler diye bir bölge olduğunu biliyor muydun?"); break; //bkn. Eşyalar.Eşya() -> ŞehirlerListesi
-                case 17: Console.Write("İpucu: Haşin Koruma pahalı olabilir ama gerçekten de koruyor."); break;
-                case 18: Console.Write("İpucu: Koyuncu Köylerinden Et ve Yün alıp en yakın Şehirde satmak oldukça kârlıdır."); break;
-                case 19: Console.Write("İpucu: Hangi numara hangi şehri temsil ediyor öğrenmek için 'Yerleşkeler'in kodunu gir."); break;
-                case 20: Console.Write("İpucu: 'iflas' yazarak iflas edebilirsin."); break;
-                case 21: Console.Write("İpucu: Yün'ü Koyuncu köyünden alıp, Şehirlerde değil ama başka köylerde satmak daha kârlıdır."); break;
-                case 22: Console.Write("İpucu: İçki'ye nedense buranın köylüleri daha düşkün, en çok ithal edeniyse 'Kuzey Limen Şehri'."); break;
-                case 23: Console.Write("İpucu: 'Merkez Şehir'dekiler biraz içki düşkünü mü ne..."); break;
-                case 24: Console.Write("İpucu: 24 güzel sayı."); break;
-                case 25: Console.Write("İpucu: 'Madenciler Köyü' tuz ve demiri en ucuza alabileceğin yerdir."); break;
-                case 26: Console.Write("İpucu: 'Kuzey Liman Şehri'nde tuza ihtiyaç var."); break;
-                case 27: Console.Write("İpucu: 'Kuzey Liman Şehri'nde demire ihtiyaç var."); break;
-                case 28: Console.Write("İpucu: Çömlekleri 'Merkez Şehir'den alıp 'Falanca Liman Şehri'nde satmak daha kârlıdır."); break;
-                case 29: Console.Write("İpucu: Yağ'ı Kuzey Yerleşkelerden alıp Güney Yerleşkelerde satmak oldukça kârlı."); break;
-                case 30: Console.Write("İpucu: Güney'den alıp Kuzey'de satmak İpek için oldukça kâr getiren bir hareket."); break;
-                case 31: Console.Write("İpucu: 'Merkez Şehir'dekiler Baharat Düşkünü."); break;
-                case 32: Console.Write("İp mi ucu?"); break;
-                case 33: Console.Write("İpucu: Midye için en çok para verenler Köylülermiş."); break;
-                case 34: Console.Write("İpucu: Midye ve Balığı liman Yerleşkelerden oldukça ucuza bulabilirsin."); break;
-                case 35: Console.Write("İpucu: Merkez Şehir'de keten üretimi çokmuş."); break;
-                case 36: Console.Write("İpucu: Merkez Şehir'de bal çokmuş."); break;
-                case 37: Console.Write("İpucu: Kuzey Liman Şehri'nde bal kıtlığı varmış."); break;
-                case 38: Console.Write("İpucu: Elmas Yüzük bulursan Kuzey Liman Şehri'ne git. Süse orada daha çok para harcanıyor."); break;
-                case 39: Console.Write("İpucu: Bu oyuna 20'sinde başlanıp 25'inde oynanabilir bir versiyonun ulaşılmıştır."); break;
-                case 40: Console.Write("İpucu: Mount and Blade Warband'ta en kârlı dükkan Reyvadin Şehrindeki Kadife Dokuma Atölyesidir."); break; //Bu oyuna da dükkan eklesek olurmuş bak
-                case 41: Console.Write("İpucu: 41 kere Maşallah."); break;
-                case 42: Console.Write("İpucu: The answer to life, the universe, and everything..."); break; //Göndermemizi de yapalım
-                case 43: Console.Write("İpucu: Vedalar hep üzücüdür. Evine bir kervan kurmak için veda ettin. Buna değmesini sağla."); break;
-                case 44: Console.Write("İpucu: Bu oyunu görsem yapımcısına 100 üzerinden 100 verirdim."); break;
-            }
+            Console.Write("\n\n" + rastgele + Language.GetText("Harita.İpucu") + " ");
+            Console.Write(Language.GetText($"Harita.İpucu.{rastgele}"));
+            
             #region İpucunun havalı şekilde geçilmesini sağlayan kod dizini
             Console.WriteLine();
             Thread.Sleep(2416);

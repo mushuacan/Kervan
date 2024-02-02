@@ -131,6 +131,121 @@ _____________________________________________________________________
 
 
 
+HARİTA BAŞLIYOR
+_____________________________________________________________________
+
+Harita.Menu.1:(w-Up, s-Down, d-Right, a-Left
+Harita.Menu.2:1-Map information, 2-Settlement (names),
+Harita.Menu.3:3-Your information, 4-Get a Hint, 5-Save and exit.)
+Harita.Menu.4:->
+
+Harita.Menu.Case3.1:Your current money ->
+Harita.Menu.Case3.2:Your remaining supplies ->
+
+Harita.Olay.Doktor.Ölüm.1:On the way, your illness got worse.
+Harita.Olay.Doktor.Ölüm.2:You abandoned the Kervan to see a doctor in the city.
+Harita.Olay.Doktor.Ölüm.3:However, upon the insistence of the person next to you, you stopped under the shade of a tree.
+Harita.Olay.Doktor.Ölüm.4:He went to call the doctor here.
+Harita.Olay.Doktor.Ölüm.5:While you were waiting for him to return, you fell into a sleep that you couldn't wake up from.
+Harita.Olay.Doktor.Ölüm.6:Game over.
+Harita.Olay.Doktor.Ölüm.7:Thanks for playing.
+
+Harita.Bitiş.Kumarbaz.1:You became a gambler on this path that you set out with the intention of becoming a merchant.
+Harita.Bitiş.Kumarbaz.2:But it just so happens that you still managed to win the game!
+Harita.Bitiş.Kumarbaz.3:Your money exceeded 1000, without trading!
+Harita.Bitiş.Kumarbaz.4:You are a real gambler.
+Harita.Bitiş.Kumarbaz.5:We don't thank you for playing. What the hell is gambling?!
+Harita.Bitiş.Kumarbaz.6:You won 1000 gold!
+Harita.Bitiş.Kumarbaz.7:Gambler's Victory!
+
+Harita.Bitiş.KumarbazTüccar.1:Glorious Player!
+Harita.Bitiş.KumarbazTüccar.2:Your money exceeded 1000.
+Harita.Bitiş.KumarbazTüccar.3:You are a real merchant, but you are also involved in gambling.
+Harita.Bitiş.KumarbazTüccar.4:Thanks for playing.
+Harita.Bitiş.KumarbazTüccar.5:You won!
+Harita.Bitiş.KumarbazTüccar.6:Gambling Merchant Victory!
+
+Harita.Bitiş.Tüccar.1:Glorious Player!
+Harita.Bitiş.Tüccar.2:Your money exceeded 1000.
+Harita.Bitiş.Tüccar.3:You are a real trader.
+Harita.Bitiş.Tüccar.4:Thanks for playing.
+Harita.Bitiş.Tüccar.5:You won!
+Harita.Bitiş.Tüccar.6:Merchant Victory!
+
+Harita.Bitiş.Lose.1:You have no money left. You don't have any belongings.
+Harita.Bitiş.Lose.2:Everyone around you cursed and left you.
+
+Harita.Bitiş.Lose.Kumar.1:You spent all your money pursuing gambling.
+Harita.Bitiş.Lose.Kumar.2:You returned to the village where you went saying you would be a merchant, having spent all your money as a gambler.
+Harita.Bitiş.Lose.Kumar.3:You left a black mark on your family's reputation in the village.
+Harita.Bitiş.Lose.Kumar.4:You lost all your money gambling!
+Harita.Bitiş.Lose.Kumar.5:Game over!
+Harita.Bitiş.Lose.Kumar.6:Gambling Loss!
+
+Harita.Bilgilendirme.1:P -> Shows your current location.
+Harita.Bilgilendirme.2:# -> Rough terrain or sea (cannot be crossed)
+Harita.Bilgilendirme.3:. -> Empty land. Passable.
+Harita.Bilgilendirme.4:? -> Dangerous terrain. There is no news from those who passed away.
+Harita.Bilgilendirme.5:Numbers like 1-2 -> Refers to cities or villages (Settlements).
+
+
+HARİTA.İPUCU
+________________________
+Harita.İpucu:.Hint ->
+Harita.İpucu.01:It is much more profitable to buy from villages and sell in cities.
+Harita.İpucu.02:If you run out of supplies, those in your group may become your enemies.
+Harita.İpucu.03:Giving food to the poor is a good deed.
+Harita.İpucu.04:Navigating dangerous terrain will take time, even if you don't lose anything.
+Harita.İpucu.05:Gambling in the city is just a number puzzle game.
+Harita.İpucu.06:You can get the personnel (Guard & Cook) only from the cities not from the villages.
+Harita.İpucu.07:Guards protect you from getting into dangerous situations.
+Harita.İpucu.08:Hiring a Cook for your team ensures supply control and your supplies last longer.
+Harita.İpucu.09:The producer of this game is Mushu.
+Harita.İpucu.10:You can save your project and continue where you left off whenever you want, but be careful, recording after recording will delete the previous recording.
+Harita.İpucu.11:The Kervan game was actually made as a Final Project.
+Harita.İpucu.12:If you plan to cross dangerous terrain, do not buy meat or fish. It can attract wild animals.
+Harita.İpucu.13:The most profitable item in the game is the Diamond Ring (and the rarest).
+Harita.İpucu.14:To avoid running out of supplies, you can buy from Cities or Villages.
+Harita.İpucu.15:Supplies are important in this game.
+Harita.İpucu.16:Did you know that there is an area in the game called Ruins with code 0?
+Harita.İpucu.17:Haşin Protection may be expensive, but it really protects.
+Harita.İpucu.18:It is very profitable to buy Meat and Wool from Sheep Villages and sell them in the nearest City.
+Harita.İpucu.19:Enter the 'Settlements' code to find out which number represents which city.
+Harita.İpucu.20:You can go bankrupt by typing 'iflas'.
+Harita.İpucu.21:It is more profitable to buy wool from Koyuncu village and sell it in other villages, not in the cities.
+Harita.İpucu.22:For some reason, the villagers here are more fond of alcohol, and the one that imports it the most is the 'Northern Limen City'.
+Harita.İpucu.23:Are the people in the Central City a little bit of a drinker or something...
+Harita.İpucu.24:24 is a beautiful number.
+Harita.İpucu.25:'Miners Village' is the place where you can buy salt and iron cheaply.
+Harita.İpucu.26:'There is a need for salt in the Northern Port City.
+Harita.İpucu.27:'Iron is needed in the Northern Port City.
+Harita.İpucu.28:It is more profitable to buy pottery from the 'Central City' and sell it in the Port Cities.
+Harita.İpucu.29:It is very profitable to buy Oil from the Northern Settlements and sell it in the Southern Settlements.
+Harita.İpucu.30:Buying from the South and selling in the North is a very profitable move for silk.
+Harita.İpucu.31:People in the Central City are fond of spices.
+Harita.İpucu.32:Is it a rope?
+Harita.İpucu.33:Those who paid the most for mussels were the villagers.
+Harita.İpucu.34:You can find Mussels and Fish quite cheaply in the port settlements.
+Harita.İpucu.35:Flax production was abundant in the Central City.
+Harita.İpucu.36:There is a lot of honey in the Central City.
+Harita.İpucu.37:There is a shortage of honey in Northern Port City.
+Harita.İpucu.38:If you find a Diamond Ring, go to Northern Port City. More money is spent on ornaments there.
+Harita.İpucu.39:This game was started on the 20th and a playable version was reached on the 25th.
+Harita.İpucu.40:The most profitable shop in Mount and Blade Warband is the Velvet Weaving Workshop in Reyvadin City.
+Harita.İpucu.41:Mashallah 41 times.
+Harita.İpucu.42:Yaşamın, evrenin ve her şeyin cevabı...
+Harita.İpucu.43:Goodbyes are always sad. You said goodbye to your home to set up a Kervan. Make it worth it.
+Harita.İpucu.44:Bu oyunu görsem yapımcısına 100 üzerinden 100 verirdim.
+
+HARİTA.İPUCU
+________________________
+
+
+HARİTA BİTTİ
+_____________________________________________________________________
+
+
+
 
 
 

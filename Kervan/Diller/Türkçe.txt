@@ -8,6 +8,8 @@ _____________________________________________________________________
 
 All.GeçersizGirdiSayıGir:Geçersiz giriş. Lütfen bir sayı girin.
 All.Para:Paran -> 
+All.Erzak:Erzağın ->
+All.GeçersizYönlendirme:Geçersiz yönlendirme.
 
 ALL NOKTALAR BİTTİ
 _____________________________________________________________________
@@ -139,11 +141,118 @@ _____________________________________________________________________
 
 
 
+HARİTA BAŞLIYOR
+_____________________________________________________________________
+
+Harita.Menu.1:(w-Yukarı, s-Aşağı, d-Sağa, a-Sola
+Harita.Menu.2:1-Harita bilgilendirmesi, 2-Yerleşkeler (isimleri),
+Harita.Menu.3:3-Kendi bilgilerin, 4-İpucu Al, 5-Kaydedip çık.)
+Harita.Menu.4:->
+
+Harita.Menu.Case3.1:Güncel paran -> 
+Harita.Menu.Case3.2:Kalan erzağın ->
+
+Harita.Olay.Doktor.Ölüm.1:Yolda hastalığın iyice ağırlaştı.
+Harita.Olay.Doktor.Ölüm.2:Kervanı şehirde doktor görmek için terk ettin.
+Harita.Olay.Doktor.Ölüm.3:Ancak yanındaki kişinin ısrarı üzere bir ağaç gölgesinde durdun.
+Harita.Olay.Doktor.Ölüm.4:Doktoru buraya çağırmak için gitti.
+Harita.Olay.Doktor.Ölüm.5:Dönmesini beklerken uyanamayacağın bir uykuya daldın.
+Harita.Olay.Doktor.Ölüm.6:Oyun Bitti.
+Harita.Olay.Doktor.Ölüm.7:Oynadığınız için teşekkürler.
+
+Harita.Bitiş.Kumarbaz.1:Tüccar olma niyetiyle çıktığın bu yolda kumarbazın teki oldun.
+Harita.Bitiş.Kumarbaz.2:Ama öyle olacak ki oyunu gene de kazanmayı becerdin!
+Harita.Bitiş.Kumarbaz.3:Paran 1000'i geçti, hem de ticaret yapmadan!
+Harita.Bitiş.Kumarbaz.4:Gerçek bir kumarbazsın.
+Harita.Bitiş.Kumarbaz.5:Oynadığın için teşekkür etmiyoruz. Kumar oynamak nedir lan?!
+Harita.Bitiş.Kumarbaz.6:1000 altın kazandın!
+Harita.Bitiş.Kumarbaz.7:Kumarbaz Zaferi!
+
+Harita.Bitiş.KumarbazTüccar.1:Şanlı oyuncu!
+Harita.Bitiş.KumarbazTüccar.2:Paran 1000'i geçti.
+Harita.Bitiş.KumarbazTüccar.3:Gerçek bir tüccarsın ama kumara da bulaşmışsın.
+Harita.Bitiş.KumarbazTüccar.4:Oynadığın için teşekkürler.
+Harita.Bitiş.KumarbazTüccar.5:Kazandın!
+Harita.Bitiş.KumarbazTüccar.6:Kumarlı Tüccarlık Zaferi!
+
+Harita.Bitiş.Tüccar.1:Şanlı oyuncu!
+Harita.Bitiş.Tüccar.2:Paran 1000'i geçti.
+Harita.Bitiş.Tüccar.3:Gerçek bir tüccarsın.
+Harita.Bitiş.Tüccar.4:Oynadığın için teşekkürler.
+Harita.Bitiş.Tüccar.5:Kazandın!
+Harita.Bitiş.Tüccar.6:Tüccarlık Zaferi!
+
+Harita.Bitiş.Lose.1:Beş paran kalmadı. Eşyan da yok.
+Harita.Bitiş.Lose.2:Etrafındaki herkes sayıp sövüp gitti.
+
+Harita.Bitiş.Lose.Kumar.1:Kumarbazlığın peşinde koştururken bütün paranı harcadın.
+Harita.Bitiş.Lose.Kumar.2:Tüccar olacağım diyerek çıktığın köye bütün parasını kumarbaz halde yemiş biri olarak döndün.
+Harita.Bitiş.Lose.Kumar.3:Köyde ailenizin nâmına bir kara leke olarak yapıştın.
+Harita.Bitiş.Lose.Kumar.4:Kumarda bütün paranı kaybettin!
+Harita.Bitiş.Lose.Kumar.5:Oyun Bitti!
+Harita.Bitiş.Lose.Kumar.6:Kumar Mağlubiyeti!
+
+Harita.Bilgilendirme.1: P -> Bulunduğunuz konumu gösterir.
+Harita.Bilgilendirme.2: # -> Engebeli arazi veya deniz (üzerinden geçilemez.)
+Harita.Bilgilendirme.3: . -> Boş arazi. Geçilebilir.
+Harita.Bilgilendirme.4: ? -> Tehlikeli arazi. Geçenlerden haber alınamıyor.
+Harita.Bilgilendirme.5: 1-2 gibi sayılar -> Şehirleri veya köyleri (Yerleşkeleri) ifade eder.
 
 
+HARİTA.İPUCU
+________________________
+Harita.İpucu:.İpucu ->
+Harita.İpucu.01:Köylerden alıp şehirlerde satmak çok daha kârlıdır.
+Harita.İpucu.02:Erzağınız biterse grubunuzdakiler size düşman kesilebilir.
+Harita.İpucu.03:Garibe yemek vermek sevaptır.
+Harita.İpucu.04:Tehlikeli arazide ilerlemek bir şey kaybetmeseniz bile zaman alacaktır.
+Harita.İpucu.05:Şehirde kumar oynamak sadece bir sayı bulmaca oyunudur.
+Harita.İpucu.06:Köylerden alamayacağınız elemanları (Koruma & Aşçı) Şehirlerden temin edebilirsiniz.
+Harita.İpucu.07:Korumalar sizi tehlikeli durumlarda kalmaktan korur.
+Harita.İpucu.08:Ekibinize Aşçı almak erzak kontrolünü sağlar ve erzağınız daha uzun gider.
+Harita.İpucu.09:Bu oyunun yapıncısı Mushu'dur.
+Harita.İpucu.10:Projenizi kaydetip istediğiniz zaman kaldığınız yerden devam edebilirsiniz ama dikkat edin, kayıt üstüne kayıt almak önceki kaydı silecektir.
+Harita.İpucu.11:Kervan oyunu aslında bir Final Projesi olarak yapıldı.
+Harita.İpucu.12:Tehlikeli araziden geçmeyi düşünüyorsanız et-balık almayın. Vahşi hayvanları çekebilir.
+Harita.İpucu.13:Oyunda en çok kâr getiren eşya Elmas Yüzüktür (ve en nâdir bulunan).
+Harita.İpucu.14:Erzağınızın bitmemesi için Şehirlerden veya Köylerden alımda bulunabilirsiniz.
+Harita.İpucu.15:Erzak bu oyunda önemlidir.
+Harita.İpucu.16:Oyunda 0 koduna sahip Harabeler diye bir bölge olduğunu biliyor muydun?
+Harita.İpucu.17:Haşin Koruma pahalı olabilir ama gerçekten de koruyor.
+Harita.İpucu.18:Koyuncu Köylerinden Et ve Yün alıp en yakın Şehirde satmak oldukça kârlıdır.
+Harita.İpucu.19:Hangi numara hangi şehri temsil ediyor öğrenmek için 'Yerleşkeler'in kodunu gir.
+Harita.İpucu.20:'iflas' yazarak iflas edebilirsin.
+Harita.İpucu.21:Yün'ü Koyuncu köyünden alıp, Şehirlerde değil ama başka köylerde satmak daha kârlıdır.
+Harita.İpucu.22:İçki'ye nedense buranın köylüleri daha düşkün, en çok ithal edeniyse 'Kuzey Limen Şehri'.
+Harita.İpucu.23:'Merkez Şehir'dekiler biraz içki düşkünü mü ne...
+Harita.İpucu.24:24 güzel sayı.
+Harita.İpucu.25:'Madenciler Köyü' tuz ve demiri en ucuza alabileceğin yerdir.
+Harita.İpucu.26:'Kuzey Liman Şehri'nde tuza ihtiyaç var.
+Harita.İpucu.27:'Kuzey Liman Şehri'nde demire ihtiyaç var.
+Harita.İpucu.28:Çömlekleri 'Merkez Şehir'den alıp 'Falanca Liman Şehri'nde satmak daha kârlıdır.
+Harita.İpucu.29:Yağ'ı Kuzey Yerleşkelerden alıp Güney Yerleşkelerde satmak oldukça kârlı.
+Harita.İpucu.30:Güney'den alıp Kuzey'de satmak İpek için oldukça kâr getiren bir hareket.
+Harita.İpucu.31:'Merkez Şehir'dekiler Baharat Düşkünü.
+Harita.İpucu.32:İp mi ucu?
+Harita.İpucu.33:Midye için en çok para verenler Köylülermiş.
+Harita.İpucu.34:Midye ve Balığı liman Yerleşkelerden oldukça ucuza bulabilirsin.
+Harita.İpucu.35:Merkez Şehir'de keten üretimi çokmuş.
+Harita.İpucu.36:Merkez Şehir'de bal çokmuş.
+Harita.İpucu.37:Kuzey Liman Şehri'nde bal kıtlığı varmış.
+Harita.İpucu.38:Elmas Yüzük bulursan Kuzey Liman Şehri'ne git. Süse orada daha çok para harcanıyor.
+Harita.İpucu.39:Bu oyuna 20'sinde başlanıp 25'inde oynanabilir bir versiyonun ulaşılmıştır.
+Harita.İpucu.40:Mount and Blade Warband'ta en kârlı dükkan Reyvadin Şehrindeki Kadife Dokuma Atölyesidir.
+Harita.İpucu.41:41 kere Maşallah.
+Harita.İpucu.42:The answer to life, the universe, and everything...
+Harita.İpucu.43:Vedalar hep üzücüdür. Evine bir kervan kurmak için veda ettin. Buna değmesini sağla.
+Harita.İpucu.44:Bu oyunu görsem yapımcısına 100 üzerinden 100 verirdim.
+
+HARİTA.İPUCU
+________________________
 
 
-
+HARİTA BİTTİ
+_____________________________________________________________________
 
 
 
