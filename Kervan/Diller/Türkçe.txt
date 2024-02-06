@@ -17,6 +17,141 @@ _____________________________________________________________________
 
 
 
+ŞEHİR BAŞLIYOR
+_____________________________________________________________________
+
+Şehir.GrupYazdır:Grup Elemanların ->
+Şehir.GrupYazdır.Eleman:Eleman
+Şehir.GrupYazdır.Aşçı:Aşçı
+Şehir.GrupYazdır.Basit Koruma:Basit Koruma
+Şehir.GrupYazdır.Haşin Koruma:Haşin Koruma
+
+Şehir.EnvanterYazdır:Envanterindekiler ->
+
+Şehir.Menu.Ticaret:1-Ticaret yap
+Şehir.Menu.Eleman:2-Eleman alma
+Şehir.Menu.Kumar:3-Kumar oynama
+Şehir.Menu.Gecele:4-Gecele
+Şehir.Menu.Erzak:5-Erzak alma
+Şehir.Menu.Ayrıl:6-Şehirden ayrılma
+Şehir.Menu.dc:Doktor görmek için dc yaz.
+Şehir.Menu.Son.dc:Lütfen bir seçenek girin (1-6 veya dc) ->
+Şehir.Menu.Son:Lütfen bir seçenek girin (1-6) -> 
+
+Şehir.Köy.Menu.Erzak:3-Erzak alma
+Şehir.Köy.Menu.Ayrıl:4-Köyden ayrılma
+Şehir.Köy.Menu.Son:Lütfen bir seçenek girin (1-4) -> 
+
+Şehir.Girdi.Ticaret:Ticaret yapılıyor...
+Şehir.Girdi.Eleman:Eleman alınıyor...
+Şehir.Girdi.Kumar:Kumar oynanıyor...
+Şehir.Girdi.Kumar.Vaz:Helal olsun dostum! Doğru olanı yaptın ve bu illete bulaşmadın.
+Şehir.Girdi.Kumar.az:Bu kadar az para yatıracaksan kumar oynamanın ne manası var?
+Şehir.Girdi.Gecele:Geceleniyor...
+Şehir.Girdi.Geceleniyor:(Gecelemek ne işe yarıyorsa artık...)
+Şehir.Girdi.Erzak:Erzak alınıyor...
+Şehir.Girdi.Ayrıl:Şehirden ayrılıyor...
+Şehir.Köy.Girdi.Ayrıl:Köyden ayrılıyor...
+Şehir.Girdi.Çık:Çıkış yapılıyor...
+
+Şehir.Girdi.dc.1:Doktor görmeye gittin.
+Şehir.Girdi.dc.2:Tedavi parası -> 20
+Şehir.Girdi.dc.3:(Ödemek için 1, çıkmak için 0)
+Şehir.Girdi.dc.4:Tedavi oldun.
+Şehir.Girdi.dc.5:Yeterli para bulamadın. Paran -> 
+Şehir.Girdi.dc.6:Şifahaneyi terk ettin.
+
+Şehir.Erzak.Kontrol.Grup:Gruptakilerin sayısı -> 
+Şehir.Erzak.Kontrol.Erzak:Günlük erzak -> 
+Şehir.Erzak.Kontrol.Aşçı:(Aşçı var)
+
+Şehir.Erzak.Bitiyor: E R Z A Ğ I N I Z   B İ T İ Y O R ! ! !
+
+Şehir.İşlem.Erzak.Kalan:Günlük erzağın -> 
+Şehir.İşlem.Erzak.Fiyat:Gün başına ödeyeceğin miktar -> 
+Şehir.İşlem.Erzak.Sor:Kaç günlük yiyecek alacaksın ->
+
+Şehir.İşlem.Erzak.Al:Günlük yiyecek alımınız ->
+
+Şehir.İşlem.Erzak.Parasız:Lütfen paranız yeten bir değer seçin, bay fakir.
+Şehir.İşlem.Erzak.ÖdenecekTutar:Ödemen gereken para tutarı ->
+
+Şehir.İşlem.Eleman.ElemanFiyat:Elemanın fiyatı -> 
+Şehir.İşlem.Eleman.AşçıFiyat:Aşçının fiyatı -> 
+Şehir.İşlem.Eleman.KorumaFiyat:Basit Koruma fiyatı -> 
+Şehir.İşlem.Eleman.HaşinFiyat:Haşin Koruma fiyatı -> 
+Şehir.İşlem.Eleman.HaşinKoruma:(Haşin koruma en üst korumadır.)
+
+Şehir.İş.Eleman:Eleman
+Şehir.İş.Aşçı:Aşçı
+Şehir.İş.Basit Koruma:Basit Koruma
+Şehir.İş.Haşin Koruma:Haşin Koruma
+Şehir.İş.Alma:Alma
+
+Şehir.İşlem.Eleman.GirişYap: Seçiminizi yapınız (sayı giriniz) ->
+Şehir.İşlem.Eleman.Seçiminiz:Seçiminiz -> 
+Şehir.İşlem.Eleman.Girdi.Alma:Bir şey almadınız.
+Şehir.İşlem.Eleman.YetersizPara:Paran yetersiz.
+
+Şehir.İşlem.Pazar.Giriş:Almak için 1, satmak için 2, çıkmak için 3 gir.
+Şehir.İşlem.Pazar.Çıkış:Pazardan çıktınız.
+
+Şehir.Ticaret.Envanter:Envanterin -> 
+Şehir.Ticaret.ÇıkışButonu:Çıkış
+
+Şehir.Sat.Girdi:Girilen sayı -> 
+Şehir.Sat.Eşya:Seçilen eşya ->
+Şehir.Sat.Fiyat:Eşyanın fiyatı ->
+Şehir.Sat.Çık:Çıkış yaptın.
+Şehir.Sat.YanlışGirdi:Lütfen listedeki sayıları girin.
+
+Şehir.Al.Eşyalar: Eşyalar ->
+Şehir.Al.ParaYetmedi:Bu eşyaya paran yetmedi.
+Şehir.Al.ElemanYetmedi:Daha fazla eşya alabilmek için 'Eleman' alman lazım.
+
+ŞEHİR BİTTİ
+_____________________________________________________________________
+
+
+
+
+EŞYALAR BAŞLIYOR
+_____________________________________________________________________
+
+Eşyalar.Şehir.Harabeler:Harabeler
+Eşyalar.Şehir.Güney Koyuncular Köyü:Güney Koyuncular Köyü
+Eşyalar.Şehir.Güney Liman Şehri:Güney Liman Şehri
+Eşyalar.Şehir.Madenciler Köyü:Madenciler Köyü
+Eşyalar.Şehir.Balıkçılar Köyü:Balıkçılar Köyü
+Eşyalar.Şehir.Merkez Şehir:Merkez Şehir
+Eşyalar.Şehir.Çiftçiler Köyü:Çiftçiler Köyü
+Eşyalar.Şehir.Kuzey Koyuncular Köyü:Kuzey Koyuncular Köyü
+Eşyalar.Şehir.Kuzey Liman Şehri:Kuzey Liman Şehri
+
+Eşyalar.item.Aile Yâdigârı Gümüş Kolye:Aile Yâdigârı Gümüş Kolye
+Eşyalar.item.Et:Et
+Eşyalar.item.Balık:Balık
+Eşyalar.item.Tahıl:Tahıl
+Eşyalar.item.İçki:İçki
+Eşyalar.item.Yün:Yün
+Eşyalar.item.Tuz:Tuz
+Eşyalar.item.Demir:Demir
+Eşyalar.item.Çömlek:Çömlek
+Eşyalar.item.Yağ:Yağ
+Eşyalar.item.İpek:İpek
+Eşyalar.item.Baharat:Baharat
+Eşyalar.item.Midye:Midye
+Eşyalar.item.Keten:Keten
+Eşyalar.item.Bal:Bal
+Eşyalar.item.Elmas Yüzük:Elmas Yüzük
+Eşyalar.item.Deri:Deri
+
+EŞYALAR BİTTİ
+_____________________________________________________________________
+
+
+
+
 PROGRAM BAŞLIYOR
 _____________________________________________________________________
 

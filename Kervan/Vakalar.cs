@@ -25,6 +25,7 @@ namespace Kervan
         public void VakaAyrıştırıcı(string girdi, int sayıGirdisi1 = 0)
         {
             Vaka( girdi, sayıGirdisi1);
+            //Bu ne gereksiz bir ayrıştırıcı ağzımı kırayım
         }
 
         private void Vaka(string olay, int sayıGirdisi1 = 0)

@@ -2,8 +2,155 @@ Dil:English
 
 
 
+
+ALL NOKTALAR BAŞLIYOR
+_____________________________________________________________________
+
 All.GeçersizGirdiSayıGir:Invalid login. Please enter a number.
-All.Para:Paran -> 
+All.Para:Your money ->
+All.Erzak:Your supplies ->
+All.GeçersizYönlendirme:Invalid redirect.
+
+ALL NOKTALAR BİTTİ
+_____________________________________________________________________
+
+
+
+
+ŞEHİR BAŞLIYOR
+_____________________________________________________________________
+
+Şehir.GrupYazdır:Group of Your Employees->
+Şehir.GrupYazdır.Eleman:Workman
+Şehir.GrupYazdır.Aşçı:Chef
+Şehir.GrupYazdır.Basit Koruma:Simple Protection
+Şehir.GrupYazdır.Haşin Koruma:Haşin Protection
+
+Şehir.EnvanterYazdır:Items in your inventory ->
+
+Şehir.Menu.Ticaret:1-Trade
+Şehir.Menu.Eleman:2-Recruitment
+Şehir.Menu.Kumar:3-Gambling
+Şehir.Menu.Gecele:4-Stay overnight
+Şehir.Menu.Erzak:5-Getting supplies
+Şehir.Menu.Ayrıl:6-Leaving the city
+Şehir.Menu.dc:Write dc to see a doctor.
+Şehir.Menu.Son.dc:Please enter an option (1-6 or dc) ->
+Şehir.Menu.Son:Please enter an option (1-6) ->
+
+Şehir.Köy.Menu.Erzak:3-Getting supplies
+Şehir.Köy.Menu.Ayrıl:4-Leaving the village
+Şehir.Köy.Menu.Son:Please enter an option (1-4) ->
+
+Şehir.Girdi.Ticaret:Trading...
+Şehir.Girdi.Eleman:Recruiting staff...
+Şehir.Girdi.Kumar:Gambling...
+Şehir.Girdi.Kumar.Vaz:Helal my friend! You did the right thing and did not get involved in this malady.
+Şehir.Girdi.Kumar.az:What's the point of gambling if you have to deposit so little money?
+Şehir.Girdi.Gecele:It's night time...
+Şehir.Girdi.Geceleniyor:(What's the use of spending the night anyway...)
+Şehir.Girdi.Erzak:Getting supplies...
+Şehir.Girdi.Ayrıl:Leaving the town...
+Şehir.Köy.Girdi.Ayrıl:Leaving the village...
+Şehir.Girdi.Çık:Exiting...
+Ağzını gırdığmın translate'i düzgün çıkarmıyor şu exiting aptalını
+
+Şehir.Girdi.dc.1:You went to see a doctor.
+Şehir.Girdi.dc.2:Treatment fee -> 20
+Şehir.Girdi.dc.3:(1 to pay, 0 to exit)
+Şehir.Girdi.dc.4:You have been treated.
+Şehir.Girdi.dc.5:You couldn't find enough money. Your money ->
+Şehir.Girdi.dc.6:You left the hospital.
+
+Şehir.Erzak.Kontrol.Grup:Number of people in the group ->
+Şehir.Erzak.Kontrol.Erzak:Your days of food -> 
+Şehir.Erzak.Kontrol.Aşçı:(There is a chef)
+
+Şehir.Erzak.Bitiyor: YOUR FOODS ARE FINISHING! ! !
+
+Şehir.İşlem.Erzak.Kalan: Your days of food -> 
+Şehir.İşlem.Erzak.Fiyat:The amount you will pay per day ->
+Şehir.İşlem.Erzak.Sor:How many days of food will you buy ->
+
+Şehir.İşlem.Erzak.Al:Your daily food intake ->
+
+Şehir.İşlem.Erzak.Parasız:Please choose something you can afford, Mr Poor.
+Şehir.İşlem.Erzak.ÖdenecekTutar:Amount you need to pay ->
+
+Şehir.İşlem.Eleman.ElemanFiyat:Workman price -> 
+Şehir.İşlem.Eleman.AşçıFiyat:Chef's price -> 
+Şehir.İşlem.Eleman.KorumaFiyat:Simple Protection price -> 
+Şehir.İşlem.Eleman.HaşinFiyat:Haşin Protection price -> 
+Şehir.İşlem.Eleman.HaşinKoruma:(Haşin Protection is the ultimate protection.)
+
+Şehir.İş.Eleman:Workman
+Şehir.İş.Aşçı:Chef
+Şehir.İş.Basit Koruma:Simple Protection
+Şehir.İş.Haşin Koruma:Haşin Protection
+Şehir.İş.Alma:Dont take
+
+Şehir.İşlem.Eleman.GirişYap: Make your selection (enter number) ->
+Şehir.İşlem.Eleman.Seçiminiz:Your choice ->
+Şehir.İşlem.Eleman.Girdi.Alma:You didn't get anything.
+Şehir.İşlem.Eleman.YetersizPara:You don't have enough money.
+
+Şehir.İşlem.Pazar.Giriş:Enter 1 to buy, 2 to sell, 3 to exit.
+Şehir.İşlem.Pazar.Çıkış:You are out of the pazar.
+
+Şehir.Ticaret.Envanter:Your inventory ->
+Şehir.Ticaret.ÇıkışButonu:Exit
+
+Şehir.Sat.Girdi:Entered number ->
+Şehir.Sat.Eşya:Selected item ->
+Şehir.Sat.Fiyat:Price of the item ->
+Şehir.Sat.Çık:Exiting...
+Şehir.Sat.YanlışGirdi:Please enter the numbers from the list.
+
+Şehir.Al.Eşyalar: Items ->
+Şehir.Al.ParaYetmedi:You couldn't afford this item.
+Şehir.Al.ElemanYetmedi:To get more items, you need to buy 'Workman'.
+
+ŞEHİR BİTTİ
+_____________________________________________________________________
+
+
+
+
+EŞYALAR BAŞLIYOR
+_____________________________________________________________________
+
+Eşyalar.Şehir.Harabeler:Ruins
+Eşyalar.Şehir.Güney Koyuncular Köyü:Southern Shepherd Village
+Eşyalar.Şehir.Güney Liman Şehri:South Port City
+Eşyalar.Şehir.Madenciler Köyü:Miners Village
+Eşyalar.Şehir.Balıkçılar Köyü:Fishermen's Village
+Eşyalar.Şehir.Merkez Şehir:Central City
+Eşyalar.Şehir.Çiftçiler Köyü:Farmers Village
+Eşyalar.Şehir.Kuzey Koyuncular Köyü:Northern Shepherd Village
+Eşyalar.Şehir.Kuzey Liman Şehri:Northern Port City
+
+Eşyalar.item.Aile Yâdigârı Gümüş Kolye:Family Heirloom Silver Necklace
+Eşyalar.item.Et:Meat
+Eşyalar.item.Balık:Fish
+Eşyalar.item.Tahıl:Grain
+Eşyalar.item.İçki:Wine
+Eşyalar.item.Yün:Wool
+Eşyalar.item.Tuz:Salt
+Eşyalar.item.Demir:Iron
+Eşyalar.item.Çömlek:Pot
+Eşyalar.item.Yağ:Oil
+Eşyalar.item.İpek:Silk
+Eşyalar.item.Baharat:Spice
+Eşyalar.item.Midye:Mussel
+Eşyalar.item.Keten:linen
+Eşyalar.item.Bal:Honey
+Eşyalar.item.Elmas Yüzük:Diamond Ring
+Eşyalar.item.Deri:Leather
+
+EŞYALAR BİTTİ
+_____________________________________________________________________
+
+
 
 
 PROGRAM BAŞLIYOR

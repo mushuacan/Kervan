@@ -1,34 +1,8 @@
 Olay:Çık
-Olay:Çık
-Olay:Avcı Koruma Bahşiş İsyanı
-Grup:Eleman
-Grup:Eleman
-Grup:Aşçı
-Grup:Basit Koruma
-Grup:Eleman
 Grup:Eleman
 Grup:Eleman
 Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Envanter:Aile Yâdigârı Gümüş Kolye
-Para:95
-Erzak:0
-OyuncuKonumX:10
+Para:100
+Erzak:24
+OyuncuKonumX:14
 OyuncuKonumY:10

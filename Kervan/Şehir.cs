@@ -68,10 +68,10 @@ namespace Kervan
         {
             OL_Singleton ortakErişim = OL_Singleton.Instance;
             // Grubun içeriğini yazdırmak
-            Console.WriteLine("\nGrup Elemanların:");
+            Console.WriteLine("\n" + Language.GetText("Şehir.GrupYazdır"));
             foreach (var eleman in ortakErişim.OrtakListe.Grup)
             {
-                Console.WriteLine(eleman);
+                Console.WriteLine(Language.GetText($"Şehir.GrupYazdır.{eleman}"));
             }
             Thread.Sleep(500);
         }
@@ -80,10 +80,10 @@ namespace Kervan
         {
             OL_Singleton ortakErişim = OL_Singleton.Instance;
             // Grubun içeriğini yazdırmak
-            Console.WriteLine("\nEnvanterindekiler:");
+            Console.WriteLine("\n" + Language.GetText("Şehir.EnvanterYazdır"));
             foreach (var item in ortakErişim.OrtakListe.Envanter)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(Language.GetText($"Eşyalar.item.{item}"));
             }
             Console.WriteLine("\n");
             Thread.Sleep(500);
@@ -102,29 +102,29 @@ namespace Kervan
                 #endregion
 
                 #region Yerleşkenin İsmini Yazdır
-                Console.WriteLine($"\n\n{EşyalarCs.ŞehirlerListesi[bölgeKodu].Name}");
+                Console.WriteLine($"\n\n" + Language.GetText($"Eşyalar.Şehir.{EşyalarCs.ŞehirlerListesi[bölgeKodu].Name}"));
                 Thread.Sleep(200);
                 #endregion
 
                 while (true)
                 {
                     #region Menü
-                    Console.WriteLine("1-Ticaret yap");
-                    Console.WriteLine("2-Eleman alma");
-                    Console.WriteLine("3-Kumar oynama");
-                    Console.WriteLine("4-Gecele");
-                    Console.WriteLine("5-Erzak alma");
-                    Console.WriteLine("6-Şehirden ayrılma");
+                    Console.WriteLine(Language.GetText("Şehir.Menu.Ticaret"));
+                    Console.WriteLine(Language.GetText("Şehir.Menu.Eleman"));
+                    Console.WriteLine(Language.GetText("Şehir.Menu.Kumar"));
+                    Console.WriteLine(Language.GetText("Şehir.Menu.Gecele"));
+                    Console.WriteLine(Language.GetText("Şehir.Menu.Erzak"));
+                    Console.WriteLine(Language.GetText("Şehir.Menu.Ayrıl"));
                     // ... istediğiniz kadar seçenek ekleyebilirsiniz
                     Thread.Sleep(100);
                     if (ortakErişim.OrtakListe.Olay.Contains("Doktor"))
                     {
-                        Console.WriteLine("\nDoktor görmek için dc yaz.");
-                        Console.Write("\nLütfen bir seçenek girin (1-6 veya dc): ");
+                        Console.WriteLine("\n" + Language.GetText("Şehir.Menu.dc"));
+                        Console.Write("\n" + Language.GetText("Şehir.Menu.Son.dc"));
                     }
                     else
                     {
-                        Console.Write("\nLütfen bir seçenek girin (1-6): ");
+                        Console.Write("\n" + Language.GetText("Şehir.Menu.Son"));
                     }
                     #endregion
 
@@ -137,7 +137,7 @@ namespace Kervan
                     {
                         //Ticaret
                         case "1":
-                            Console.WriteLine("\nTicaret yapılıyor...\n");
+                            Console.WriteLine("\n" + Language.GetText("Şehir.Girdi.Ticaret") + "\n");
                             Thread.Sleep(600);
                             İşlem(bölge, "Ticaret", bölgeKodu);
                             Thread.Sleep(1000);
@@ -145,7 +145,7 @@ namespace Kervan
 
                         //Eleman
                         case "2":
-                            Console.WriteLine("\nEleman alınıyor...\n");
+                            Console.WriteLine("\n" + Language.GetText("Şehir.Girdi.Eleman") + "\n");
                             Thread.Sleep(600);
                             İşlem(bölge, "Eleman");
                             Thread.Sleep(1000);
@@ -153,30 +153,30 @@ namespace Kervan
 
                         //Kumar
                         case "3":
-                            Console.WriteLine("\nKumar oynanıyor...\n");
+                            Console.WriteLine("\n" + Language.GetText("Şehir.Girdi.Kumar") + "\n");
                             Thread.Sleep(600);
                             Kumar KumarCs = new Kumar();
                             int kumarParası = KumarCs.coinEnter();
                             if (kumarParası == 0)
-                            { Console.WriteLine($"Helal olsun dostum! Doğru olanı yaptın ve bu illete bulaşmadın."); }
+                            { Console.WriteLine(Language.GetText("Şehir.Girdi.Kumar.Vaz")); }
                             else if (kumarParası <= 4)
-                            {Console.WriteLine($"Bu kadar az para yatıracaksan kumar oynamanın ne manası var?");}
+                            { Console.WriteLine(Language.GetText("Şehir.Girdi.Kumar.az")); }
                             else{KumarCs.Gamble(kumarParası, kumarParası); }
                             Thread.Sleep(1000);
                             break;
 
                         //Geceleme (Ne işe yarıyorsa artık)
                         case "4":
-                            Console.WriteLine("\nGeceleniyor...");
+                            Console.WriteLine("\n" + Language.GetText("Şehir.Girdi.Gecele") + "\n");
                             Thread.Sleep(600);
-                            Console.WriteLine("(Gecelemek ne işe yarıyorsa artık...)\n");
+                            Console.WriteLine("\n" + Language.GetText("Şehir.Girdi.Geceleniyor"));
                             İşlem(bölge, "Gecele");
                             Thread.Sleep(1000);
                             break;
 
                         //Erzak
                         case "5":
-                            Console.WriteLine("\nErzak alınıyor...\n");
+                            Console.WriteLine("\n" + Language.GetText("Şehir.Girdi.Erzak") + "\n");
                             Thread.Sleep(600);
                             İşlem(bölge, "Erzak");
                             Thread.Sleep(1000);
@@ -184,18 +184,18 @@ namespace Kervan
 
                         //Çıkış
                         case "6":
-                            Console.WriteLine("\nŞehirden ayrılma...");
+                            Console.WriteLine("\n" + Language.GetText("Şehir.Girdi.Ayrıl"));
                             Thread.Sleep(600);
-                            Console.WriteLine("Çıkış yapılıyor...\n");
+                            Console.WriteLine(Language.GetText("Şehir.Girdi.Çık") + "\n");
                             Thread.Sleep(600);
                             return; // while döngüsünü kır
                                     // break; // return kullanıldığı için break kullanmaya gerek yok
 
                         //Doktor
                         case "dc":
-                            Console.WriteLine("\nDoktor görmeye gittin.");
-                            Console.WriteLine("Tedavi parası: 20");
-                            Console.WriteLine("(Ödemek için -> 1, çıkmak için 0)");
+                            Console.WriteLine("\n" + Language.GetText("Şehir.Girdi.dc.1"));
+                            Console.WriteLine(Language.GetText("Şehir.Girdi.dc.2"));
+                            Console.WriteLine(Language.GetText("Şehir.Girdi.dc.3"));
                             // Kullanıcının seçimini al
                             userInput = Console.ReadLine();
                             if (userInput == "1")
@@ -209,22 +209,22 @@ namespace Kervan
                                             ortakErişim.OrtakListe.Olay.RemoveAt(i);
                                         }
                                     }
-                                    Console.WriteLine("Tedavi oldun.");
+                                    Console.WriteLine(Language.GetText("Şehir.Girdi.dc.4"));
                                 }else
                                 {
-                                    Console.WriteLine($"Yeterli para bulamadın. Cebinden sadece {ortakErişim.OrtakListe.Para} çıktı.");
+                                    Console.WriteLine(Language.GetText("Şehir.Girdi.dc.5") + $" {ortakErişim.OrtakListe.Para}");
                                 }
                             }else
                             {
-                                Console.WriteLine("Şifahaneyi terk ettin.");
+                                Console.WriteLine(Language.GetText("Şehir.Girdi.dc.6"));
                                 Thread.Sleep(1000);
                             }
                             break;
 
                         default:
-                            Console.WriteLine("Geçersiz seçenek!");
+                            Console.WriteLine(Language.GetText("All.GeçersizYönlendirme"));
                             Thread.Sleep(600);
-                            Console.WriteLine("Lütfen 1 ile 6 arasında bir sayı girin.");
+                            Console.Write(Language.GetText("Şehir.Menu.Son"));
                             break;
                     }
                     #endregion
@@ -239,19 +239,19 @@ namespace Kervan
         {
             {
                 Eşyalar EşyalarCs = new Eşyalar();
-                Console.WriteLine($"\n\n{EşyalarCs.ŞehirlerListesi[bölgeKodu].Name}");
+                Console.WriteLine($"\n\n" + Language.GetText($"Eşyalar.Şehir.{EşyalarCs.ŞehirlerListesi[bölgeKodu].Name}"));
                 Thread.Sleep(200);
                 string bölge = "Köy";
                 while (true)
                 {
-                    Console.WriteLine("1-Ticaret yap");
-                    Console.WriteLine("2-Eleman alma");
-                    Console.WriteLine("3-Erzak alma");
-                    Console.WriteLine("4-Köyden ayrılma");
+                    Console.WriteLine(Language.GetText("Şehir.Menu.Ticaret"));
+                    Console.WriteLine(Language.GetText("Şehir.Menu.Eleman"));
+                    Console.WriteLine(Language.GetText("Şehir.Köy.Menu.Erzak"));
+                    Console.WriteLine(Language.GetText("Şehir.Köy.Menu.Ayrıl"));
                     // ... istediğiniz kadar seçenek ekleyebilirsiniz
                     Thread.Sleep(100);
 
-                    Console.Write("\nLütfen bir seçenek girin (1-4): ");
+                    Console.Write("\n" + Language.GetText("Şehir.Köy.Menu.Son") + " ");
 
                     // Kullanıcının seçimini al
                     string userInput = Console.ReadLine();
@@ -260,39 +260,39 @@ namespace Kervan
                     switch (userInput)
                     {
                         case "1":
-                            Console.WriteLine("\nTicaret yapılıyor...\n");
+                            Console.WriteLine("\n" + Language.GetText("Şehir.Girdi.Ticaret") + "\n");
                             Thread.Sleep(600);
                             İşlem(bölge, "Ticaret", bölgeKodu);
                             Thread.Sleep(1000);
                             break;
 
                         case "2":
-                            Console.WriteLine("\nEleman alınıyor...\n");
+                            Console.WriteLine("\n" + Language.GetText("Şehir.Girdi.Eleman") + "\n");
                             Thread.Sleep(600);
                             İşlem(bölge, "Eleman");
                             Thread.Sleep(1000);
                             break;
 
                         case "3":
-                            Console.WriteLine("\nErzak alınıyor...\n");
+                            Console.WriteLine("\n" + Language.GetText("Şehir.Girdi.Erzak") + "\n");
                             Thread.Sleep(600);
                             İşlem(bölge, "Erzak");
                             Thread.Sleep(1000);
                             break;
 
                         case "4":
-                            Console.WriteLine("\nKöyden ayrılma...");
+                            Console.WriteLine("\n" + Language.GetText("Şehir.Köy.Girdi.Ayrıl"));
                             Thread.Sleep(600);
-                            Console.WriteLine("Çıkış yapılıyor...\n");
+                            Console.WriteLine(Language.GetText("Şehir.Girdi.Çık") + "\n");
                             Thread.Sleep(600);
                             return; // while döngüsünü kır
                                     // break; // return kullanıldığı için break kullanmaya gerek yok
 
 
                         default:
-                            Console.WriteLine("Geçersiz seçenek!");
+                            Console.WriteLine(Language.GetText("All.GeçersizYönlendirme"));
                             Thread.Sleep(600);
-                            Console.WriteLine("Lütfen 1 ile 4 arasında bir sayı girin.");
+                            Console.Write(Language.GetText("Şehir.Köy.Menu.Son"));
                             break;
                     }
 
@@ -322,28 +322,29 @@ namespace Kervan
             else if (işlem == "Kontrol")
             {
                 int günlükErzak = 5;
-                Console.WriteLine($"Gruptakilerin sayısı: {ortakErişim.OrtakListe.Grup.Count}");
+                Console.WriteLine(Language.GetText("Şehir.Erzak.Kontrol.Grup") + $" {ortakErişim.OrtakListe.Grup.Count}");
                 if (ortakErişim.OrtakListe.Erzak > 0 && ortakErişim.OrtakListe.Grup.Contains("Aşçı"))
                 {
                     günlükErzak = (int)(ortakErişim.OrtakListe.Erzak / (ortakErişim.OrtakListe.Grup.Count / 1.5f));
-                    Console.WriteLine($"{günlükErzak} günlük erzağın var. (Aşçı var)");
+                    Console.WriteLine(Language.GetText("Şehir.Erzak.Kontrol.Erzak") + $" {günlükErzak}" 
+                        + Language.GetText("Şehir.Erzak.Kontrol.Aşçı"));
                     if (günlükErzak <= 4 && günlükErzak != 0)
                     {
-                        Console.WriteLine("\n E R Z A Ğ I N I Z   B İ T İ Y O R ! ! ! \n");
+                        Console.WriteLine("\n " + Language.GetText("Şehir.Erzak.Bitiyor") + " \n");
                     }
                 }
                 else if (ortakErişim.OrtakListe.Erzak > 0)
                 {
                     günlükErzak = ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count;
-                    Console.WriteLine($"{günlükErzak} günlük erzağın var.");
+                    Console.WriteLine(Language.GetText("Şehir.Erzak.Kontrol.Erzak") + $" {günlükErzak}");
                     if (günlükErzak <= 4 && günlükErzak != 0)
                     {
-                        Console.WriteLine("\n E R Z A Ğ I N I Z   B İ T İ Y O R ! ! ! \n");
+                        Console.WriteLine("\n " + Language.GetText("Şehir.Erzak.Bitiyor") + " \n");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("\n E R Z A Ğ I N I Z   B İ T T İ \n");
+                    Console.WriteLine("\n " + Language.GetText("Şehir.Erzak.Bitiyor") + " \n");
                 }
             }
         }
@@ -355,45 +356,43 @@ namespace Kervan
             //Erzak Alma Menüsü
             if (iş == "Erzak")
             {
-                Console.WriteLine($"{ortakErişim.OrtakListe.Erzak/ortakErişim.OrtakListe.Grup.Count} günlük erzağın var.");
+                Console.WriteLine(Language.GetText("Şehir.İşlem.Erzak.Kalan") + $" {ortakErişim.OrtakListe.Erzak/ortakErişim.OrtakListe.Grup.Count}");
                 int erzakGünlükFiyat = ortakErişim.OrtakListe.Grup.Count;
-                Console.WriteLine($"Gün başına {erzakGünlükFiyat} para ödeyeceksin.");
-                Console.WriteLine($"{ortakErişim.OrtakListe.Para} kadar paran var.");
+                Console.WriteLine(Language.GetText("Şehir.İşlem.Erzak.Fiyat") + $" {erzakGünlükFiyat}");
+                Console.WriteLine(Language.GetText("All.Para") + $" {ortakErişim.OrtakListe.Para}");
 
                 bool alışveriş = true;
                 do
                 {
-                    Console.Write("Kaç günlük yiyecek almak istiyorsunuz? \n -> ");
+                    Console.Write(Language.GetText("Şehir.İşlem.Erzak.Sor") + " ");
                     string kullaniciGirdisi = Console.ReadLine();
                     if (int.TryParse(kullaniciGirdisi, out int gunlukYiyecek))
                     {
                         int tutar = gunlukYiyecek * erzakGünlükFiyat;
                         if (ortakErişim.OrtakListe.Para >= tutar)
                         {
-                            Console.WriteLine($"Günlük yiyecek alımınız: {gunlukYiyecek} gün");
+                            Console.WriteLine(Language.GetText("Şehir.İşlem.Erzak.Al") + $" {gunlukYiyecek}");
                             ortakErişim.OrtakListe.Para -= tutar;
-                            Console.WriteLine($"Güncel paranız {ortakErişim.OrtakListe.Para}");
+                            Console.WriteLine(Language.GetText("All.Para") + $" {ortakErişim.OrtakListe.Para}");
                             Erzak("Arttır", gunlukYiyecek);
                             int günlükErzak = ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count;
-                            Console.WriteLine($"Günlük erzak stoğunuz ise {günlükErzak}");
+                            Console.WriteLine(Language.GetText("Şehir.İşlem.Erzak.Kalan") + $" { günlükErzak}");
                             alışveriş = false;
                             if (ortakErişim.OrtakListe.Olay.Contains("Avcı Koruma Bahşiş İsyanı"))
-                            {
-                                ortakErişim.OrtakListe.Olay.Remove("Avcı Koruma Bahşiş İsyanı");
-                            }
+                            { ortakErişim.OrtakListe.Olay.Remove("Avcı Koruma Bahşiş İsyanı"); }
                         }
                         else
                         {
-                            Console.WriteLine($"Lütfen paranız yeten bir değer seçin, bay fakir.");
-                            Console.WriteLine($"{gunlukYiyecek} gün çarpı {erzakGünlükFiyat} para, {tutar} para eder.");
-                            Console.WriteLine($"Oysa senin {ortakErişim.OrtakListe.Para} paran var.");
+                            Console.WriteLine(Language.GetText("Şehir.İşlem.Erzak.Parasız"));
+                            Console.WriteLine(Language.GetText("Şehir.İşlem.Erzak.ÖdenecekTutar") + $" {tutar}");
+                            Console.WriteLine(Language.GetText("All.Para") + $" {ortakErişim.OrtakListe.Para}");
                             alışveriş = false;
                         }
                     }
                     else
                     {
                         // Eğer dönüştürme başarısız olduysa, kullanıcıya hata mesajı gönder
-                        Console.WriteLine("Geçersiz giriş. Lütfen bir sayı girin.");
+                        Console.WriteLine(Language.GetText("All.GeçersizGirdiSayıGir"));
                     }
                 } while (alışveriş);
             }
@@ -407,7 +406,7 @@ namespace Kervan
                 GrupYazdır();
 
                 int fiyatEleman = 10 + (ortakErişim.OrtakListe.Grup.Count * 5);
-                Console.WriteLine($"\n{fiyatEleman} paraya 1 Eleman alabilirsin");
+                Console.WriteLine("\n" + Language.GetText("Şehir.İşlem.Eleman.ElemanFiyat") +  $" {fiyatEleman}");
                 alinabileceklerListesi.Add("Eleman");
                 alinabileceklerListesiFiyat.Add(fiyatEleman);
 
@@ -416,7 +415,7 @@ namespace Kervan
                     if (!ortakErişim.OrtakListe.Grup.Contains("Aşçı"))
                     {
                         int fiyatAşçı = 30;
-                        Console.WriteLine($"{fiyatAşçı} paraya 1 Aşçı alabilirsin");
+                        Console.WriteLine(Language.GetText("Şehir.İşlem.Eleman.AşçıFiyat") + $" {fiyatAşçı}");
                         alinabileceklerListesi.Add("Aşçı");
                         alinabileceklerListesiFiyat.Add(fiyatAşçı);
                     }
@@ -426,15 +425,15 @@ namespace Kervan
                         if (!ortakErişim.OrtakListe.Grup.Contains("Haşin Koruma"))
                         {
                             int fiyatKoruma = 50;
-                            Console.WriteLine($"{fiyatKoruma} paraya Haşin Koruma alabilirsin.");
-                            Console.WriteLine("(Haşin koruma en üst korumadır.)");
+                            Console.WriteLine(Language.GetText("Şehir.İşlem.Eleman.HaşinFiyat") + $" {fiyatKoruma}");
+                            Console.WriteLine(Language.GetText("Şehir.İşlem.Eleman.HaşinKoruma"));
                             alinabileceklerListesi.Add("Haşin Koruma");
                             alinabileceklerListesiFiyat.Add(fiyatKoruma);
                         }
                     }else
                     {
                         int fiyatKoruma = 20;
-                        Console.WriteLine($"{fiyatKoruma} paraya Basit Koruma alabilirsin.");
+                        Console.WriteLine(Language.GetText("Şehir.İşlem.Eleman.KorumaFiyat") + $" {fiyatKoruma}");
                         alinabileceklerListesi.Add("Basit Koruma");
                         alinabileceklerListesiFiyat.Add(fiyatKoruma);
                     }
@@ -448,7 +447,7 @@ namespace Kervan
                 Console.WriteLine("\n");
                 for (int i = 0; i < alinabileceklerListesi.Count; i++)
                 {
-                    Console.WriteLine($"{i + 1}. {alinabileceklerListesi[i]}");
+                    Console.WriteLine($"{i + 1}. " + Language.GetText($"Şehir.İş.{alinabileceklerListesi[i]}"));
                 }
 
                 bool Continue = true;
@@ -457,7 +456,7 @@ namespace Kervan
                 do
                 {
                     // Kullanıcının seçimini alın
-                    Console.Write("Seçiminizi yapınız (sayı giriniz): ");
+                    Console.Write(Language.GetText("Şehir.İşlem.Eleman.GirişYap") + " ");
                     int kullaniciSecimi;
 
                     // Kullanıcının girdiği değeri kontrol etmek için TryParse kullanın
@@ -467,17 +466,18 @@ namespace Kervan
                         secilenEleman = alinabileceklerListesi[kullaniciSecimi - 1];
                         fiyatÖde = alinabileceklerListesiFiyat[kullaniciSecimi - 1];
                         Continue = false;
-                        Console.WriteLine($"Seçiminiz: {secilenEleman}");
+                        Console.WriteLine(Language.GetText("Şehir.İşlem.Eleman.Seçiminiz") + " " +
+                        Language.GetText($"Şehir.İş.{secilenEleman}"));
                     }
                     else
                     {
-                        Console.WriteLine("Geçersiz bir seçim yaptınız.");
+                        Console.Write(Language.GetText("All.GeçersizYönlendirme"));
                     }
                 } while (Continue);
                 
                 if(secilenEleman == "Alma")
                 {
-                    Console.WriteLine("Bir şey almadınız.");
+                    Console.WriteLine(Language.GetText("Şehir.İşlem.Eleman.Girdi.Alma"));
                 }
                 else
                 {
@@ -488,10 +488,10 @@ namespace Kervan
                     }
                     else
                     {
-                        Console.WriteLine("Paran yetersiz.");
+                        Console.WriteLine(Language.GetText("Şehir.İşlem.Eleman.YetersizPara"));
                     }
                 }
-                Console.WriteLine($"Paran: {ortakErişim.OrtakListe.Para}");
+                Console.WriteLine(Language.GetText("All.Para") + $" {ortakErişim.OrtakListe.Para}");
             }
             
             //Ticaret Menüsü
@@ -499,8 +499,8 @@ namespace Kervan
             {
                 do
                 {
-                    Console.WriteLine($"{ortakErişim.OrtakListe.Para} paran var.");
-                    Console.Write("\nAlmak için 1, satmak için 2, çıkmak için 3 gir.\n->");
+                    Console.WriteLine(Language.GetText("All.Para") + $" {ortakErişim.OrtakListe.Para}");
+                    Console.Write("\n" + Language.GetText("Şehir.İşlem.Pazar.Giriş") + " -> ");
                     string cevap = Console.ReadLine();
 
                     switch (cevap)
@@ -516,11 +516,11 @@ namespace Kervan
                             break;
 
                         case "3":
-                            Console.WriteLine("Pazardan çıktınız.");
+                            Console.WriteLine(Language.GetText("Şehir.İşlem.Pazar.Çıkış"));
                             return;
 
                         default:
-                            Console.WriteLine("Geçersiz giriş. Lütfen '1', '2' veya '3' yazın.");
+                            Console.WriteLine(Language.GetText("All.GeçersizYönlendirme"));
                             break;
                     }
                 }while (true);
@@ -609,13 +609,15 @@ namespace Kervan
             while (true)
             {
                 #region Envanterdeki eşyaları yazdır
-                Console.WriteLine($"\nParan: {ortakErişim.OrtakListe.Para}\n\nEnvanterin:");
+                Console.WriteLine("\n\n" + Language.GetText("All.Para") + $" {ortakErişim.OrtakListe.Para}");
+                Console.WriteLine($"\n\n" + Language.GetText("Şehir.Ticaret.Envanter"));
                 for (int i = 0; i < ortakErişim.OrtakListe.Envanter.Count; i++)
                 {
-                    Console.WriteLine($"{i + 1}.{ortakErişim.OrtakListe.Envanter[i]} için {tahminiFiyat[i]} ödeniyor.");
+                    string eşya = ortakErişim.OrtakListe.Envanter[i];
+                    Console.WriteLine($"{i + 1}.{Language.GetText($"Eşyalar.item.{eşya}")} -> {tahminiFiyat[i]}");
                 }
                 Thread.Sleep(100);
-                Console.Write($"{tahminiFiyat.Count + 1}.Çıkış\n->");
+                Console.Write($"{tahminiFiyat.Count + 1}.{Language.GetText("Şehir.Ticaret.ÇıkışButonu")}\n->");
                 #endregion
 
                 #region Sat
@@ -626,14 +628,14 @@ namespace Kervan
                     // Girdi kontrolü
                     if (int.TryParse(kullanıcıGirdisi, out int sayı))
                     {
-                        Console.WriteLine("\nGirilen sayı: " + sayı);
+                        Console.WriteLine("\n " + Language.GetText("Şehir.Sat.Girdi") + " " + sayı);
                         // Girdi sayıya dönüştürülebiliyorsa
                         if (sayı <= tahminiFiyat.Count)
                         {
                             string eşyaSat = ortakErişim.OrtakListe.Envanter[sayı - 1];
                             int fiyatSat = tahminiFiyat[sayı - 1];
-                            Console.WriteLine("Seçilen eşya: " + eşyaSat);
-                            Console.WriteLine("Eşyanın fiyatı: " + fiyatSat);
+                            Console.WriteLine(Language.GetText("Şehir.Sat.Eşya") + eşyaSat);
+                            Console.WriteLine(Language.GetText("Şehir.Sat.Fiyat") + fiyatSat);
                             ortakErişim.OrtakListe.Para += fiyatSat;
                             ortakErişim.OrtakListe.Envanter.RemoveAt(sayı - 1);
                             tahminiFiyat.RemoveAt(sayı - 1);
@@ -646,17 +648,17 @@ namespace Kervan
                         }
                         else if (sayı == tahminiFiyat.Count + 1)
                         {
-                            Console.WriteLine("Çıkış yaptın.");
+                            Console.WriteLine(Language.GetText("Şehir.Sat.Çık"));
                             return;
                         }
                         else
                         {
-                            Console.WriteLine("Lütfen listedeki sayıları girin.\n->");
+                            Console.WriteLine(Language.GetText("Şehir.Sat.YanlışGirdi"));
                         }
                     }
                     else
                     {
-                        Console.WriteLine("Geçersiz giriş. Lütfen bir sayı girin.");
+                        Console.WriteLine(Language.GetText("All.GeçersizGirdiSayıGir"));
                     }
                 }
                 #endregion
@@ -731,14 +733,16 @@ namespace Kervan
             while (true)
             {
                 // Sonuçları yazdırma
-                Console.WriteLine($"\nParan: {ortakErişim.OrtakListe.Para}\nEşyalar:");
+                Console.WriteLine("\n" + Language.GetText("All.Para") + $" {ortakErişim.OrtakListe.Para}");
+                Console.WriteLine("\n" + Language.GetText("Şehir.Al.Eşyalar"));
                 for (int i = 0; i < seçilenEşyalar.Count; i++)
                 {
-                    Console.WriteLine($"{i + 1}.{seçilenEşyalar[i]}: {seçilenEşyalarFiyatları[i]}");
+                    string eşya = seçilenEşyalar[i];
+                    Console.WriteLine($"{i + 1}.{Language.GetText($"Eşyalar.item.{eşya}")} -> {seçilenEşyalarFiyatları[i]}");
                 }
                 Thread.Sleep(100);
 
-                Console.Write($"{seçilenEşyalar.Count + 1}.Çıkış\n->");
+                Console.Write($"{seçilenEşyalar.Count + 1}.{Language.GetText("Şehir.Ticaret.ÇıkışButonu")}\n->");
                 while (true)
                 {
                     string kullanıcıGirdisi = Console.ReadLine();
@@ -746,7 +750,7 @@ namespace Kervan
                     // Girdi kontrolü
                     if (int.TryParse(kullanıcıGirdisi, out int sayı))
                     {
-                        Console.WriteLine("\nGirilen sayı: " + sayı);
+                        Console.WriteLine("\n" + Language.GetText("Şehir.Sat.Girdi") + " " + sayı);
                         // Girdi sayıya dönüştürülebiliyorsa
                         string arananEleman = "Eleman";
                         int elemanSayısı = ortakErişim.OrtakListe.Grup.Count(e => e == arananEleman);
@@ -756,16 +760,18 @@ namespace Kervan
                         {
                             string eşyaAl = seçilenEşyalar[sayı - 1];
                             int fiyatAl = seçilenEşyalarFiyatları[sayı - 1];
-                            Console.WriteLine("Seçilen eşya: " + eşyaAl);
-                            Console.WriteLine("Eşyanın fiyatı: " + fiyatAl);
+                            Console.WriteLine(Language.GetText("Şehir.Sat.Eşya") + eşyaAl);
+                            Console.WriteLine(Language.GetText("Şehir.Sat.Fiyat") + fiyatAl);
                             if (fiyatAl > ortakErişim.OrtakListe.Para)
                             {
-                                Console.WriteLine($"Bu eşyaya paran ({ortakErişim.OrtakListe.Para}) yetmedi.");
+                                Console.WriteLine(Language.GetText("Şehir.Al.ParaYetmedi"));
+                                Console.WriteLine("\n" + Language.GetText("All.Para") + $" {ortakErişim.OrtakListe.Para}");
                                 Thread.Sleep(724);
                             }
                             else if (!(elemanSayısı * 4 > envanterdekilerinSayısı))
                             {
-                                Console.WriteLine($"\nDaha fazla eşya alabilmek için 'Eleman' alman lazım.");
+                                Console.WriteLine("\n");
+                                Console.WriteLine(Language.GetText("Şehir.Al.ElemanYetmedi"));
                                 Thread.Sleep(2000);
                                 return;
                             }
@@ -780,17 +786,17 @@ namespace Kervan
                         }
                         else if (sayı == seçilenEşyalar.Count + 1)
                         {
-                            Console.WriteLine("Çıkış yaptın.");
+                            Console.WriteLine(Language.GetText("Şehir.Sat.Çık"));
                             return;
                         }
                         else
                         {
-                            Console.WriteLine("Lütfen listedeki sayıları girin.\n->");
+                            Console.WriteLine(Language.GetText("Şehir.Sat.YanlışGirdi"));
                         }
                     }
                     else
                     {
-                        Console.WriteLine("Geçersiz giriş. Lütfen bir sayı girin.");
+                        Console.WriteLine(Language.GetText("All.GeçersizGirdiSayıGir"));
                     }
                 }
             }

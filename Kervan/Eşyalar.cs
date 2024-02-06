@@ -350,7 +350,8 @@ namespace Kervan
                 {
                     if (city.Name != "Harabeler")
                     {
-                        Console.WriteLine($"{i}.{city.Name}");
+                        Console.WriteLine($"{i}." + Language.GetText($"Eşyalar.Şehir.{city.Name}"));
+                        //Console.WriteLine($"{i}.{city.Name}");
                         Thread.Sleep(200);
                     }
                     i++;
