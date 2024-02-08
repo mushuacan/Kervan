@@ -12,7 +12,7 @@ ____________________________________________________________________________
 
 
 OYUNU AÇMAK İÇİN
-
+(Visual studio c# gerektirir)
 
 Yöntem-1
 Kervan dosyasını açın,
@@ -24,7 +24,7 @@ Kervan.exe'yi çalıştırın.
 
 Yöntem-3
 Kervan dosyasını açın,
-Kervan.sln'yi çalıştırın. (Visual studio c# gerektirir)
+Kervan.sln'yi çalıştırın. 
 ctrl + f5 'e basın.
 ____________________________________________________________________________
 
@@ -42,7 +42,7 @@ ____________________________________________________________________________
 
 
 TO OPEN THE GAME
-
+(Requires Visual Studio C#)
 
 Method-1
 Open the Kervan file,
@@ -54,6 +54,6 @@ Run Kervan.exe.
 
 Method-3
 Open the Kervan file,
-Run Kervan.sln. (Requires Visual Studio C#)
+Run Kervan.sln. 
 Press ctrl + f5.
 ____________________________________________________________________________
