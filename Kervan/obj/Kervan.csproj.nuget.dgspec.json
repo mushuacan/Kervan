@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mushu\\OneDrive\\Masaüstü\\C# Final\\Oyun dosyası\\Kervan\\Kervan.csproj": {}
+    "C:\\Users\\mushu\\OneDrive\\Documents\\GitHub\\DGD203-FirstProject\\Kervan\\Kervan.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mushu\\OneDrive\\Masaüstü\\C# Final\\Oyun dosyası\\Kervan\\Kervan.csproj": {
+    "C:\\Users\\mushu\\OneDrive\\Documents\\GitHub\\DGD203-FirstProject\\Kervan\\Kervan.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mushu\\OneDrive\\Masaüstü\\C# Final\\Oyun dosyası\\Kervan\\Kervan.csproj",
+        "projectUniqueName": "C:\\Users\\mushu\\OneDrive\\Documents\\GitHub\\DGD203-FirstProject\\Kervan\\Kervan.csproj",
         "projectName": "Kervan",
-        "projectPath": "C:\\Users\\mushu\\OneDrive\\Masaüstü\\C# Final\\Oyun dosyası\\Kervan\\Kervan.csproj",
+        "projectPath": "C:\\Users\\mushu\\OneDrive\\Documents\\GitHub\\DGD203-FirstProject\\Kervan\\Kervan.csproj",
         "packagesPath": "C:\\Users\\mushu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mushu\\OneDrive\\Masaüstü\\C# Final\\Oyun dosyası\\Kervan\\obj\\",
+        "outputPath": "C:\\Users\\mushu\\OneDrive\\Documents\\GitHub\\DGD203-FirstProject\\Kervan\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mushu\\AppData\\Roaming\\NuGet\\NuGet.Config",

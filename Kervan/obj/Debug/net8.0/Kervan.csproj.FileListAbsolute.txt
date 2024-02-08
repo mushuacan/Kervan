@@ -54,3 +54,18 @@ C:\Users\mushu\OneDrive\Masaüstü\C# Final\Oyun dosyası\Kervan - v1.3.3 İngil
 C:\Users\mushu\OneDrive\Masaüstü\C# Final\Oyun dosyası\Kervan - v1.3.3 İngilizce kumara kadar eklendi\obj\Debug\net8.0\Kervan.pdb
 C:\Users\mushu\OneDrive\Masaüstü\C# Final\Oyun dosyası\Kervan - v1.3.3 İngilizce kumara kadar eklendi\obj\Debug\net8.0\Kervan.genruntimeconfig.cache
 C:\Users\mushu\OneDrive\Masaüstü\C# Final\Oyun dosyası\Kervan - v1.3.3 İngilizce kumara kadar eklendi\obj\Debug\net8.0\ref\Kervan.dll
+C:\Users\mushu\OneDrive\Documents\GitHub\DGD203-FirstProject\Kervan\bin\Debug\net8.0\Kervan.exe
+C:\Users\mushu\OneDrive\Documents\GitHub\DGD203-FirstProject\Kervan\bin\Debug\net8.0\Kervan.deps.json
+C:\Users\mushu\OneDrive\Documents\GitHub\DGD203-FirstProject\Kervan\bin\Debug\net8.0\Kervan.runtimeconfig.json
+C:\Users\mushu\OneDrive\Documents\GitHub\DGD203-FirstProject\Kervan\bin\Debug\net8.0\Kervan.dll
+C:\Users\mushu\OneDrive\Documents\GitHub\DGD203-FirstProject\Kervan\bin\Debug\net8.0\Kervan.pdb
+C:\Users\mushu\OneDrive\Documents\GitHub\DGD203-FirstProject\Kervan\obj\Debug\net8.0\Kervan.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mushu\OneDrive\Documents\GitHub\DGD203-FirstProject\Kervan\obj\Debug\net8.0\Kervan.AssemblyInfoInputs.cache
+C:\Users\mushu\OneDrive\Documents\GitHub\DGD203-FirstProject\Kervan\obj\Debug\net8.0\Kervan.AssemblyInfo.cs
+C:\Users\mushu\OneDrive\Documents\GitHub\DGD203-FirstProject\Kervan\obj\Debug\net8.0\Kervan.csproj.CoreCompileInputs.cache
+C:\Users\mushu\OneDrive\Documents\GitHub\DGD203-FirstProject\Kervan\obj\Debug\net8.0\Kervan.sourcelink.json
+C:\Users\mushu\OneDrive\Documents\GitHub\DGD203-FirstProject\Kervan\obj\Debug\net8.0\Kervan.dll
+C:\Users\mushu\OneDrive\Documents\GitHub\DGD203-FirstProject\Kervan\obj\Debug\net8.0\refint\Kervan.dll
+C:\Users\mushu\OneDrive\Documents\GitHub\DGD203-FirstProject\Kervan\obj\Debug\net8.0\Kervan.pdb
+C:\Users\mushu\OneDrive\Documents\GitHub\DGD203-FirstProject\Kervan\obj\Debug\net8.0\Kervan.genruntimeconfig.cache
+C:\Users\mushu\OneDrive\Documents\GitHub\DGD203-FirstProject\Kervan\obj\Debug\net8.0\ref\Kervan.dll
