@@ -1,8 +1,9 @@
 Olay:Çık
+Olay:Gariban
 Grup:Eleman
 Grup:Eleman
 Envanter:Aile Yâdigârı Gümüş Kolye
 Para:100
-Erzak:24
-OyuncuKonumX:14
+Erzak:31
+OyuncuKonumX:10
 OyuncuKonumY:10

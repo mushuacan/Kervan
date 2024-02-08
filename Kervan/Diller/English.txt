@@ -11,8 +11,274 @@ All.Para:Your money ->
 All.Erzak:Your supplies ->
 All.GeçersizYönlendirme:Invalid redirect.
 
+All.1/0:Please enter 1 or 0.
+
 ALL NOKTALAR BİTTİ
 _____________________________________________________________________
+
+
+
+
+
+VAKALAR BAŞLIYOR
+_______________________________________________________________________
+
+Vakalar.Yaz(Vaka):CASE
+
+Vakalar.Vaka-1.1:You are now having a hard time finding bread that will satisfy your hunger.
+Vakalar.Vaka-1.2:You were left penniless on the path you thought was blessed.
+Vakalar.Vaka-1.3:You want to return to your father's house, mother's house
+Vakalar.Vaka-1.4:But you have no guidance, no food, no strength.
+Vakalar.Vaka-1.5:You Lost the Game!
+Vakalar.Vaka-1.6:Defeat!
+
+T.A -> Tehlikeli Arazi
+Vaka.T.A.Harabelik.1:You are passing through a ruin.
+Vaka.T.A.Harabelik.2:Flowers bloomed inside some of the houses in the ruins.
+Vaka.T.A.Harabelik.Koruma.1:They say the guards can explore the ruin.
+Vaka.T.A.Harabelik.Koruma.2:Do you want to send? (Enter 1 to send, 0 not to send) ->
+Vaka.T.A.Harabelik.Koruma.2.Girdi.0:You decide not to enter.
+Vaka.T.A.Harabelik.Koruma.2.Girdi.1:The guards and a curious member went to investigate the ruins.
+Vaka.T.A.Harabelik.Koruma.2.Girdi.1.Rand.4.1:While your guys were wandering around, someone found a Diamond Ring.
+Vaka.T.A.Harabelik.Koruma.2.Girdi.1.Rand.4.2:He handed it over to you.
+Vaka.T.A.Harabelik.Koruma.2.Girdi.1.Rand.7.1:The soldiers declared that there was no one around.
+Vaka.T.A.Harabelik.Koruma.2.Girdi.1.Rand.7.2:The curious guy found two pots and brought them.
+Vaka.T.A.Harabelik.KorumaYok.1:Nobody wants to stay here any longer.
+Vaka.T.A.Harabelik.KorumaYok.2:There is uneasiness in everyone.
+
+Vaka.T.A.Ayı.1:As you passed near a cave, you heard a distant roar.
+Vaka.T.A.Ayı.2:There is an angry BEAR running towards the kervan.
+Vaka.T.A.Ayı.Koruma.1:Your guards rushed forward and tackled the bear.
+Vaka.T.A.Ayı.Koruma.Haşin.1:Thanks to your Haşin Bodyguard, you defeated the bear.
+Vaka.T.A.Ayı.Koruma.Haşin.2:No one was injured.
+Vaka.T.A.Ayı.Koruma.Haşin.3:You also butchered the bear's meat and skinned it.
+Vaka.T.A.Ayı.Koruma.Haşin.4:You have obtained -> 3 Leather & 2 Meat
+Vaka.T.A.Ayı.Koruma.Basit.1:Your bodyguard was seriously injured while fighting the bear, but he managed to scare the bear.
+Vaka.T.A.Ayı.Koruma.Basit.2:You quickly changed places as the bear turned its back and limped away.
+Vaka.T.A.Ayı.Koruma.Basit.3:However, your bodyguard died due to bleeding as the sun set.
+Vaka.T.A.Ayı.Korumasız.1:The bear caused havoc.
+Vaka.T.A.Ayı.Korumasız.2:You couldn't resist because you didn't have any protection.
+Vaka.T.A.Ayı.Korumasız.3:A lot of belongings and a few employees perished.
+Vaka.T.A.Ayı.Korumasız.ElemanÖldü:died.
+Vaka.T.A.Ayı.Korumasız.EşyaKırıldı:is unsellable.
+
+
+
+Vaka.T.A.Eşkiya.1:The bandit group is approaching you from two directions.
+Vaka.T.A.Eşkiya.Haşin.1:Your guards stepped forward and told them to step back.
+Vaka.T.A.Eşkiya.Haşin.2:The bandits don't seem to have any such intention.
+Vaka.T.A.Eşkiya.Haşin.3:The fight started.
+Vaka.T.A.Eşkiya.Haşin.4:Your Haşin bodyguard died while fighting.
+Vaka.T.A.Eşkiya.Haşin.5:But you were protected from the bandits and a Diamond Ring was found from one of the bandits.
+Vaka.T.A.Eşkiya.Haşin.6:You didn't know who he stole from, but you took the ring and continued walking in this cursed land.
+
+Vaka.T.A.Eşkiya.Basit.1:There were too many for your guard to handle.
+Vaka.T.A.Eşkiya.Basit.Yitti.koruma.baş:Your bodyguard and
+Vaka.T.A.Eşkiya.Basit.Yitti.koruma.son:, were killed.
+Vaka.T.A.Eşkiya.Çalındı:has stolen.
+Vaka.T.A.Eşkiya.Çalındı2:money stolen.
+
+Vaka.T.A.EşkiyaBaskını.1:They slaughtered everyone who resisted.
+Vaka.T.A.EşkiyaBaskını.2:And as you look at the feet of the man coming at you with his sword...
+Vaka.T.A.EşkiyaBaskını.3:You questioned why you were passing through this uncursed land.
+Vaka.T.A.EşkiyaBaskını.4:But in vain. The last regret did not help.
+Vaka.T.A.EşkiyaBaskını.5:You threw your money purse in the far corner and started running in the opposite direction.
+Vaka.T.A.EşkiyaBaskını.6:The bandits didn't even care that you were running.
+Vaka.T.A.EşkiyaBaskını.7:They only focused on the money purser.
+Vaka.T.A.EşkiyaBaskını.8:You ran and ran and ran without stopping.
+Vaka.T.A.EşkiyaBaskını.9:You can no longer run because your feet are starting to cramp.
+Vaka.T.A.EşkiyaBaskını.10:You're trying to get back to civilization, but from where?
+
+
+
+Vaka.T.A.Kurt.1:You were very frightened by the wolf howling.
+Vaka.T.A.Kurt.2:You continued on your way out of necessity.
+Vaka.T.A.Kurt.3:As night fell, the voices increased.
+Vaka.T.A.Kurt.4:Before you knew what was happening, wolves appeared around you and started attacking you.
+
+Vaka.T.A.Kurt.Haşin.1:Your guards struggled and quickly lit torches.
+Vaka.T.A.Kurt.Haşin.2:They managed to drive away the wolves that were coveting your meat.
+Vaka.T.A.Kurt.Haşin.3:You also killed a wolf.
+Vaka.T.A.Kurt.Haşin.4:You obtained Meat and Leather.
+
+Vaka.T.A.Kurt.Basit.1:There are more wolves than the guard can handle.
+Vaka.T.A.Kurt.Basit.2:The wolves attacked you fiercely.
+Vaka.T.A.Kurt.Basit.Yadigar.1:The wolf made such a move that you thought you were going to die.
+Vaka.T.A.Kurt.Basit.Yadigar.2:You didn't die, but your Heirloom Silver Necklace was shattered.
+Vaka.T.A.Kurt.Basit.3:Your guard, who was exhausted from the fight, perished.
+Vaka.T.A.Kurt.Basit.4:The wolves stole a piece of meat.
+
+Vaka.T.A.Kurt.Korumasız.1:You couldn't resist because there was no protection in your group.
+Vaka.T.A.Kurt.Korumasız.2:The wolves took all the meat and fish they had and ran away.
+Vaka.T.A.Kurt.Korumasız.3:You counted during the day.
+Vaka.T.A.Kurt.Korumasız.Et.Gitmiş:1 piece of meat is gone.
+Vaka.T.A.Kurt.Korumasız.Balık.Gitmiş:1 piece of fish is gone.
+
+Vaka.T.A.Kurt.Saldırmadı:You were afraid they would attack, but there was no attack.
+
+
+Vaka.T.A.Tekinsiz.Adam.1:You notice a man following you.
+Vaka.T.A.Tekinsiz.Adam.2:You are constantly being watched from far away.
+Vaka.T.A.Tekinsiz.Adam.3:Your guards stayed up all night.
+Vaka.T.A.Tekinsiz.Adam.4:You assigned one of your employees to keep be awake at night.
+Vaka.T.A.Tekinsiz.Adam.5:You woke up early in the morning and saw that your employee was also sleeping.
+Vaka.T.A.Tekinsiz.Adam.6:You checked your money, but realized with irritation that
+Vaka.T.A.Tekinsiz.Adam.7:Your Family Heirloom Silver Necklace has been stolen.
+Vaka.T.A.Tekinsiz.Adam.8.baş:You control your money,
+Vaka.T.A.Tekinsiz.Adam.8.son:of your money was stolen.
+
+
+Vaka.T.A.Giz.1:An employee was feeling bad.
+Vaka.T.A.Giz.2:Interestingly, a pot broke.
+Vaka.T.A.Giz.3:You hope he gets better.
+
+Vaka.T.A.olaysız.1:You pass through humming and ringing places.
+Vaka.T.A.olaysız.2:Your team is uncomfortable moving forward in this area.
+Vaka.T.A.olaysız.3:They want to return.
+
+
+
+Vaka.Hırsızlık.iflas.1:Theft
+Vaka.Hırsızlık.iflas.2:The last person left with you also threatened you.
+Vaka.Hırsızlık.iflas.3:What you could do against the cutting tool he found was limited.
+Vaka.Hırsızlık.iflas.4:He cursed you for making you wander around hungry and thirsty for days.
+Vaka.Hırsızlık.iflas.5:Your Family Heirloom Silver Necklace has been stolen.
+Vaka.Hırsızlık.iflas.6:You have no money.
+Vaka.Hırsızlık.iflas.7:There is no one left to carry your belongings.
+Vaka.Hırsızlık.iflas.8:There are no proper belongings left anyway.
+Vaka.Hırsızlık.iflas.9:The employee you've been wandering around hungry for so many days has left the group.
+Vaka.Hırsızlık.iflas.10:There is no one left to carry the belongings.
+Vaka.Hırsızlık.iflas.11:You are no different from the poor people you see on the road.
+
+Vaka.Hırsızlık.AKBİ.1:Your hunting guards were not happy with the money you gave them.
+Vaka.Hırsızlık.AKBİ.2:All guards abandoned the group.
+Vaka.Hırsızlık.AKBİ.3:They made a fuss as they left.
+Vaka.Hırsızlık.AKBİ.4:A few more people went with them.
+Vaka.Hırsızlık.AKBİ.5:Those remaining in your group ->
+
+Vaka.Hırsızlık.AKBİ.Envanter.1:The remaining members do not have the strength to carry all the items.
+Vaka.Hırsızlık.AKBİ.Envanter.2:You should drop some of your belongings.
+Vaka.Hırsızlık.AKBİ.Yol.1:Without leaving any more belongings, you shouldered the load and set off.
+Vaka.Hırsızlık.AKBİ.Yol.2:But unless you feed your other employees, you don't know whether they will leave or stay.
+
+Vaka.Hırsızlık.AKBİ.Envanterin:Your inventory ->
+Vaka.Hırsızlık.AKBİ.Girdi:Entered number ->
+Vaka.Hırsızlık.AKBİ.Eşya:Dropped item ->
+Vaka.Hırsızlık.AKBİ.YanlışGirdi:Please enter the numbers from the list.
+
+Vaka.Hırsızlık.Rand.<3.1:Theft
+Vaka.Hırsızlık.Rand.<3.2:One of your employees stole some of your belongings and escaped at night.
+Vaka.Hırsızlık.Rand.<3.3:Stolen item ->
+Vaka.Hırsızlık.Rand.<3.4:Thief ->
+
+Vaka.Hırsızlık.Rand.2.1:Theft
+Vaka.Hırsızlık.Rand.2.2:You can't find your money, but you can't blame your comrades.
+Vaka.Hırsızlık.Rand.2.3:Everyone is already very nervous because there are no supplies.
+Vaka.Hırsızlık.Rand.2.4:The guys in the kervan have lost their trust in you.
+Vaka.Hırsızlık.Rand.2.5:Your money was stolen ->
+
+Vaka.Hırsızlık.Rand.3.1:The Haşin Guard has stated that he has no respect for your authority.
+Vaka.Hırsızlık.Rand.3.2:He reproached you for running out of supplies.
+Vaka.Hırsızlık.Rand.3.3:Haşin Guard left the group.
+
+Vaka.Hırsızlık.Rand.4:Your bodyguard has returned from hunting.
+Vaka.Hırsızlık.Rand.4.1.1:He hunted a rabbit.
+Vaka.Hırsızlık.Rand.4.1.2:You have something to eat.
+Vaka.Hırsızlık.Rand.4.2.1:He hunted a gazelle.
+Vaka.Hırsızlık.Rand.4.2.2:Those in your group were happy about the situation.
+Vaka.Hırsızlık.Rand.4.3.1:He hunted quail.
+Vaka.Hırsızlık.Rand.4.4.1:He hunted two birds.
+Vaka.Hırsızlık.Rand.4.4.2:Even if you shared and were not satisfied, you satisfied your hunger.
+Vaka.Hırsızlık.Rand.4.5.1:He couldn't catch anything.
+
+Vaka.Hırsızlık.Rand.5.1:One of your employees insulted you and left the caravan.
+Vaka.Hırsızlık.Rand.5.2:You have no supplies. Either everyone will leave the group one by one, or you will starve to death.
+Vaka.Hırsızlık.Rand.5.3:Who left the group -> 
+Vaka.Hırsızlık.Rand.else:Your comrades are disturbed by the fact that the supplies are running out.
+
+Vaka.Kumar.0.1:Returning home at night with a large amount of gambling money
+Vaka.Kumar.0.2:You suddenly fainted from a painful stick on your neck.
+
+Vaka.Kumar.1.1:When you woke up, it was already morning.
+Vaka.Kumar.1.2:And you didn't have any money on you.
+
+Vaka.Kumar.2.1:You started to wake up with water droplets smacking on your face.
+Vaka.Kumar.2.2:Someone in your kervan wondered why you hadn't arrived for so long.
+Vaka.Kumar.2.3:When you checked your clothes, you realized that you didn't have the money you earned with you.
+
+Vaka.Kumar.3.1:Out of a momentary faintness, you felt hands feeling over you.
+Vaka.Kumar.3.2:You were hit while trying to fight back.
+Vaka.Kumar.3.3:You looked after the usurpers with a shifting and foggy image.
+Vaka.Kumar.3.4:There was nothing you could do.
+Vaka.Kumar.3.5:In the middle of the night, you crawled anxiously through the streets.
+Vaka.Kumar.3.6:I got home safe but you need to see a doctor.
+
+Vaka.Kumar.4.1:A man was looking for loot on you.
+Vaka.Kumar.4.2:You came to your senses and slapped the man on the head.
+Vaka.Kumar.4.3:The man stumbled in surprise and you turned him around and took all the money he had on him.
+Vaka.Kumar.4.4:You were in a good mood on the way back to the inn, but at the inn you noticed that you were a little sore.
+Vaka.Kumar.4.5:You'd better see a doctor.
+
+Vaka.Kumar.5.1:You heard a running sound from behind.
+Vaka.Kumar.5.2:The man behind attacked you.
+Vaka.Kumar.5.3:The man fell to one side and you fell to the other side.
+Vaka.Kumar.5.4:You stood up and started running when the man grabbed your money purse.
+Vaka.Kumar.5.5:The rope connecting their sacs broke as you pulled.
+Vaka.Kumar.5.6:You ran to the inn where you were sheltered.
+Vaka.Kumar.5.7:Your stolen money ->
+
+Vaka.dc.1:The sneezing and coughing that started two or three days ago has become more severe.
+Vaka.dc.2:You are now convinced that you need to see a doctor.
+
+Vaka.Çerez.1:You started sneezing and coughing, but it seems like you don't need to see a doctor.
+Vaka.Çerez.2:You sneezed so much you felt dizzy.
+Vaka.Çerez.3:You're feeling like you're choking, but it doesn't seem like you need to see a doctor.
+Vaka.Çerez.4:This is the first time in your life that you've seen an insect that big AND WHILE BITTING YOU.
+Vaka.Çerez.5:A man in the kervan started coughing a lot.
+Vaka.Çerez.6:You started to hear rumors very frequently that there is an epidemic around.
+Vaka.Çerez.7:Aim and fire
+Vaka.Çerez.8:Your nose is dripping with snot.
+
+Vaka.Dilenci.1:A stranger on the road says he is hungry and wants some food.
+Vaka.Dilenci.2:If you want to give it, enter 1, otherwise enter 0 ->
+Vaka.Dilenci.3:You gave a piece of food to the gariban.
+Vaka.Dilenci.4:You left the gariban just like that,
+Vaka.Dilenci.5:Hungry...
+Vaka.Dilenci.6:Anhydrous...
+Vaka.Dilenci.7:Listlessly...
+Vaka.Dilenci.8:Please enter 1 or 0.
+
+Vaka.Zengin.1:While you were on the road, you came across a kervan.
+Vaka.Zengin.2:A fight broke out between those traveling in the kervans.
+Vaka.Zengin.3:While you were going to prevent the incident, you saw that someone had already taken action.
+Vaka.Zengin.4:You made eye contact with the man who calmed the people down.
+Vaka.Zengin.5:A friendly smile appeared on the man's face.
+Vaka.Zengin.6:The man approached and you started talking.
+Vaka.Zengin.7:The man was a descendant of a place.
+Vaka.Zengin.8:Because of his self-confidence, he could not see the threat.
+Vaka.Zengin.9:He wandered on the road hungry and thirsty.
+Vaka.Zengin.10:Just when he gave up, you shared your bread with that gariban.
+Vaka.Zengin.11:You suddenly remembered him.
+Vaka.Zengin.12:You chatted for a long time.
+Vaka.Zengin.13:Thanks to the influence of his lineage, the man became rich in a short time.
+Vaka.Zengin.14:He also gave you a diamond ring as a thank you.
+
+Vaka.Zengin.Yine.1:While you were on the road, you came across a kervan.
+Vaka.Zengin.Yine.2:The man who once gave you a Diamond Ring gave you two sacks of spices this time.
+
+vBahşiş.1:Your guard expects you to tip him.
+vBahşiş.2:The amount you have to pay to make him completely happy ->
+vBahşiş.3:If you will give, enter the amount, if not, 0 ->
+vBahşiş.4:The amount of money you gave to your bodyguard ->
+vBahşiş.5:Your bodyguard didn't like the amount you gave him.
+vBahşiş.6:Your bodyguard was very happy with the amount you gave.
+vBahşiş.7:He feels that his efforts are being rewarded.
+vBahşiş.8:Your bodyguard made an expression like he would be more pleased if you gave him a little more.
+vBahşiş.9:But this amount was definitely enough for him.
+vBahşiş.10:You don't have that much money.
+
+VAKALAR BİTTİ
+_______________________________________________________________________
 
 
 
@@ -172,7 +438,7 @@ Program.Menu.Menu.8:Please enter a number between 1-7 ->
 
 Program.Menu.Case1:Game Starting
 Program.Menu.Case2:P indicates your current location on the map.
-Program.Menu.Case3:(Construction has started as of 31.01.2024. If possible, it will be delivered within 3 days at the latest.)
+Program.Menu.Case3:(Türkçe & English)
 Program.Menu.Case3.1:Select language option ->
 Program.Menu.Case3.2:1. Türkçe
 Program.Menu.Case3.3:2. English

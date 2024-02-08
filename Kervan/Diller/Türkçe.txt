@@ -3,6 +3,12 @@ Dil:Türkçe
 
 
 
+Elemanlar için
+Language.GetText($"Şehir.İş.{Eleman}")
+Eşyalar için
+Language.GetText($"Eşyalar.item.{eşya}")
+
+
 ALL NOKTALAR BAŞLIYOR
 _____________________________________________________________________
 
@@ -11,8 +17,275 @@ All.Para:Paran ->
 All.Erzak:Erzağın ->
 All.GeçersizYönlendirme:Geçersiz yönlendirme.
 
+All.1/0:Lütfen 1 veya 0 yazınız.
+
 ALL NOKTALAR BİTTİ
 _____________________________________________________________________
+
+
+
+
+
+VAKALAR BAŞLIYOR
+_______________________________________________________________________
+
+Vakalar.Yaz(Vaka):VAKA
+
+Vakalar.Vaka-1.1:Açlık hissini artık yatıştıracak ekmek bulmakta zorlanıyorsun.
+Vakalar.Vaka-1.2:Kutlu olduğunu düşündüğün yolda, beş parasız kaldın.
+Vakalar.Vaka-1.3:Baba evine, ana ocağına dönmek istiyorsun
+Vakalar.Vaka-1.4:Ama ne yol gösterenin var, ne yemeğin, ne gücün.
+Vakalar.Vaka-1.5:Oyunu Kaybettin!
+Vakalar.Vaka-1.6:Mağlubiyet!
+
+T.A -> Tehlikeli Arazi
+Vaka.T.A.Harabelik.1:Bir harabelikten geçiyorsunuz.
+Vaka.T.A.Harabelik.2:Harabelikte bazı evlerin içi çiçek açmış.
+Vaka.T.A.Harabelik.Koruma.1:Korumaların harabeyi keşfedebileceklerini söylüyorlar.
+Vaka.T.A.Harabelik.Koruma.2:Göndermek istiyor musun? (Göndermek için 1 gir, göndermemek için 0) ->
+Vaka.T.A.Harabelik.Koruma.2.Girdi.0:Girmeme kararı alıyorsunuz.
+Vaka.T.A.Harabelik.Koruma.2.Girdi.1:Korumaların ve bir meraklı eleman, harabelerde etrafı araştırmaya gitti.
+Vaka.T.A.Harabelik.Koruma.2.Girdi.1.Rand.4.1:Elemanların etrafta dolaşırken, birisi Elmas Yüzük bulmuş.
+Vaka.T.A.Harabelik.Koruma.2.Girdi.1.Rand.4.2:Sana teslim etti.
+Vaka.T.A.Harabelik.Koruma.2.Girdi.1.Rand.7.1:Askerlerin etrafta kimsenin olmadığını beyan ettiler.
+Vaka.T.A.Harabelik.Koruma.2.Girdi.1.Rand.7.2:Meraklı elemanın ise iki çömlek bulmuş ve onları getirdi.
+Vaka.T.A.Harabelik.KorumaYok.1:Hiçkimse burada daha fazla kalmak istemiyor.
+Vaka.T.A.Harabelik.KorumaYok.2:Herkesin içerisine bir huzursuzluk çökmüş durumda.
+
+Vaka.T.A.Ayı.1:Bir mağaranın yakınından geçerken uzaklardan bir kükreme duydunuz.
+Vaka.T.A.Ayı.2:Kervana doğru koşan sinirli bir AYI var.
+Vaka.T.A.Ayı.Koruma.1:Korumalarınız öne atıldı ve ayıyla mücadele etti.
+Vaka.T.A.Ayı.Koruma.Haşin.1:Haşin koruman sayesinde ayıyı alt ettiniz.
+Vaka.T.A.Ayı.Koruma.Haşin.2:Kimse yaralanmadı.
+Vaka.T.A.Ayı.Koruma.Haşin.3:Ayrıca ayının etini doğradınız ve derisini yüzdünüz.
+Vaka.T.A.Ayı.Koruma.Haşin.4:Elde ettiniz -> 3 Deri & 2 Et
+Vaka.T.A.Ayı.Koruma.Basit.1:Ayıyla mücadele eden koruman ağır yaralandı ama ayıyı korkutmayı başardı.
+Vaka.T.A.Ayı.Koruma.Basit.2:Ayı arkasını dönmüş topallayarak kaçarken siz de hızlıca yer değiştirdiniz.
+Vaka.T.A.Ayı.Koruma.Basit.3:Ancak korumanız gün batarken kanamadan dolayı vefat etti.
+Vaka.T.A.Ayı.Korumasız.1:Ayı ortalığı kırdı geçirdi.
+Vaka.T.A.Ayı.Korumasız.2:Bir korumaya da sahip olmadığınızdan karşı koyamadınız.
+Vaka.T.A.Ayı.Korumasız.3:Çokça eşya ve birkaç elemanın telef oldu.
+Vaka.T.A.Ayı.Korumasız.ElemanÖldü:öldü.
+Vaka.T.A.Ayı.Korumasız.EşyaKırıldı:satılamaz halde.
+
+
+
+Vaka.T.A.Eşkiya.1:Eşkiya gurubu size doğru iki cihetten yaklaşıyor.
+Vaka.T.A.Eşkiya.Haşin.1:Korumalarınız öne çıktı ve geri basmalarını söylediler.	
+Vaka.T.A.Eşkiya.Haşin.2:Eşkiyaların öyle bir niyeti yok gibi görünüyor.
+Vaka.T.A.Eşkiya.Haşin.3:Arbede başladı.
+Vaka.T.A.Eşkiya.Haşin.4:Haşin koruma'nız savaşırken öldü.
+Vaka.T.A.Eşkiya.Haşin.5:Ama eşkiyalardan korunmuş oldunuz ve eşkiyanın tekinden Elmas Yüzük çıktı.
+Vaka.T.A.Eşkiya.Haşin.6:Kimden çaldı bilmiyordunuz ancak yüzüğü alıp bu lanetli diyarda yürümeye devam ettiniz.
+
+Vaka.T.A.Eşkiya.Basit.1:Korumanızın başa çıkmayacağı kadar çoktular.
+Vaka.T.A.Eşkiya.Basit.Yitti.koruma.baş:Koruma ve
+Vaka.T.A.Eşkiya.Basit.Yitti.koruma.son:, öldürüldüler.
+Vaka.T.A.Eşkiya.Çalındı:çalındı.
+Vaka.T.A.Eşkiya.Çalındı2:kadar paran çalındı.
+
+Vaka.T.A.EşkiyaBaskını.1:Karşı koyan herkesi kılıçtan geçirdiler.
+Vaka.T.A.EşkiyaBaskını.2:Ve üzerine kılıcıyla gelen adamın ayaklarına bakarken sen...
+Vaka.T.A.EşkiyaBaskını.3:Bu lanetsiz topraklardan neden geçtiğini sorguladın.
+Vaka.T.A.EşkiyaBaskını.4:Ama nafile. Son pişmanlık fayda vermedi.
+Vaka.T.A.EşkiyaBaskını.5:Para keseni uzak köşeye fırlatıp aksi yönde koşmaya başladın.
+Vaka.T.A.EşkiyaBaskını.6:Koşuyor olman eşkiyaların umrunda bile olmadı.
+Vaka.T.A.EşkiyaBaskını.7:Sadece para kesene yöneldiler.
+Vaka.T.A.EşkiyaBaskını.8:Koştun, koştun ve durmadan koştun.
+Vaka.T.A.EşkiyaBaskını.9:Artık ayaklarına kramplar girmeye başladığı için koşamaz hâle geldin.
+Vaka.T.A.EşkiyaBaskını.10:Medeniyete geri dönmeye çalışıyorsun, ama nereden?
+
+
+
+Vaka.T.A.Kurt.1:Kurt ulumalarından oldukça ürktünüz.
+Vaka.T.A.Kurt.2:Mecburiyetten yola devam ettiniz.
+Vaka.T.A.Kurt.3:Gece bastırınca sesler çoğaldı.
+Vaka.T.A.Kurt.4:Ne olduğunu anlayamadan etrafınızda beliren kurtlar üzerinize saldırmaya başladı.
+
+Vaka.T.A.Kurt.Haşin.1:Korumalarınız mücadele etti ve hızlıca meşaleler yaktılar.
+Vaka.T.A.Kurt.Haşin.2:Etlerinize göz diken kurtları uzaklaştırmayı başardılar.
+Vaka.T.A.Kurt.Haşin.3:Kurdun birini de öldürdünüz.
+Vaka.T.A.Kurt.Haşin.4:Et ve Deri elde ettin.
+
+Vaka.T.A.Kurt.Basit.1:Korumanın başa çıkabileceğinden daha fazla kurt var.
+Vaka.T.A.Kurt.Basit.2:Kurtlar size hışımla saldırdılar.
+Vaka.T.A.Kurt.Basit.Yadigar.1:Kurt öyle bir hamle yaptı ki öleceksin sandın.
+Vaka.T.A.Kurt.Basit.Yadigar.2:Ölmedin ama Aile Yadigarı Gümüş Kolye'n parçalandı.
+Vaka.T.A.Kurt.Basit.3:Mücadeleye yorulan koruman telef oldu.
+Vaka.T.A.Kurt.Basit.4:Kurtlar bir parça et kaçırdılar.
+
+Vaka.T.A.Kurt.Korumasız.1:Grubunda koruma olmadığından dolayı karşı koyamadınız.
+Vaka.T.A.Kurt.Korumasız.2:Kurtlar et-balık ne vardıysa hepsini alıp kaçtılar.
+Vaka.T.A.Kurt.Korumasız.3:Gündüz sayım yaptınız.
+Vaka.T.A.Kurt.Korumasız.Et.Gitmiş:1 parça et gitmiş.
+Vaka.T.A.Kurt.Korumasız.Balık.Gitmiş:1 parça balık gitmiş.
+
+Vaka.T.A.Kurt.Saldırmadı:Saldırmalarından korktunuz ancak bir saldırı olmadı.
+
+
+Vaka.T.A.Tekinsiz.Adam.1:Sizi takip eden bir adam fark ettiniz.
+Vaka.T.A.Tekinsiz.Adam.2:Sürekli uzaklardan izleniyorsunuz.
+Vaka.T.A.Tekinsiz.Adam.3:Korumalarınız gece ayakta kaldı.
+Vaka.T.A.Tekinsiz.Adam.4:Gece olduğunda uyumamak üzere bir elemanını görevlendirdin.
+Vaka.T.A.Tekinsiz.Adam.5:Sabah erkenden uyandın ve baktın ki elemanın da uyuyor.
+Vaka.T.A.Tekinsiz.Adam.6:Paranı kontrol ettin, yerinde ancak sinirle fark ettin ki
+Vaka.T.A.Tekinsiz.Adam.7:Aile Yâdigârı Gümüş Kolye'n çalınmış.
+Vaka.T.A.Tekinsiz.Adam.8.baş:Paranı kontrol ettin,
+Vaka.T.A.Tekinsiz.Adam.8.son:kadar paran çalınmış.
+
+
+Vaka.T.A.Giz.1:Bir elemanın kendini kötü hissediyordu.
+Vaka.T.A.Giz.2:İlginç bir şekilde bir çömlek kırıldı.
+Vaka.T.A.Giz.3:İyileşmesini umuyorsun.
+
+Vaka.T.A.olaysız.1:Uğuldayan ve çınlayan mekanlardan geçiyorsunuz.
+Vaka.T.A.olaysız.2:Ekibinizdekiler bu bölgede ilerlemekten rahatsız.
+Vaka.T.A.olaysız.3:Geri dönmek istiyorlar.
+
+
+
+Vaka.Hırsızlık.iflas.1:Hırsızlık
+Vaka.Hırsızlık.iflas.2:Yanında son kalan kişi de seni tehdit etti.
+Vaka.Hırsızlık.iflas.3:Bulduğu kesici alet karşısında yapabileceklerin sınırlıydı.
+Vaka.Hırsızlık.iflas.4:Günlerdir aç susuz dolaştırdığın için sana sayıp sövdü.
+Vaka.Hırsızlık.iflas.5:Aile Yâdigârı Gümüş Kolye'n gasp edildi.
+Vaka.Hırsızlık.iflas.6:Beş paran yok.
+Vaka.Hırsızlık.iflas.7:Eşyalarını taşıyacak, kimse kalmadı.
+Vaka.Hırsızlık.iflas.8:Zaten doğru düzgün eşyân da kalmadı.
+Vaka.Hırsızlık.iflas.9:Kaç gündür aç acına dolaştırdığın elemanın grubu terk etti.
+Vaka.Hırsızlık.iflas.10:Eşyaları taşıyacak kimse kalmadı.
+Vaka.Hırsızlık.iflas.11:Yolda gördüğün garibanlardan farkın kalmadı.
+
+Vaka.Hırsızlık.AKBİ.1:Av yapıp ava çıkan korumaların verdiğin paradan mutlu değillerdi.
+Vaka.Hırsızlık.AKBİ.2:Bütün korumalar grubu terk etti.
+Vaka.Hırsızlık.AKBİ.3:Giderken yaygara çıkardılar.
+Vaka.Hırsızlık.AKBİ.4:Yanlarında bir kaç kişi daha gitti.
+Vaka.Hırsızlık.AKBİ.5:Grubunda kalanlar ->
+
+Vaka.Hırsızlık.AKBİ.Envanter.1:Kalan elemanlarının bütün eşyaları taşıyacak gücü yok.
+Vaka.Hırsızlık.AKBİ.Envanter.2:Eşyaların bir kısmını bırakmalısın.
+Vaka.Hırsızlık.AKBİ.Yol.1:Daha fazla eşya bırakmadan, yükleri sırtlandınız ve yola çıktınız.
+Vaka.Hırsızlık.AKBİ.Yol.2:Ama diğer elemanlarını doyurmadığın müddetçe onlar da gider mi kalır mı bilemiyorsun.
+
+Vaka.Hırsızlık.AKBİ.Envanterin:Envanterin ->
+Vaka.Hırsızlık.AKBİ.Girdi:Girilen sayı -> 
+Vaka.Hırsızlık.AKBİ.Eşya:Bırakılan eşya ->
+Vaka.Hırsızlık.AKBİ.YanlışGirdi:Lütfen listedeki sayıları girin.
+
+Vaka.Hırsızlık.Rand.<3.1:Hırsızlık
+Vaka.Hırsızlık.Rand.<3.2:Elemanlarından biri gece bir eşyanı çalarak kaçmış.
+Vaka.Hırsızlık.Rand.<3.3:Çalınan eşyân ->
+Vaka.Hırsızlık.Rand.<3.4:Çalan -> 
+
+Vaka.Hırsızlık.Rand.2.1:Hırsızlık
+Vaka.Hırsızlık.Rand.2.2:Paranı bulamıyorsun ancak yoldaşlarını suçlayabilecek durumda değilsin.
+Vaka.Hırsızlık.Rand.2.3:Erzak olmadığından dolayı herkes zaten çok gergin.
+Vaka.Hırsızlık.Rand.2.4:Kervandaki elemanlar sana karşı olan güvenlerini kaybettiler.
+Vaka.Hırsızlık.Rand.2.5:Paran çalındı -> 
+
+Vaka.Hırsızlık.Rand.3.1:Haşin Koruma senin otoritene saygısı kalmadığını belirtti.
+Vaka.Hırsızlık.Rand.3.2:Erzak bittiği için seni kınadı.
+Vaka.Hırsızlık.Rand.3.3:Haşin Koruma gruptan ayrıldı.
+
+Vaka.Hırsızlık.Rand.4:Koruman avdan döndü.
+Vaka.Hırsızlık.Rand.4.1.1:Bir tavşan avlamış.
+Vaka.Hırsızlık.Rand.4.1.2:Yiyecek bir şeyiniz oldu.
+Vaka.Hırsızlık.Rand.4.2.1:Bir Ceylan avlamış.
+Vaka.Hırsızlık.Rand.4.2.2:Grubunuzdakiler duruma mutlu oldu.
+Vaka.Hırsızlık.Rand.4.3.1:Bıldırcın avlamış.
+Vaka.Hırsızlık.Rand.4.4.1:İki kuş avlamış.
+Vaka.Hırsızlık.Rand.4.4.2:Bölüşüp doymasanız da açlığınızı geçirdiniz.
+Vaka.Hırsızlık.Rand.4.5.1:Bir şey avlayamamış.
+
+Vaka.Hırsızlık.Rand.5.1:Bir elemanın sana hakaretler ederek kervandan ayrıldı.
+Vaka.Hırsızlık.Rand.5.2:Erzağın yok. Ya herkes teker teker grubu terk edecek ya da açlıktan öleceksiniz.
+Vaka.Hırsızlık.Rand.5.3:Grubu terk eden -> 
+Vaka.Hırsızlık.Rand.else:Yoldaşların erzakların bitmesinden rahatsız olduğunu dillendiriyor.
+
+Vaka.Kumar.0.1:Gece evine yüklü miktarda kumar parasıyla dönerken
+Vaka.Kumar.0.2:Ansızın ensene inen acı verici bir sopayla bayıldın.
+
+Vaka.Kumar.1.1:Kendine geldiğinde çoktan sabah olmuştu.
+Vaka.Kumar.1.2:Ve üzerinde zırnık para yoktu.
+
+Vaka.Kumar.2.1:Yüzüne şapırdayan su damlacıklarıyla ayılmaya başladın.
+Vaka.Kumar.2.2:Kervanındaki biri senin neden bu kadar uzun süre gelmediğine bakmış.
+Vaka.Kumar.2.3:Üzerini kontrol ettiğindeyse kazandığın paraların yanında olmadığını fark ettin.
+
+Vaka.Kumar.3.1:Anlık bir baygınlıktan, üzerini yoklayan elleri hissettin.
+Vaka.Kumar.3.2:Karşı koymaya çalışırken darbe aldın.
+Vaka.Kumar.3.3:Kayan ve sisli görüntüyle gaspçıların arkasından baktın.
+Vaka.Kumar.3.4:Elinden hiçbir şey gelmedi.
+Vaka.Kumar.3.5:Gece yarısı, sokaklarda tedirginlikle süründün.
+Vaka.Kumar.3.6:Sağsağlim eve vardın ancak bir doktor görmen gerek.
+
+Vaka.Kumar.4.1:Adamın teki üzerini karıştırıyordu.
+Vaka.Kumar.4.2:Kendine geldin ve adamın kafasına şamarı yapıştırdın.
+Vaka.Kumar.4.3:Adam şaşkınlıkla sendeledi ve adamı dönüp sen üzerindeki bütün parayı aldın.
+Vaka.Kumar.4.4:Hana dönerken keyfin yerindeydi ama handa biraz ağrın olduğunu fark ettin.
+Vaka.Kumar.4.5:Doktora görünsen iyi olacak.
+
+Vaka.Kumar.5.1:Arkadan bir koşma sesi duydun.
+Vaka.Kumar.5.2:Gelen adam üzerine saldırdı.
+Vaka.Kumar.5.3:Adamı bir yana sen bir yana düştün.
+Vaka.Kumar.5.4:Sen ayağa kalktın koşmaya başladın ki adam para keseni tuttu.
+Vaka.Kumar.5.5:Keselerini birbirine bağlayan ip çekiştirmenizde koptu.
+Vaka.Kumar.5.6:Koşturarak barındığın hana koştun.
+Vaka.Kumar.5.7:Çalınan paran ->
+
+Vaka.dc.1:İki üç gün önce başlayan hapşurma ve tıksırmaların şiddetlendi.
+Vaka.dc.2:Artık bir doktor görmen gerektiğine ikna olmuş vaziyettesin.
+
+Vaka.Çerez.1:Hapşurmaya ve tıksırmaya başladın ama doktor görmene gerek yok gibi.
+Vaka.Çerez.2:O kadar çok hapşurdun ki başın döndü.
+Vaka.Çerez.3:Tıksıra tıksıra bir hâl oldun ama doktor görmene gerek yok gibi.
+Vaka.Çerez.4:Hayatında ilk defa o kadar büyük bir böcek gördün. HEM DE SENİ ISIRIRKEN
+Vaka.Çerez.5:Kervandaki bir adam çok öksürmeye başladı.
+Vaka.Çerez.6:Etrafta salgın var söylentisini çok sık duymaya başladın.
+Vaka.Çerez.7:Gez göz arpacık
+Vaka.Çerez.8:Burnun salya sümük akıyor.
+
+Vaka.Dilenci.1:Yolda bir garip, aç olduğunu ve bir erzak istediğini söylüyor.
+Vaka.Dilenci.2:Vereceksen 1, yoksa 0 gir -> 
+Vaka.Dilenci.3:Garibana bir parça yemek verdin.
+Vaka.Dilenci.4:Garibanı öylece bıraktın,
+Vaka.Dilenci.5:Aç...
+Vaka.Dilenci.6:Susuz...
+Vaka.Dilenci.7:Umursamazca...
+Vaka.Dilenci.8:Lütfen 1 veya 0 gir.
+
+Vaka.Zengin.1:Yolda giderken bir kervanla karşılaştınız.
+Vaka.Zengin.2:Kervanlarda gidenler arasında bir arbede yaşandı.
+Vaka.Zengin.3:Olayı engellemeye giderken birinin çoktan olaya el attığını gördün.
+Vaka.Zengin.4:Ahaliyi sakinleştiren adamla göz göze geldin.
+Vaka.Zengin.5:Adamın yüzünde canayakın bir gülümseme belirdi.
+Vaka.Zengin.6:Adam yaklaştı ve konuşmaya başladınız.
+Vaka.Zengin.7:Adam falanca yerden falanca kişinin soyundanmış.
+Vaka.Zengin.8:Kendine olan güveninden dolayı gelen tehditi görememiş.
+Vaka.Zengin.9:Yolda aç, susuz garibâne dolaşmış.
+Vaka.Zengin.10:Tam vazgeçtiği anda sen adamla ekmeğini paylaşmışsın.
+Vaka.Zengin.11:Adamı birden hatırladın.
+Vaka.Zengin.12:Uzunca sohbet ettiniz.
+Vaka.Zengin.13:Adam soyunun da etkisiyle kısa sürede zenginliğe erişmiş.
+Vaka.Zengin.14:Sana da teşekkür mahiyetinde bir Elmas yüzük verdi.
+
+Vaka.Zengin.Yine.1:Yolda giderken bir kervanla karşılaştınız.
+Vaka.Zengin.Yine.2:Zamanında sana Elmas Yüzük hediye eden adam bu sefer de iki çuval baharat verdi.
+
+vBahşiş.1:Koruman bahşiş vermeni bekliyor.
+vBahşiş.2:Kesinkez mutlu etmek için ödemen gereken miktar ->
+vBahşiş.3:Vereceksen tutarı gir, vermeyeceksen 0 ->
+vBahşiş.4:Korumana verdiğin para miktarı ->
+vBahşiş.5:Koruman verdiğin miktarı beğenmedi.
+vBahşiş.6:Koruman verdiğin miktardan ziyadesiyle mutlu oldu.
+vBahşiş.7:Emeğinin karşılığının verildiğini hissediyor.
+vBahşiş.8:Koruman biraz daha fazla versen daha hoşnut olurdu gibi bir ifade takındı.
+vBahşiş.9:Ama bu miktar da kesinlikle ona yetmiş.
+vBahşiş.10:O kadar paran yok.
+
+VAKALAR BİTTİ
+_______________________________________________________________________
+
 
 
 
@@ -171,7 +444,7 @@ Program.Menu.Menu.8:Lütfen 1-7 arası bir sayı girin ->
 
 Program.Menu.Case1:Oyun Başlatılıyor
 Program.Menu.Case2:P haritadaki sizin bulunduğunuz konumu gösterir.
-Program.Menu.Case3:(31.01.2024 itibariyle yapımına başlanmıştır. Mümkünse en geç 3 gün içerisinde getirilecektir.)
+Program.Menu.Case3:(Türkçe & English)
 Program.Menu.Case3.1:Dil seçeneğini belirtin ->
 Program.Menu.Case3.2:1. Türkçe
 Program.Menu.Case3.3:2. English
