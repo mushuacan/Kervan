@@ -605,15 +605,15 @@ Harita.Bilgilendirme.5:Numbers like 1-2 -> Refers to cities or villages (Settlem
 HARİTA.İPUCU
 ________________________
 Harita.İpucu:.Hint ->
-Harita.İpucu.1:It is much more profitable to buy from villages and sell in cities.
-Harita.İpucu.2:If you run out of supplies, those in your group may become your enemies.
-Harita.İpucu.3:Giving food to the poor is a good deed.
-Harita.İpucu.4:Navigating dangerous terrain will take time, even if you don't lose anything.
-Harita.İpucu.5:Gambling in the city is just a number puzzle game.
-Harita.İpucu.6:You can get the personnel (Guard & Cook) only from the cities not from the villages.
-Harita.İpucu.7:Guards protect you from getting into dangerous situations.
-Harita.İpucu.8:Hiring a Cook for your team ensures supply control and your supplies last longer.
-Harita.İpucu.9:The producer of this game is Mushu.
+Harita.İpucu.01:It is much more profitable to buy from villages and sell in cities.
+Harita.İpucu.02:If you run out of supplies, those in your group may become your enemies.
+Harita.İpucu.03:Giving food to the poor is a good deed.
+Harita.İpucu.04:Navigating dangerous terrain will take time, even if you don't lose anything.
+Harita.İpucu.05:Gambling in the city is just a number puzzle game.
+Harita.İpucu.06:You can get the personnel (Guard & Cook) only from the cities not from the villages.
+Harita.İpucu.07:Guards protect you from getting into dangerous situations.
+Harita.İpucu.08:Hiring a Cook for your team ensures supply control and your supplies last longer.
+Harita.İpucu.09:The producer of this game is Mushu.
 Harita.İpucu.10:You can save your project and continue where you left off whenever you want, but be careful, recording after recording will delete the previous recording.
 Harita.İpucu.11:The Kervan game was actually made as a Final Project.
 Harita.İpucu.12:If you plan to cross dangerous terrain, do not buy meat or fish. It can attract wild animals.

@@ -610,15 +610,15 @@ Harita.Bilgilendirme.5: 1-2 gibi sayılar -> Şehirleri veya köyleri (Yerleşke
 HARİTA.İPUCU
 ________________________
 Harita.İpucu:.İpucu ->
-Harita.İpucu.1:Köylerden alıp şehirlerde satmak çok daha kârlıdır.
-Harita.İpucu.2:Erzağınız biterse grubunuzdakiler size düşman kesilebilir.
-Harita.İpucu.3:Garibe yemek vermek sevaptır.
-Harita.İpucu.4:Tehlikeli arazide ilerlemek bir şey kaybetmeseniz bile zaman alacaktır.
-Harita.İpucu.5:Şehirde kumar oynamak sadece bir sayı bulmaca oyunudur.
-Harita.İpucu.6:Köylerden alamayacağınız elemanları (Koruma & Aşçı) Şehirlerden temin edebilirsiniz.
-Harita.İpucu.7:Korumalar sizi tehlikeli durumlarda kalmaktan korur.
-Harita.İpucu.8:Ekibinize Aşçı almak erzak kontrolünü sağlar ve erzağınız daha uzun gider.
-Harita.İpucu.9:Bu oyunun yapıncısı Mushu'dur.
+Harita.İpucu.01:Köylerden alıp şehirlerde satmak çok daha kârlıdır.
+Harita.İpucu.02:Erzağınız biterse grubunuzdakiler size düşman kesilebilir.
+Harita.İpucu.03:Garibe yemek vermek sevaptır.
+Harita.İpucu.04:Tehlikeli arazide ilerlemek bir şey kaybetmeseniz bile zaman alacaktır.
+Harita.İpucu.05:Şehirde kumar oynamak sadece bir sayı bulmaca oyunudur.
+Harita.İpucu.06:Köylerden alamayacağınız elemanları (Koruma & Aşçı) Şehirlerden temin edebilirsiniz.
+Harita.İpucu.07:Korumalar sizi tehlikeli durumlarda kalmaktan korur.
+Harita.İpucu.08:Ekibinize Aşçı almak erzak kontrolünü sağlar ve erzağınız daha uzun gider.
+Harita.İpucu.09:Bu oyunun yapıncısı Mushu'dur.
 Harita.İpucu.10:Projenizi kaydetip istediğiniz zaman kaldığınız yerden devam edebilirsiniz ama dikkat edin, kayıt üstüne kayıt almak önceki kaydı silecektir.
 Harita.İpucu.11:Kervan oyunu aslında bir Final Projesi olarak yapıldı.
 Harita.İpucu.12:Tehlikeli araziden geçmeyi düşünüyorsanız et-balık almayın. Vahşi hayvanları çekebilir.

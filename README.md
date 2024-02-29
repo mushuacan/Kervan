@@ -1,59 +1,40 @@
 Kervan
 
-OYUN HAKKINDA
-
-Text base ticaret oyunudur.
-
-Oyunun amacı mal alıp satarak 1000 altın kazanmaktır.
-Parasız kalınca veya satacak eşya olmadan kalınca oyun kaybedilmektedir.
-
-Oyunu kazanmak tahminen 25-30 dk sürmekte
-____________________________________________________________________________
+Yazı tabanlı bir ticaret oyunudur.
+Oyunun amacı sermayenizi katlayarak 1000 altına ulaşmaktır.
+Bütün paranızı yitirince oyunu kaybedersiniz.
 
 
 OYUNU AÇMAK İÇİN
-(Visual studio c# gerektirir)
 
-Yöntem-1
-Kervan dosyasını açın,
-Kervan.exe - Kısayol'u çalıştırın.
+Kervan dosyasına girin
+Kervan.exe kısayol'unu çalıştırın.
 
-Yöntem-2
-Kervan -> bin -> Debug -> net8.0 dosyasını açın
-Kervan.exe'yi çalıştırın.
 
-Yöntem-3
-Kervan dosyasını açın,
-Kervan.sln'yi çalıştırın. 
-ctrl + f5 'e basın.
-____________________________________________________________________________
+Kodları incelemek için
+
+Kervan Visual Studio Codes dosyasına girin
+Kervan.sln dosyasını açın (Visual Studi c# gerektirir)
 
 
 
-ABOUT THE GAME
 
-It is a text base trading game.
+Translation
 
-The aim of the game is to earn 1000 gold by buying and selling.
-The game is lost when you run out of money or have no items to sell.
+Kervan
 
-It takes approximately 25-30 minutes to win the game.
-____________________________________________________________________________
+It is a text-based trading game.
+The aim of the game is to double your capital and reach 1000 gold.
+When you lose all your money, you lose the game.
 
 
 TO OPEN THE GAME
-(Requires Visual Studio C#)
 
-Method-1
-Open the Kervan file,
-Run Kervan.exe - Shortcut.
+Enter the Kervan file
+Run Kervan.exe shortcut.
 
-Method-2
-Open Kervan -> bin -> Debug -> net8.0 file
-Run Kervan.exe.
 
-Method-3
-Open the Kervan file,
-Run Kervan.sln. 
-Press ctrl + f5.
-____________________________________________________________________________
+To review the codes
+
+Enter the Kervan Visual Studio Codes file
+Open Kervan.sln (requires Visual Studio c#)
