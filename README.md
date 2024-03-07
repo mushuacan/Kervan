@@ -7,14 +7,20 @@ Bütün paranızı yitirince oyunu kaybedersiniz.
 
 OYUNU AÇMAK İÇİN
 
-Kervan dosyasına girin
-Kervan.exe kısayol'unu çalıştırın.
+.net 8.0'ı indirin
+https://dotnet.microsoft.com/en-us/download/dotnet/8.0
+
+Kervan\Program\Release\Kervan konumunu açın
+Kervan.exe'yi çalıştırın.
 
 
 Kodları incelemek için
 
+Visual Studio'yu indirin.
+https://www.youtube.com/watch?v=Ivvwh-7H2ek
+
 Kervan Visual Studio Codes dosyasına girin
-Kervan.sln dosyasını açın (Visual Studi c# gerektirir)
+Kervan.sln dosyasını açın (Visual Studio c# gerektirir)
 
 
 
@@ -30,11 +36,17 @@ When you lose all your money, you lose the game.
 
 TO OPEN THE GAME
 
-Enter the Kervan file
-Run Kervan.exe shortcut.
+Download .net 8.0
+https://dotnet.microsoft.com/en-us/download/dotnet/8.0
+
+Open Kervan\Program\Release\Kervan
+Run Kervan.exe.
 
 
 To review the codes
+
+Download Visual Studio.
+https://www.youtube.com/watch?v=Ivvwh-7H2ek
 
 Enter the Kervan Visual Studio Codes file
 Open Kervan.sln (requires Visual Studio c#)
