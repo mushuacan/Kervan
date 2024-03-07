@@ -22,6 +22,8 @@ https://www.youtube.com/watch?v=Ivvwh-7H2ek
 Kervan Visual Studio Codes dosyasına girin
 Kervan.sln dosyasını açın (Visual Studio c# gerektirir)
 
+Kervan'ı indirmek için
+https://github.com/mushuacan/Kervan
 
 
 
@@ -50,3 +52,6 @@ https://www.youtube.com/watch?v=Ivvwh-7H2ek
 
 Enter the Kervan Visual Studio Codes file
 Open Kervan.sln (requires Visual Studio c#)
+
+For downloading Kervan:
+https://github.com/mushuacan/Kervan
