@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OyunVerileri xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Kazanımlar>
+    <string>İlk kazanımını yazdın</string>
+    <string>İkinciyi de yazdın</string>
+    <string>Ve üçüncüyü de</string>
+  </Kazanımlar>
+  <BitirilenSonlar>
+    <string>Tüccar zaferi</string>
+    <string>kznm.sn.tc.win</string>
+    <string>kznm.sn.hile.win</string>
+    <string>kznm.sn.kb.win</string>
+    <string>kznm.sn.eşkiy.luz</string>
+  </BitirilenSonlar>
+</OyunVerileri>

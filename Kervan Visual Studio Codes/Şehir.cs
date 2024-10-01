@@ -59,8 +59,8 @@ namespace Kervan
             ortakErişim.OrtakListe.Grup.Add("Eleman");
             ortakErişim.OrtakListe.Para = 100;
             ortakErişim.OrtakListe.Erzak = 44;
-            ortakErişim.OrtakListe.oyuncuGlobalKonumX = 4;
-            ortakErişim.OrtakListe.oyuncuGlobalKonumY = 10;
+            ortakErişim.OrtakListe.oyuncuGlobalKonumX = 11;
+            ortakErişim.OrtakListe.oyuncuGlobalKonumY = 9;
             ortakErişim.OrtakListe.Envanter.Add("Aile Yâdigârı Gümüş Kolye");
         }
 
@@ -207,6 +207,7 @@ namespace Kervan
                                         if (ortakErişim.OrtakListe.Olay[i] == "Doktor")
                                         {
                                             ortakErişim.OrtakListe.Olay.RemoveAt(i);
+                                            ortakErişim.OrtakListe.Para -= 20;
                                         }
                                     }
                                     Console.WriteLine(Language.GetText("Şehir.Girdi.dc.4"));
@@ -311,13 +312,59 @@ namespace Kervan
             {
                 if (ortakErişim.OrtakListe.Grup.Contains("Aşçı") && artış == -1)
                 {
-                    ortakErişim.OrtakListe.Erzak = (int)(ortakErişim.OrtakListe.Erzak + artış * (ortakErişim.OrtakListe.Grup.Count / 1.5f)); //Aşçı varsa erzak daha fazla dayanır.
+                    ortakErişim.OrtakListe.Erzak = (int)(ortakErişim.OrtakListe.Erzak + artış * (ortakErişim.OrtakListe.Grup.Count / 1.7f)); //Aşçı varsa erzak daha fazla dayanır.
                 }
                 else
                 {
                     ortakErişim.OrtakListe.Erzak = ortakErişim.OrtakListe.Erzak + artış * ortakErişim.OrtakListe.Grup.Count;
                 }
+
                 if(ortakErişim.OrtakListe.Erzak < 0){ ortakErişim.OrtakListe.Erzak = 0;}
+
+
+                if (ortakErişim.OrtakListe.Erzak == 0 && ortakErişim.OrtakListe.Envanter.Contains("Tahıl"))
+                {
+                    ortakErişim.OrtakListe.Envanter.Remove("Tahıl");
+                    ortakErişim.OrtakListe.Erzak += 3;
+                    Thread.Sleep(1000);
+                    Console.WriteLine(Language.GetText("Envanterden-erzaklaştırma.tahıl"));
+                    Thread.Sleep(3000);
+                }
+                if (ortakErişim.OrtakListe.Erzak == 0 && ortakErişim.OrtakListe.Envanter.Contains("Et"))
+                {
+                    ortakErişim.OrtakListe.Envanter.Remove("Et");
+                    ortakErişim.OrtakListe.Erzak += 10;
+                    Thread.Sleep(1000);
+                    Console.WriteLine(Language.GetText("Envanterden-erzaklaştırma.et"));
+                    Thread.Sleep(3000);
+                }
+                if (ortakErişim.OrtakListe.Erzak == 0 && ortakErişim.OrtakListe.Envanter.Contains("Balık"))
+                {
+                    ortakErişim.OrtakListe.Envanter.Remove("Balık");
+                    ortakErişim.OrtakListe.Erzak += 6;
+                    Thread.Sleep(1000);
+                    Console.WriteLine(Language.GetText("Envanterden-erzaklaştırma.balık"));
+                    Thread.Sleep(3000);
+                }
+                if (ortakErişim.OrtakListe.Erzak == 0  && ortakErişim.OrtakListe.Envanter.Contains("Bal"))
+                {
+                    ortakErişim.OrtakListe.Envanter.Remove("Bal");
+                    ortakErişim.OrtakListe.Erzak += 10;
+                    Thread.Sleep(1000);
+                    Console.WriteLine(Language.GetText("Envanterden-erzaklaştırma.bal"));
+                    Thread.Sleep(3000);
+                }
+                if (ortakErişim.OrtakListe.Erzak == 0 && ortakErişim.OrtakListe.Envanter.Contains("Midye"))
+                {
+                    for (int i = 0; i < ortakErişim.OrtakListe.Envanter.Count(s => s == "Midye");  i++)
+                    {
+                        ortakErişim.OrtakListe.Envanter.Remove("Midye");
+                        ortakErişim.OrtakListe.Erzak += 1;
+                    }
+                    Thread.Sleep(1000);
+                    Console.WriteLine(Language.GetText("Envanterden-erzaklaştırma.midye"));
+                    Thread.Sleep(4400);
+                }
             }
             else if (işlem == "Kontrol")
             {
@@ -344,6 +391,8 @@ namespace Kervan
                 }
                 else
                 {
+                    günlükErzak = ortakErişim.OrtakListe.Erzak / ortakErişim.OrtakListe.Grup.Count;
+                    Console.WriteLine(Language.GetText("Şehir.Erzak.Kontrol.Erzak") + $" {günlükErzak}");
                     Console.WriteLine("\n " + Language.GetText("Şehir.Erzak.Bitiyor") + " \n");
                 }
             }

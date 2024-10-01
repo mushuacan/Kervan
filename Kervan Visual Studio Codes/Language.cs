@@ -39,8 +39,8 @@ namespace Kervan
             languageDictionary = new Dictionary<string, string>();
 
             string workingDirectory = Environment.CurrentDirectory;
-            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
-            string filePath = Path.Combine(projectDirectory, "Diller", languageFile);
+            //string projectDirectory = Directory.GetParent(workingDirectory).FullName;
+            string filePath = Path.Combine(workingDirectory, "Diller", languageFile);
 
             if (File.Exists(filePath))
             {
@@ -64,6 +64,7 @@ namespace Kervan
             {
                 // Dosya bulunamazsa uyarı ver
                 Console.WriteLine($"'{languageFile}' dosyası bulunamadı.");
+                Thread.Sleep( 100000 );
             }
         }
     }

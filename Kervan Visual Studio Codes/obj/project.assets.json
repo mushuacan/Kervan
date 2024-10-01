@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mushu\\OneDrive\\Documents\\GitHub\\DGD203-FirstProject\\Kervan\\Kervan.csproj",
+      "projectUniqueName": "C:\\Users\\mushu\\OneDrive\\Masaüstü\\Üniversite arşiv dosyası\\3. dönem\\c#\\C# Final Kervan\\Oyun dosyası\\Kervan\\Kervan.csproj",
       "projectName": "Kervan",
-      "projectPath": "C:\\Users\\mushu\\OneDrive\\Documents\\GitHub\\DGD203-FirstProject\\Kervan\\Kervan.csproj",
+      "projectPath": "C:\\Users\\mushu\\OneDrive\\Masaüstü\\Üniversite arşiv dosyası\\3. dönem\\c#\\C# Final Kervan\\Oyun dosyası\\Kervan\\Kervan.csproj",
       "packagesPath": "C:\\Users\\mushu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mushu\\OneDrive\\Documents\\GitHub\\DGD203-FirstProject\\Kervan\\obj\\",
+      "outputPath": "C:\\Users\\mushu\\OneDrive\\Masaüstü\\Üniversite arşiv dosyası\\3. dönem\\c#\\C# Final Kervan\\Oyun dosyası\\Kervan\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mushu\\AppData\\Roaming\\NuGet\\NuGet.Config",

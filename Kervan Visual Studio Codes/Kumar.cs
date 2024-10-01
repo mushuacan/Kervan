@@ -52,7 +52,7 @@ namespace Kervan
             int due; //Kaç deneme hakkı olduğu
 
             randomMax = 161; //150
-            due = 7; //6
+            due = 8; //7
             #endregion
 
             #region KUMAR OYUNU
@@ -137,8 +137,10 @@ namespace Kervan
                     else if (attempts == due)
                     {
                         Console.WriteLine($"\n" + Language.GetText("Kumar.Gamble.Oyun.Lose") + "\n");
+                        Thread.Sleep(500);
                         Console.WriteLine(Language.GetText("Kumar.Gamble.Oyun.Lose.1") + $" {targetNumber}");
                         Console.WriteLine(Language.GetText("Kumar.Gamble.Oyun.Lose.2") + $" {attempts}\n");
+                        Thread.Sleep(250);
                         Console.WriteLine(Language.GetText("Kumar.Gamble.Oyun.Yatırdığın") + $" {coin}");
                         playAgainInput = "NoCoin";
                         coinRate = coin;

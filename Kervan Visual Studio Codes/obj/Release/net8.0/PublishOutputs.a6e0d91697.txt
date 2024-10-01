@@ -1,0 +1,5 @@
+C:\Users\mushu\OneDrive\Masaüstü\Kervan.exe
+C:\Users\mushu\OneDrive\Masaüstü\Kervan.dll
+C:\Users\mushu\OneDrive\Masaüstü\Kervan.deps.json
+C:\Users\mushu\OneDrive\Masaüstü\Kervan.runtimeconfig.json
+C:\Users\mushu\OneDrive\Masaüstü\Kervan.pdb

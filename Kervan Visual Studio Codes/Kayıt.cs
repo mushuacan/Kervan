@@ -12,7 +12,7 @@ namespace Kervan
         // KayıtDosyası() -> dosyaYolu'nu belirler
         public void KayıtDosyası(string işlem)
         {
-            string klasorYolu = Path.Combine(Environment.CurrentDirectory, "..", "..", "..",  "SaveData");
+            string klasorYolu = Path.Combine(Environment.CurrentDirectory,  "SaveData");
 
             // Eğer SaveData klasörü yoksa oluştur
             if (!Directory.Exists(klasorYolu))

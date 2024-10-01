@@ -1,5 +1,44 @@
 Dil:Türkçe
+versiyon:Versiyon
+versiyonTarihi: Versiyonun yayınlandığı tarih 
 
+
+
+Kazanımlar Başlangıç
+_____________________________________________________________________
+kznm.sn.tc.win:Tüccar zaferi
+kznm.sn.kb.win:Kumarbaz zaferi
+kznm.sn.hile.win:Hilebaz zaferi
+kznm.sn.kbtc.win:Kumarbaz Tüccar zaferi
+kznm.sn.tacir.luz:Tüccar mağlubiyeti
+kznm.sn.kumar.luz:Kumarbaz mağlubiyeti
+kznm.sn.hasta.luz:Hastalıktan mağlubiyeti
+kznm.sn.iflas.luz:Keyfî iflas mağlubiyeti
+kznm.sn.eşkiy.luz:Eşkiya mağlubiyeti
+kznm.sn.yolda.luz:Yolda Kalma mağlubiyeti
+
+
+Kazanımlar Son
+_____________________________________________________________________
+
+Hikâye Başlangıç
+_____________________________________________________________________
+Hikaye.1:Her zaman hareketli bir çocuk olduğunu söylerdi baban.
+Hikaye.2:Sen de köyünden artık çıkmak istediğini üstü kapalı dillendirirdin.
+Hikaye.3:Koyunları güttükten sonra eve geldiğinde baban gözünde, hayallerinden uzakta kalmış bir çocuğun özlemini gördü.
+Hikaye.4:Yapmak istediğin şeyi sordu ve sen de söyledin.
+Hikaye.5:Baban hep destek çıkan biriydi, köydeki dostlarının oğullarından ikisini yanına verdi ve seni de lider yaptı.
+Hikaye.6:Bir tüccar olman için gerekli sermayeyi sana verdi.
+Hikaye.7:Hayatının yeni başlayan ilk gününde heyecanlıydın ve hüzünlüydün.
+Hikaye.8:Baban Âile Yâdigârı Gümüş Kolye'yi sana verdi, gerekirse eğer harcamanı söyledi.
+Hikaye.9:Babana son kez sarıldın, ailene vedâ ettin ve yola çıktın.
+
+HikayeGösterelimMi:Hikâyeyi okumak ister misin?
+HikayeGösterelimMi.Açıklama:(Evet için 1, hayır için 0) -> 
+Hikaye.red:Oyun başlatılıyor...
+
+Hikâye Son
+_____________________________________________________________________
 
 
 
@@ -293,6 +332,12 @@ _______________________________________________________________________
 ŞEHİR BAŞLIYOR
 _____________________________________________________________________
 
+Envanterden-erzaklaştırma.tahıl:Envanterdeki bir çuval tahılı yiyorsunuz.
+Envanterden-erzaklaştırma.et:Envanterindeki eti yemeye başladınız.
+Envanterden-erzaklaştırma.balık:Envanterdeki balıkları yiyorsunuz.
+Envanterden-erzaklaştırma.bal:Envanterdeki balı yediniz.
+Envanterden-erzaklaştırma.midye:Envanterindeki bütün midyeleri yediniz ve envanterde başka yiyecek kalmadı.
+
 Şehir.GrupYazdır:Grup Elemanların ->
 Şehir.GrupYazdır.Eleman:Eleman
 Şehir.GrupYazdır.Aşçı:Aşçı
@@ -436,7 +481,7 @@ Program.Menu.Selam.2:Kervan oyununa hoşgeldin!
 Program.Menu.Menu.1:1.Oyuna Başla
 Program.Menu.Menu.2:2.Son Kaydı Oyna
 Program.Menu.Menu.3:3.Dil Seçeneklerini Gör (Language)
-Program.Menu.Menu.4:4.Hile Kodlarını Gör
+Program.Menu.Menu.4:4.Kazanımları gör
 Program.Menu.Menu.5:5.Oyun Hakkında Bilgi Al
 Program.Menu.Menu.6:6.Yapımcıları Hakkında Bilgi Al
 Program.Menu.Menu.7:7.Çıkış Yap
@@ -589,6 +634,15 @@ Harita.Bitiş.Tüccar.3:Gerçek bir tüccarsın.
 Harita.Bitiş.Tüccar.4:Oynadığın için teşekkürler.
 Harita.Bitiş.Tüccar.5:Kazandın!
 Harita.Bitiş.Tüccar.6:Tüccarlık Zaferi!
+
+Harita.Bitiş.Hilebaz.1:Ağzını gırdığmın hilecisi seni.
+Harita.Bitiş.Hilebaz.2:E yerinde hile yapsan neyse...
+Harita.Bitiş.Hilebaz.3:Ama sen sadece oyuna girip para basmışsın.
+Harita.Bitiş.Hilebaz.4:E böyle yaparsan oyunun zevki kalır mı?
+Harita.Bitiş.Hilebaz.5:Olayı zaten para kazanmak oyunun be ahmak!
+Harita.Bitiş.Hilebaz.6:neyse kazandın
+Harita.Bitiş.Hilebaz.7:hilebaz zaferi
+
 
 Harita.Bitiş.Lose.1:Beş paran kalmadı. Eşyan da yok.
 Harita.Bitiş.Lose.2:Etrafındaki herkes sayıp sövüp gitti.

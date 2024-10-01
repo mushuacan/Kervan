@@ -136,54 +136,55 @@ namespace Kervan
             #region Eşyların Şehirlere göre Nadirlik ve Fiyatlarının Belirlenmesi
 
             //AllItems[EŞYAKODU].SetCityData("Şehrin ismi", Nadirlik, Fiyat)
+            //Eşya eğer 100, 8 ise %100 var, ortalama 8 altından
 
             #region ET 15 15
-            AllItems[0].SetCityData("Güney Koyuncular Köyü",    100, 8);
+            AllItems[0].SetCityData("Güney Koyuncular Köyü",    100, 6);
             AllItems[0].SetCityData("Güney Liman Şehri",        5, 20);
             AllItems[0].SetCityData("Madenciler Köyü",          35, 17);
             AllItems[0].SetCityData("Balıkçılar Köyü",          10, 15);
             AllItems[0].SetCityData("Merkez Şehir",             20, 14);
             AllItems[0].SetCityData("Çiftçiler Köyü",           35, 14);
-            AllItems[0].SetCityData("Kuzey Koyuncular Köyü",    100, 10);
-            AllItems[0].SetCityData("Kuzey Liman Şehri",        5, 20);
+            AllItems[0].SetCityData("Kuzey Koyuncular Köyü",    100, 12);
+            AllItems[0].SetCityData("Kuzey Liman Şehri",        5, 17);
             #endregion
             #region Balık 33 8
-            AllItems[1].SetCityData("Güney Koyuncular Köyü",    35, 10);
+            AllItems[1].SetCityData("Güney Koyuncular Köyü",    10, 12);
             AllItems[1].SetCityData("Güney Liman Şehri",        95, 6);
-            AllItems[1].SetCityData("Madenciler Köyü",          5, 15);
-            AllItems[1].SetCityData("Balıkçılar Köyü",          100, 5);
-            AllItems[1].SetCityData("Merkez Şehir",             25, 8);
+            AllItems[1].SetCityData("Madenciler Köyü",          5, 18);
+            AllItems[1].SetCityData("Balıkçılar Köyü",          100, 3);
+            AllItems[1].SetCityData("Merkez Şehir",             25, 15);
             AllItems[1].SetCityData("Çiftçiler Köyü",           20, 12);
             AllItems[1].SetCityData("Kuzey Koyuncular Köyü",    20, 12);
             AllItems[1].SetCityData("Kuzey Liman Şehri",        85, 5);
             #endregion
             #region Tahıl 25 6
             AllItems[2].SetCityData("Güney Koyuncular Köyü",    55, 4);
-            AllItems[2].SetCityData("Güney Liman Şehri",        15, 8);
-            AllItems[2].SetCityData("Madenciler Köyü",          45, 8);
+            AllItems[2].SetCityData("Güney Liman Şehri",        15, 14);
+            AllItems[2].SetCityData("Madenciler Köyü",          45, 10);
             AllItems[2].SetCityData("Balıkçılar Köyü",          15, 7);
-            AllItems[2].SetCityData("Merkez Şehir",             45, 6);
-            AllItems[2].SetCityData("Çiftçiler Köyü",           100, 3);
+            AllItems[2].SetCityData("Merkez Şehir",             45, 5);
+            AllItems[2].SetCityData("Çiftçiler Köyü",           100, 2);
             AllItems[2].SetCityData("Kuzey Koyuncular Köyü",    65, 5);
-            AllItems[2].SetCityData("Kuzey Liman Şehri",        10, 9);
+            AllItems[2].SetCityData("Kuzey Liman Şehri",        10, 10);
             #endregion
             #region İçki 25 15 
             AllItems[3].SetCityData("Güney Koyuncular Köyü",    5, 25);
             AllItems[3].SetCityData("Güney Liman Şehri",        55, 10);
             AllItems[3].SetCityData("Madenciler Köyü",          2, 35);
-            AllItems[3].SetCityData("Balıkçılar Köyü",          25, 14);
+            AllItems[3].SetCityData("Balıkçılar Köyü",          25, 18);
             AllItems[3].SetCityData("Merkez Şehir",             15, 20);
             AllItems[3].SetCityData("Çiftçiler Köyü",           10, 25);
             AllItems[3].SetCityData("Kuzey Koyuncular Köyü",    45, 13);
-            AllItems[3].SetCityData("Kuzey Liman Şehri",        100, 8);
+            AllItems[3].SetCityData("Kuzey Liman Şehri",        100, 7);
             #endregion
             #region Yün 20 10
             AllItems[4].SetCityData("Güney Koyuncular Köyü",    95, 3);
             AllItems[4].SetCityData("Güney Liman Şehri",        20, 10);
-            AllItems[4].SetCityData("Madenciler Köyü",          5, 15);
+            AllItems[4].SetCityData("Madenciler Köyü",          5, 17);
             AllItems[4].SetCityData("Balıkçılar Köyü",          2, 16);
             AllItems[4].SetCityData("Merkez Şehir",             25, 9);
-            AllItems[4].SetCityData("Çiftçiler Köyü",           10, 14);
+            AllItems[4].SetCityData("Çiftçiler Köyü",           10, 20);
             AllItems[4].SetCityData("Kuzey Koyuncular Köyü",    100, 2);
             AllItems[4].SetCityData("Kuzey Liman Şehri",        20, 10);
             #endregion
@@ -191,19 +192,19 @@ namespace Kervan
             AllItems[5].SetCityData("Güney Koyuncular Köyü",    2, 17);
             AllItems[5].SetCityData("Güney Liman Şehri",        5, 16);
             AllItems[5].SetCityData("Madenciler Köyü",          95, 5);
-            AllItems[5].SetCityData("Balıkçılar Köyü",          8, 14);
+            AllItems[5].SetCityData("Balıkçılar Köyü",          8, 17);
             AllItems[5].SetCityData("Merkez Şehir",             4, 16);
-            AllItems[5].SetCityData("Çiftçiler Köyü",           1, 18);
+            AllItems[5].SetCityData("Çiftçiler Köyü",           1, 14);
             AllItems[5].SetCityData("Kuzey Koyuncular Köyü",    1, 20);
             AllItems[5].SetCityData("Kuzey Liman Şehri",        1, 25);
             #endregion
             #region Demir 10 20
             AllItems[6].SetCityData("Güney Koyuncular Köyü",    25, 17);
-            AllItems[6].SetCityData("Güney Liman Şehri",        20, 18);
+            AllItems[6].SetCityData("Güney Liman Şehri",        20, 24);
             AllItems[6].SetCityData("Madenciler Köyü",          85, 9);
             AllItems[6].SetCityData("Balıkçılar Köyü",          3, 17);
             AllItems[6].SetCityData("Merkez Şehir",             10, 20);
-            AllItems[6].SetCityData("Çiftçiler Köyü",           2, 16);
+            AllItems[6].SetCityData("Çiftçiler Köyü",           2, 24);
             AllItems[6].SetCityData("Kuzey Koyuncular Köyü",    0, 10);
             AllItems[6].SetCityData("Kuzey Liman Şehri",        0, 40);
             #endregion
@@ -221,80 +222,80 @@ namespace Kervan
             AllItems[8].SetCityData("Güney Koyuncular Köyü",    0, 61);
             AllItems[8].SetCityData("Güney Liman Şehri",        0, 60);
             AllItems[8].SetCityData("Madenciler Köyü",          0, 32);
-            AllItems[8].SetCityData("Balıkçılar Köyü",          1, 15);
-            AllItems[8].SetCityData("Merkez Şehir",             3, 50);
-            AllItems[8].SetCityData("Çiftçiler Köyü",           1, 44);
-            AllItems[8].SetCityData("Kuzey Koyuncular Köyü",    2, 42);
-            AllItems[8].SetCityData("Kuzey Liman Şehri",        10, 24);
+            AllItems[8].SetCityData("Balıkçılar Köyü",          4, 15);
+            AllItems[8].SetCityData("Merkez Şehir",             6, 50);
+            AllItems[8].SetCityData("Çiftçiler Köyü",           4, 44);
+            AllItems[8].SetCityData("Kuzey Koyuncular Köyü",    5, 42);
+            AllItems[8].SetCityData("Kuzey Liman Şehri",        13, 24);
             #endregion
             #region İpek 1 50
             AllItems[9].SetCityData("Güney Koyuncular Köyü",    1, 23);
-            AllItems[9].SetCityData("Güney Liman Şehri",        10, 35);
+            AllItems[9].SetCityData("Güney Liman Şehri",        10, 34);
             AllItems[9].SetCityData("Madenciler Köyü",          1, 40);
             AllItems[9].SetCityData("Balıkçılar Köyü",          1, 35);
-            AllItems[9].SetCityData("Merkez Şehir",             2, 66);
-            AllItems[9].SetCityData("Çiftçiler Köyü",           2, 25);
-            AllItems[9].SetCityData("Kuzey Koyuncular Köyü",    1, 20);
-            AllItems[9].SetCityData("Kuzey Liman Şehri",        3, 70);
+            AllItems[9].SetCityData("Merkez Şehir",             3, 68);
+            AllItems[9].SetCityData("Çiftçiler Köyü",           2, 33);
+            AllItems[9].SetCityData("Kuzey Koyuncular Köyü",    1, 30);
+            AllItems[9].SetCityData("Kuzey Liman Şehri",        4, 80);
             #endregion
             #region Baharat 7 35
             AllItems[10].SetCityData("Güney Koyuncular Köyü",    0, 60);
             AllItems[10].SetCityData("Güney Liman Şehri",        12, 31);
             AllItems[10].SetCityData("Madenciler Köyü",          2, 26);
             AllItems[10].SetCityData("Balıkçılar Köyü",          1, 38);
-            AllItems[10].SetCityData("Merkez Şehir",             2, 50);
+            AllItems[10].SetCityData("Merkez Şehir",             2, 64);
             AllItems[10].SetCityData("Çiftçiler Köyü",           1, 30);
             AllItems[10].SetCityData("Kuzey Koyuncular Köyü",    0, 35);
             AllItems[10].SetCityData("Kuzey Liman Şehri",        15, 27);
             #endregion
             #region Midye 5 5
-            AllItems[11].SetCityData("Güney Koyuncular Köyü",    1, 10);
-            AllItems[11].SetCityData("Güney Liman Şehri",        35, 3);
+            AllItems[11].SetCityData("Güney Koyuncular Köyü",    1, 12);
+            AllItems[11].SetCityData("Güney Liman Şehri",        35, 4);
             AllItems[11].SetCityData("Madenciler Köyü",          0, 15);
-            AllItems[11].SetCityData("Balıkçılar Köyü",          60, 3);
-            AllItems[11].SetCityData("Merkez Şehir",             5, 7);
-            AllItems[11].SetCityData("Çiftçiler Köyü",           0, 10);
-            AllItems[11].SetCityData("Kuzey Koyuncular Köyü",    0, 5);
+            AllItems[11].SetCityData("Balıkçılar Köyü",          64, 2);
+            AllItems[11].SetCityData("Merkez Şehir",             5, 10);
+            AllItems[11].SetCityData("Çiftçiler Köyü",           0, 13);
+            AllItems[11].SetCityData("Kuzey Koyuncular Köyü",    0, 8);
             AllItems[11].SetCityData("Kuzey Liman Şehri",        60, 2);
             #endregion
             #region Keten 10 20
             AllItems[12].SetCityData("Güney Koyuncular Köyü",    10, 18);
-            AllItems[12].SetCityData("Güney Liman Şehri",        0, 25);
+            AllItems[12].SetCityData("Güney Liman Şehri",        0, 17);
             AllItems[12].SetCityData("Madenciler Köyü",          2, 24);
             AllItems[12].SetCityData("Balıkçılar Köyü",          1, 26);
-            AllItems[12].SetCityData("Merkez Şehir",             10, 17);
+            AllItems[12].SetCityData("Merkez Şehir",             12, 16);
             AllItems[12].SetCityData("Çiftçiler Köyü",           15, 15);
-            AllItems[12].SetCityData("Kuzey Koyuncular Köyü",    2, 22);
-            AllItems[12].SetCityData("Kuzey Liman Şehri",        0, 30);
+            AllItems[12].SetCityData("Kuzey Koyuncular Köyü",    2, 30);
+            AllItems[12].SetCityData("Kuzey Liman Şehri",        0, 44);
             #endregion
             #region Bal 3 25
             AllItems[13].SetCityData("Güney Koyuncular Köyü",    2, 26);
             AllItems[13].SetCityData("Güney Liman Şehri",        6, 18);
-            AllItems[13].SetCityData("Madenciler Köyü",          1, 30);
-            AllItems[13].SetCityData("Balıkçılar Köyü",          2, 28);
+            AllItems[13].SetCityData("Madenciler Köyü",          1, 35);
+            AllItems[13].SetCityData("Balıkçılar Köyü",          0, 30);
             AllItems[13].SetCityData("Merkez Şehir",             15, 15);
             AllItems[13].SetCityData("Çiftçiler Köyü",           3, 25);
             AllItems[13].SetCityData("Kuzey Koyuncular Köyü",    0, 30);
-            AllItems[13].SetCityData("Kuzey Liman Şehri",        0, 45);
+            AllItems[13].SetCityData("Kuzey Liman Şehri",        0, 47);
             #endregion
             #region Elmas 0 120
             AllItems[14].SetCityData("Güney Koyuncular Köyü",    0, 90);
-            AllItems[14].SetCityData("Güney Liman Şehri",        0, 150);
-            AllItems[14].SetCityData("Madenciler Köyü",          1, 45);
+            AllItems[14].SetCityData("Güney Liman Şehri",        0, 130);
+            AllItems[14].SetCityData("Madenciler Köyü",          1, 60);
             AllItems[14].SetCityData("Balıkçılar Köyü",          0, 18);
-            AllItems[14].SetCityData("Merkez Şehir",             2, 70);
+            AllItems[14].SetCityData("Merkez Şehir",             2, 90);
             AllItems[14].SetCityData("Çiftçiler Köyü",           0, 13);
             AllItems[14].SetCityData("Kuzey Koyuncular Köyü",    0, 20);
             AllItems[14].SetCityData("Kuzey Liman Şehri",        0, 160);
             #endregion
             #region Deri 7 8
-            AllItems[15].SetCityData("Güney Koyuncular Köyü",    25, 5);
+            AllItems[15].SetCityData("Güney Koyuncular Köyü",    25, 3);
             AllItems[15].SetCityData("Güney Liman Şehri",        7, 8);
             AllItems[15].SetCityData("Madenciler Köyü",          2, 10);
-            AllItems[15].SetCityData("Balıkçılar Köyü",          0, 16);
+            AllItems[15].SetCityData("Balıkçılar Köyü",          0, 18);
             AllItems[15].SetCityData("Merkez Şehir",             3, 10);
-            AllItems[15].SetCityData("Çiftçiler Köyü",           0, 13);
-            AllItems[15].SetCityData("Kuzey Koyuncular Köyü",    35, 5);
+            AllItems[15].SetCityData("Çiftçiler Köyü",           0, 16);
+            AllItems[15].SetCityData("Kuzey Koyuncular Köyü",    35, 3);
             AllItems[15].SetCityData("Kuzey Liman Şehri",        7, 8);
             #endregion
             /*

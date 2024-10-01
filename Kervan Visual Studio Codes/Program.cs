@@ -12,9 +12,28 @@ class Program
         OL_Singleton ortakErişim = OL_Singleton.Instance;
         #endregion
 
+
+
         //En üstten aşağı gitmek nedense rahatsız edici geliyor. Direk aşağıdan başlaıyorum.
         Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        ortakErişim.OrtakListe.Olay.Add("Dil: Türkçe");
+        //ortakErişim.OrtakListe.Olay.Add("Dil: Türkçe");
+        ortakErişim.OrtakListe.Olay.Add(VersiyonBul(2));
+
+        if (VersiyonBul(2) == "Dil: Türkçe")
+        {
+            Language.SetLanguage("Türkçe.txt");
+            DiliDeğiştir(2, "Dil: Türkçe");
+        }
+        else if (VersiyonBul(2) == "Dil: İngilizce")
+        {
+            Language.SetLanguage("English.txt");
+            DiliDeğiştir(2, "Dil: İngilizce");
+        }
+        else
+        {
+            //eror
+        }
+
 
         Sıfırla();
         ŞehirCs.BaşlarkenHazırlık();
@@ -28,8 +47,10 @@ class Program
         Menu();
 
         Console.WriteLine("\n\n\n\n\n\n\n\n\n");
-        Console.WriteLine(Language.GetText("Program.Main.BeforeStart"));
-        Console.WriteLine("\n\n\n");
+        Harita harita = new Harita();
+        harita.HaritaBilgilendirme("Harita");
+        Thread.Sleep(1500);
+        //Console.WriteLine(Language.GetText("Program.Main.BeforeStart")); //Buna gerek kalmadı.
 
         haritaCs.haritaHazırla();
         haritaCs.haritaYazdır();
@@ -90,6 +111,8 @@ class Program
         OL_Singleton ortakErişim = OL_Singleton.Instance;
         Console.WriteLine("\n\n" + Language.GetText("Program.Menu.Selam.1") + "\n\n" + Language.GetText("Program.Menu.Selam.2"));
         Thread.Sleep(2000);
+        Console.WriteLine( "\n\n" + Language.GetText("versiyon") + " " + VersiyonBul(0) + "\n" + Language.GetText("versiyonTarihi") + " " + VersiyonBul(1));
+        Thread.Sleep(1000);
         while (true)
         {
             #region Menü Yazıları
@@ -100,7 +123,9 @@ class Program
             }
             #endregion
 
-            if (int.TryParse(Console.ReadLine(), out int sayi))
+            string girdi = Console.ReadLine();
+
+            if (int.TryParse(girdi, out int sayi))
             {
                 Console.WriteLine("\n\n\n");
                 switch (sayi)
@@ -115,6 +140,7 @@ class Program
                         Thread.Sleep(450);
                         Console.Write(".");
                         Thread.Sleep(150);
+                        Hikaye();
                         return;
 
                     //Kaydedilmiş Son Oyunu Açar
@@ -143,11 +169,13 @@ class Program
                             if (dilSeçimi == "1")
                             {
                                 Language.SetLanguage("Türkçe.txt");
+                                DiliDeğiştir(2, "Dil: Türkçe");
                                 break;
                             }
                             else if (dilSeçimi == "2")
                             {
                                 Language.SetLanguage("English.txt");
+                                DiliDeğiştir(2, "Dil: İngilizce");
                                 break;
                             }
                             else
@@ -158,24 +186,14 @@ class Program
                         Thread.Sleep(400);
                         break;
 
-                    //Hile kodları
-                    case 4: 
-                        Console.WriteLine("Hile kodu: 1 50");
-                        Console.WriteLine(Language.GetText("Program.Menu.Case4.Hile1"));
-                        Console.WriteLine("Hile kodu: 1 150");
-                        Console.WriteLine(Language.GetText("Program.Menu.Case4.Hile1"));
-                        Console.WriteLine("Hile kodu: 2 10");
-                        Console.WriteLine(Language.GetText("Program.Menu.Case4.Hile2"));
-                        Console.WriteLine("Hile kodu: 2 50");
-                        Console.WriteLine(Language.GetText("Program.Menu.Case4.Hile2"));
-                        Console.WriteLine("Hile kodu: 3 1");
-                        Console.WriteLine(Language.GetText("Program.Menu.Case4.Hile31"));
-                        Console.WriteLine("Hile kodu: 3 2");
-                        Console.WriteLine(Language.GetText("Program.Menu.Case4.Hile32"));
-                        Console.WriteLine("Hile kodu: 3 3");
-                        Console.WriteLine(Language.GetText("Program.Menu.Case4.Hile33"));
-                        Console.WriteLine(Language.GetText("Program.Menu.Case41"));
-                        Console.WriteLine(Language.GetText("Program.Menu.Case42"));
+                    //Kazanım kodları
+                    case 4:
+                        KazanımlarVeSonlar kazanımYönetimi = new KazanımlarVeSonlar();
+                        //kazanımYönetimi.KazanımlarıListele();
+                        Console.WriteLine();
+                        kazanımYönetimi.BitirilenSonlarıListele();
+                        Console.WriteLine();
+                        kazanımYönetimi.TümKazanımVeSonlarıListele();
                         break;
 
                     // Oyun hakkında bilgi
@@ -225,12 +243,111 @@ class Program
             }
             else
             {
-                Console.WriteLine(Language.GetText("All.GeçersizGirdiSayıGir"));
-                Console.WriteLine("Geçersiz giriş. Lütfen bir sayı girin.");
+                if (girdi == "Hileciyim ben")
+                {
+                    Console.WriteLine("Hile kodu: 1 50");
+                    Console.WriteLine(Language.GetText("Program.Menu.Case4.Hile1"));
+                    Console.WriteLine("Hile kodu: 1 150");
+                    Console.WriteLine(Language.GetText("Program.Menu.Case4.Hile1"));
+                    Console.WriteLine("Hile kodu: 2 10");
+                    Console.WriteLine(Language.GetText("Program.Menu.Case4.Hile2"));
+                    Console.WriteLine("Hile kodu: 2 50");
+                    Console.WriteLine(Language.GetText("Program.Menu.Case4.Hile2"));
+                    Console.WriteLine("Hile kodu: 3 1");
+                    Console.WriteLine(Language.GetText("Program.Menu.Case4.Hile31"));
+                    Console.WriteLine("Hile kodu: 3 2");
+                    Console.WriteLine(Language.GetText("Program.Menu.Case4.Hile32"));
+                    Console.WriteLine("Hile kodu: 3 3");
+                    Console.WriteLine(Language.GetText("Program.Menu.Case4.Hile33"));
+                    Console.WriteLine(Language.GetText("Program.Menu.Case41"));
+                    Console.WriteLine(Language.GetText("Program.Menu.Case42"));
+                }
+                else
+                {
+                    Console.WriteLine(Language.GetText("All.GeçersizGirdiSayıGir"));
+                }
             }
         }
         
     }
+
+    static string VersiyonBul(int sıraNo)
+    {
+        // Okunacak dosyanın yolunu belirtin
+        string dosyaYolu = "SaveData//Bilgiler.txt";
+
+        // Satırları saklamak için bir liste oluşturun
+        List<string> satırlar = new List<string>();
+
+        try
+        {
+            // Dosyayı StreamReader ile açın
+            using (StreamReader sr = new StreamReader(dosyaYolu))
+            {
+                string satır;
+                // Dosyanın sonuna kadar satırları okuyun
+                while ((satır = sr.ReadLine()) != null)
+                {
+                    // Okunan satırı listeye ekleyin
+                    satırlar.Add(satır);
+                }
+            }
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Hata: " + ex.Message);
+        }
+
+        return satırlar[sıraNo];
+    }
+
+    static void DiliDeğiştir(int sıraNo, string yeniSatır)
+    {
+        // Dosya yolunu belirtin
+        string dosyaYolu = "SaveData//Bilgiler.txt";
+
+        // Satırları saklamak için bir liste oluşturun
+        List<string> satırlar = new List<string>();
+
+        try
+        {
+            // Dosyayı okuyun ve satırları listeye ekleyin
+            using (StreamReader sr = new StreamReader(dosyaYolu))
+            {
+                string satır;
+                while ((satır = sr.ReadLine()) != null)
+                {
+                    satırlar.Add(satır);
+                }
+            }
+
+            // Listeyi kontrol et, eğer sıraNo geçerli değilse hata döndür
+            if (sıraNo < 0 || sıraNo >= satırlar.Count)
+            {
+                Console.WriteLine("Geçersiz sıra numarası!");
+                return;
+            }
+
+            // İlgili satırı değiştir
+            satırlar[sıraNo] = yeniSatır;
+
+            // Dosyayı tekrar yazın
+            using (StreamWriter sw = new StreamWriter(dosyaYolu))
+            {
+                foreach (string s in satırlar)
+                {
+                    sw.WriteLine(s);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Hata: " + ex.Message);
+        }
+    }
+
+
     static void CiddiliYaz(string metin, int minDeğer = 25, int maxDeğer = 105)
     {
         Random random = new Random();
@@ -243,5 +360,33 @@ class Program
         }
         Thread.Sleep(444);
         Console.Write("\n");
+    }
+
+
+    static void Hikaye()
+    {
+        Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
+        Console.WriteLine(Language.GetText("HikayeGösterelimMi"));
+        Console.WriteLine(Language.GetText("HikayeGösterelimMi.Açıklama"));
+        string cevap = Console.ReadLine();
+        if (cevap == "1")
+        {
+            //Hikâyeyi anlat
+            for (int i = 1; i < 10; i++)
+            {
+                CiddiliYaz(Language.GetText("Hikaye" + "." + i));
+            }
+        }
+        else if (cevap == "0")
+        {
+            //direk oyunu başlatır
+            CiddiliYaz(Language.GetText("Hikaye.red"));
+        }
+        else
+        {
+            //Hiç bekletmeden başlat
+        }
+
     }
 }

@@ -40,8 +40,7 @@ namespace Kervan
                 CiddiliYaz("\n\n\n", 500, 600);
                 CiddiliYaz(Language.GetText("Vakalar.Vaka-1.5"));
                 CiddiliYaz(Language.GetText("Vakalar.Vaka-1.6"));
-                Program program = new Program();
-                program.Maincik();
+                return;
             }
 
             #region Gerekli Referanslar
@@ -138,21 +137,21 @@ namespace Kervan
                         {
                             rastgele = random.Next(0, ortakErişim.OrtakListe.Grup.Count - 1);
                             CiddiliYaz(Language.GetText($"Şehir.İş.{ortakErişim.OrtakListe.Grup[rastgele]}")
-                                + Language.GetText("Vaka.T.A.Ayı.Korumasız.ElemanÖldü"));
+                               + " " + Language.GetText("Vaka.T.A.Ayı.Korumasız.ElemanÖldü"));
                             ortakErişim.OrtakListe.Grup.RemoveAt(rastgele);
                         }
                         if (ortakErişim.OrtakListe.Envanter.Count > 1)
                         {
                             rastgele = random.Next(0, ortakErişim.OrtakListe.Envanter.Count - 1);
                             CiddiliYaz(Language.GetText($"Eşyalar.item.{ortakErişim.OrtakListe.Envanter[rastgele]}")
-                                + Language.GetText("Vaka.T.A.Ayı.Korumasız.EşyaKırıldı"));
+                               + " " + Language.GetText("Vaka.T.A.Ayı.Korumasız.EşyaKırıldı"));
                             ortakErişim.OrtakListe.Envanter.RemoveAt(rastgele);
                         }
                         if (ortakErişim.OrtakListe.Envanter.Count > 1)
                         {
                             rastgele = random.Next(0, ortakErişim.OrtakListe.Envanter.Count - 1);
                             CiddiliYaz(Language.GetText($"Eşyalar.item.{ortakErişim.OrtakListe.Envanter[rastgele]}")
-                                + Language.GetText("Vaka.T.A.Ayı.Korumasız.EşyaKırıldı"));
+                               + " " + Language.GetText("Vaka.T.A.Ayı.Korumasız.EşyaKırıldı"));
                             ortakErişim.OrtakListe.Envanter.RemoveAt(rastgele);
                         }
                     }
@@ -213,6 +212,10 @@ namespace Kervan
                         CiddiliYaz(Language.GetText("Vaka.T.A.EşkiyaBaskını.9"));
                         CiddiliYaz(Language.GetText("Vaka.T.A.EşkiyaBaskını.10"));
                         VakaAyrıştırıcı("Son");
+                        Thread.Sleep(4444);
+                        KazanımlarVeSonlar kazanımlarVeSonlar = new KazanımlarVeSonlar();
+                        kazanımlarVeSonlar.YeniBitirilenSonEkle("kznm.sn.eşkiy.luz"); //Eşkiya mağlubiyeti
+                        Environment.Exit(0);
                     }
                 }
                 else if (sayıGirdisi1 == 8) //Kurdun gelişi
@@ -357,6 +360,10 @@ namespace Kervan
                     }
                     CiddiliYaz(Language.GetText("Vaka.Hırsızlık.iflas.11"));
                     VakaAyrıştırıcı("Son");
+                    Thread.Sleep(4444);
+                    KazanımlarVeSonlar kazanımlarVeSonlar = new KazanımlarVeSonlar();
+                    kazanımlarVeSonlar.YeniBitirilenSonEkle("kznm.sn.yolda.luz"); //Yolda Kalma mağlubiyeti
+                    Environment.Exit(0);
                 }
                 // Avcı Koruma Bahşiş İsyanı -> AKBİ
                 if (ortakErişim.OrtakListe.Olay.Contains("Avcı Koruma Bahşiş İsyanı")

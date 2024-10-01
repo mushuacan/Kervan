@@ -11,6 +11,23 @@ namespace Kervan
     {
         #region HARİTA
         // Verilen harita
+
+        string[] harita = {
+            "#####################",
+            "####..8.........#####",
+            "###......#.........##",
+            "##?..7..??....6....##",
+            "##??...??.........###",
+            "###???###.5.....#####",
+            "####???###.......####",
+            "#####??#####......###",
+            "###3...##.....#..4###",
+            "##.....?..1.......###",
+            "#?.................##",
+            "########??.....2.####",
+            "#####################"
+        };
+        /*
         string[] harita = {
             "#####################",
             "####..8.........#####",
@@ -26,6 +43,7 @@ namespace Kervan
             "########..2......####",
             "#####################"
         };
+        */
         #endregion
 
         #region Tam olarak 2 adet değişken
@@ -131,7 +149,17 @@ namespace Kervan
                     do{ Console.Write(" -> ");
                         string cevap = Console.ReadLine();
                         if (cevap == "Vazgeç") { CiddiliYaz("Helal olsun, vazgeçmeyeceğini biliyordum."); iflasDöngüsü = false; }
-                        else if (cevap == "Terk et") { CiddiliYaz("Tamam\n", 150, 160); Thread.Sleep(2000); CiddiliYaz("KORKAK", 300, 320); Thread.Sleep(200); Environment.Exit(0); }
+                        else if (cevap == "Terk et") 
+                        { 
+                            CiddiliYaz("Tamam\n", 150, 160); 
+                            Thread.Sleep(2000); 
+                            CiddiliYaz("KORKAK", 300, 320); 
+                            Thread.Sleep(200);
+                            Thread.Sleep(2000);
+                            KazanımlarVeSonlar kazanımlarVeSonlar = new KazanımlarVeSonlar();
+                            kazanımlarVeSonlar.YeniBitirilenSonEkle("kznm.sn.iflas.luz"); //Keyfi iflas mağlubiyeti
+                            Environment.Exit(0);
+                        }
                         else { CiddiliYaz("Anlayabilmem için 'Vazgeç' veya 'Terk et' yaz.", 15, 35); }
                     } while (iflasDöngüsü);
                     iflasdenemesi = true;
@@ -295,8 +323,9 @@ namespace Kervan
                 CiddiliYaz(Language.GetText("Harita.Olay.Doktor.Ölüm.5"));
                 CiddiliYaz("\n\n\n" + Language.GetText("Harita.Olay.Doktor.Ölüm.6") 
                                 + "\n\n" + Language.GetText("Harita.Olay.Doktor.Ölüm.7"));
-                Program program = new Program();
-                program.Maincik();
+                Thread.Sleep(4444);
+                KazanımlarVeSonlar kazanımlarVeSonlar = new KazanımlarVeSonlar();
+                kazanımlarVeSonlar.YeniBitirilenSonEkle("kznm.sn.hasta.luz"); //Hastalıktan ölme mağlubiyeti
                 Environment.Exit(0);
             }
             #endregion
@@ -336,6 +365,8 @@ namespace Kervan
                 CiddiliYaz("\n\n" + Language.GetText("Harita.Bitiş.Lose.Kumar.5"));
                 CiddiliYaz(Language.GetText("Harita.Bitiş.Lose.Kumar.6"));
                 Thread.Sleep(4444);
+                KazanımlarVeSonlar kazanımlarVeSonlar = new KazanımlarVeSonlar();
+                kazanımlarVeSonlar.YeniBitirilenSonEkle("kznm.sn.kumar.luz"); //Kumarbaz mağlubiyeti
                 Environment.Exit(0);
             }
             //Para bitinceki Mağlubiyet
@@ -345,6 +376,10 @@ namespace Kervan
                 CiddiliYaz(Language.GetText("Harita.Bitiş.Lose.1"));
                 CiddiliYaz(Language.GetText("Harita.Bitiş.Lose.2"));
                 vakaCs.VakaAyrıştırıcı("Son");
+                Thread.Sleep(4444);
+                KazanımlarVeSonlar kazanımlarVeSonlar = new KazanımlarVeSonlar();
+                kazanımlarVeSonlar.YeniBitirilenSonEkle("kznm.sn.tacir.luz"); //Tüccar Mağlubiyeti
+                Environment.Exit(0);
             }
 
             //Kumarbaz Zaferi
@@ -361,6 +396,8 @@ namespace Kervan
                 CiddiliYaz(Language.GetText("Harita.Bitiş.Kumarbaz.6"));
                 CiddiliYaz(Language.GetText("Harita.Bitiş.Kumarbaz.7"));
                 Thread.Sleep(4444);
+                KazanımlarVeSonlar kazanımlarVeSonlar = new KazanımlarVeSonlar();
+                kazanımlarVeSonlar.YeniBitirilenSonEkle("kznm.sn.kb.win"); //Kumarbaz zaferi
                 Environment.Exit(0);
             }
             //Kumarbaz Tüccar Zaferi
@@ -385,11 +422,15 @@ namespace Kervan
                 CiddiliYaz(Language.GetText("Harita.Bitiş.KumarbazTüccar.5"));
                 CiddiliYaz(Language.GetText("Harita.Bitiş.KumarbazTüccar.6"));
                 Thread.Sleep(4444);
+                KazanımlarVeSonlar kazanımlarVeSonlar = new KazanımlarVeSonlar();
+                kazanımlarVeSonlar.YeniBitirilenSonEkle("kznm.sn.kbtc.win"); //Kumarbaz Tüccar Zaferi
                 Environment.Exit(0);
 
             }
             //Tüccar Zaferi
-            else if (ortakErişim.OrtakListe.Para >= 1000) //
+            else if (ortakErişim.OrtakListe.Para >= 1000
+                && !ortakErişim.OrtakListe.Olay.Contains("Kumar Parası")
+                && ortakErişim.OrtakListe.Olay.Contains("Tüccariyet")) //
             {
                 Vakalar vakaCs = new Vakalar();
                 Şehir ŞehirCs = new Şehir();
@@ -408,6 +449,22 @@ namespace Kervan
                 CiddiliYaz(Language.GetText("Harita.Bitiş.Tüccar.5"));
                 CiddiliYaz(Language.GetText("Harita.Bitiş.Tüccar.6"));
                 Thread.Sleep(4444);
+                KazanımlarVeSonlar kazanımlarVeSonlar = new KazanımlarVeSonlar();
+                kazanımlarVeSonlar.YeniBitirilenSonEkle("kznm.sn.tc.win"); //Tüccar zaferi
+                Environment.Exit(0);
+            }
+            //Hilebaz zaferi
+            else if (ortakErişim.OrtakListe.Para >= 1000
+                && !ortakErişim.OrtakListe.Olay.Contains("Kumar Parası")
+                && !ortakErişim.OrtakListe.Olay.Contains("Tüccariyet"))
+            {
+                for(int i = 1; i < 8; i++)
+                {
+                    CiddiliYaz(Language.GetText("Harita.Bitiş.Hilebaz." + i));
+                }
+                Thread.Sleep(4444);
+                KazanımlarVeSonlar kazanımlarVeSonlar = new KazanımlarVeSonlar();
+                kazanımlarVeSonlar.YeniBitirilenSonEkle("kznm.sn.hile.win"); //Hilebaz zaferi
                 Environment.Exit(0);
             }
         }
@@ -454,14 +511,18 @@ namespace Kervan
             }
         }
 
-        void HaritaBilgilendirme(string bildiri)
+        public void HaritaBilgilendirme(string bildiri)
         {
             if (bildiri == "Harita")
             {
                 Console.WriteLine(Language.GetText("Harita.Bilgilendirme.1"));
+                Thread.Sleep(444);
                 Console.WriteLine(Language.GetText("Harita.Bilgilendirme.2"));
+                Thread.Sleep(444);
                 Console.WriteLine(Language.GetText("Harita.Bilgilendirme.3"));
+                Thread.Sleep(444);
                 Console.WriteLine(Language.GetText("Harita.Bilgilendirme.4"));
+                Thread.Sleep(444);
                 Console.WriteLine(Language.GetText("Harita.Bilgilendirme.5"));
                 Console.WriteLine("\n");
             }

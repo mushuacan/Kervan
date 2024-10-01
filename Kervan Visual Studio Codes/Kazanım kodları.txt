@@ -1,0 +1,17 @@
+        KazanımlarVeSonlar kazanımYönetimi = new KazanımlarVeSonlar();
+        kazanımYönetimi.YeniKazanımEkle("İlk kazanımını yazdın");
+        kazanımYönetimi.YeniKazanımEkle("İkinciyi de yazdın");
+        kazanımYönetimi.YeniKazanımEkle("Ve üçüncüyü de");
+        kazanımYönetimi.YeniBitirilenSonEkle("Tüccar zaferi");
+        kazanımYönetimi.KazanımlarıListele();
+        kazanımYönetimi.BitirilenSonlarıListele();
+
+
+
+
+
+
+
+
+        KazanımlarVeSonlar kazanımYönetimi = new KazanımlarVeSonlar();
+        kazanımYönetimi.YeniBitirilenSonEkle("Tüccar zaferi");
